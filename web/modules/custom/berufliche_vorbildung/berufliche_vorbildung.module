@@ -1,0 +1,22 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: julien
+ * Date: 23.12.18
+ * Time: 16:00
+ */
+
+/**
+ * Implements hook_theme()
+ *
+ */
+function berufliche_vorbildung_theme($existing, $type, $theme, $path) {
+    return [
+        'show_studiengaenge' => [
+          'variables' => [
+              'studiengang_name' => NULL,
+              'studiengaenge' => array(),
+          ],
+        ],
+    ];
+}

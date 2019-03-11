@@ -1,0 +1,3 @@
+services:
+  berufliche_vorbildung.berufsgruppen:
+    class: 'Drupal\berufliche_vorbildung\Helper\Berufsgruppe'

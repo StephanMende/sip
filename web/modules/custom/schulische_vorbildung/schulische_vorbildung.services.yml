@@ -1,0 +1,5 @@
+services:
+  schulabschluss:
+    class: 'Drupal\schulische_vorbildung\Classes\SchulischeVorbildung'
+  schulische_vorbildung.database:
+    class: 'Drupal\schulische_vorbildung\Helper\DatabaseHelper'

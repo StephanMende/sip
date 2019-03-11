@@ -1,0 +1,3 @@
+services:
+  assessment_data:
+    class: 'Drupal\assessment\Data\AssessmentQuestion'

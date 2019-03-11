@@ -1,0 +1,26 @@
+/**
+ * Custom CSS
+ * Use this file to override styles if you feel uncomfortable editing
+ * component stylesheets.
+ ============================================================================ */
+.button {
+    background-color: #e3001b;
+    color: #fff;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #e3100b;
+}
+
+.button::selection {
+    color: #fff;
+    background-color: #e3100b;
+}
+
+.button:visited {
+    background-color: #e3001b;
+    color: #fff;
+}
+
+

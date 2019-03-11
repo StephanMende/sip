@@ -1,0 +1,5 @@
+name: Assessment Module
+description: Provides assessment functions for asssements for the sip
+type: module
+core: 8.x
+package: SIP

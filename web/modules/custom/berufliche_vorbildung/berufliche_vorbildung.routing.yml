@@ -1,0 +1,16 @@
+berufliche_vorbildung.form:
+  path: 'berufliche-vorbildung'
+  defaults:
+    _title: 'Berufliche Vorbildung'
+    _form: 'Drupal\berufliche_vorbildung\Form\BeruflicheVorbildungForm'
+  requirements:
+    _access: 'TRUE'
+
+
+berufliche_vorbildung.controller:
+  path: 'berufliche-vorbildung/show/studiengaenge/{beruf_id}'
+  defaults:
+    _title: 'Berufsgruppe'
+    _controller: 'Drupal\berufliche_vorbildung\Controller\BeruflicheVorbildungController::showStudiengaenge'
+  requirements:
+    _access: 'TRUE'

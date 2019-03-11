@@ -1,0 +1,5 @@
+name: Berufliche Vorbildung
+description: Stellt ein Formular fuer die berufliche Vorbidlung zur Verfuegung
+type: module
+core: 8.x
+package: SIP

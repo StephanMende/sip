@@ -1,0 +1,15 @@
+schulische_vorbildung.form:
+  path: 'schulische-vorbildung'
+  defaults:
+    _form: 'Drupal\schulische_vorbildung\Form\SchulischeVorbildungForm'
+    _title: 'Schulische Vorbildung'
+  requirements:
+    _access: 'TRUE'
+
+schulische_vorbildung.controller:
+  path: 'schulische-vorbildung/{schulabschluss_nid}'
+  defaults:
+    _controller: 'Drupal\schulische_vorbildung\Controller\SchulischeVorbildungController::showStudiengaenge'
+    _title: 'Studiengänge'
+  requirements:
+    _access: 'TRUE'

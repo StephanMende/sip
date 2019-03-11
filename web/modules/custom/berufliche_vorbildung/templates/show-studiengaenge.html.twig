@@ -1,0 +1,15 @@
+{% for key,value in studiengaenge %}
+    <div style="margin: 15px 15px 30px 15px;" id="show-studiengang-{{ value }}">
+                <h3>{{ value.title }}</h3>
+        <img style="float: left; margin: 0px 15px 15px 0px;" src="/{{ directory }}/images/{{ value.title }}.jpg">
+
+
+        <p> {% if value.beschreibung %}
+                {{ value.beschreibung|raw }}
+            {% endif %}</p>
+
+
+    </div>
+    {% endfor %}
+
+
