@@ -1,0 +1,20 @@
+uuid: 6bb057d2-29a3-4168-853c-cf2ed6427d37
+langcode: de
+status: true
+dependencies:
+  module:
+    - schulische_vorbildung
+  theme:
+    - sip_theme
+id: myblock
+theme: sip_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: ZSB
+settings:
+  id: ZSB
+  label: 'My Block'
+  provider: schulische_vorbildung
+  label_display: visible
+visibility: {  }

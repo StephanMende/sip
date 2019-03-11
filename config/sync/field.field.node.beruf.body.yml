@@ -1,0 +1,22 @@
+uuid: f6ebb6c1-aba7-481b-8f4d-81993306c323
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.beruf
+  module:
+    - text
+id: node.beruf.body
+field_name: body
+entity_type: node
+bundle: beruf
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

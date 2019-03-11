@@ -1,0 +1,22 @@
+uuid: 6d44c233-2847-4808-84f9-657f14a22956
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.antwortmoeglichkeit
+  module:
+    - text
+id: node.antwortmoeglichkeit.body
+field_name: body
+entity_type: node
+bundle: antwortmoeglichkeit
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,22 @@
+uuid: 4fb1cf79-8e96-4454-86ea-cfc212a57086
+langcode: de
+status: true
+dependencies:
+  theme:
+    - sip_theme
+_core:
+  default_config_hash: h-lz3yJIpjdijknxeG5zdTac1M6f-st-p7wPkvkyQnw
+id: sip_theme_local_tasks
+theme: sip_theme
+region: content
+weight: 1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

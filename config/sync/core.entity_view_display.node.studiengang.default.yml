@@ -1,0 +1,47 @@
+uuid: d9e6f480-8424-4fb5-8fa4-a8709d4a3899
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.studiengang.body
+    - field.field.node.studiengang.field_studiengang_berufe
+    - field.field.node.studiengang.field_studiengang_schulabschluss
+    - node.type.studiengang
+  module:
+    - text
+    - user
+id: node.studiengang.default
+targetEntityType: node
+bundle: studiengang
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_studiengang_berufe:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_studiengang_schulabschluss:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

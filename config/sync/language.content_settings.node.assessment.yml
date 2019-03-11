@@ -1,0 +1,11 @@
+uuid: 47cf8ba7-0c22-47f8-9eb3-30620b0624b4
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.assessment
+id: node.assessment
+target_entity_type_id: node
+target_bundle: assessment
+default_langcode: site_default
+language_alterable: false

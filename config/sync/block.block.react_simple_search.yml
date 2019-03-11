@@ -1,0 +1,22 @@
+uuid: 871bcfc4-e35e-48a8-9b3b-6dd5e6c41ca8
+langcode: de
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - react_simple
+_core:
+  default_config_hash: kt2L8PJVxwhMHryRBxgezXBr7MNwiXHIo4tAtM4AIkI
+id: react_simple_search
+theme: react_simple
+region: content
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

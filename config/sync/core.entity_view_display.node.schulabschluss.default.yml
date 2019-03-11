@@ -1,0 +1,29 @@
+uuid: b399a947-7c53-4827-8aa9-fb93098f5b3b
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.schulabschluss.body
+    - node.type.schulabschluss
+  module:
+    - text
+    - user
+id: node.schulabschluss.default
+targetEntityType: node
+bundle: schulabschluss
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

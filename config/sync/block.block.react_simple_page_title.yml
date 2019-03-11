@@ -1,0 +1,27 @@
+uuid: 55ad5369-12e7-42ff-9506-1e4fc4497b29
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - react_simple
+_core:
+  default_config_hash: rlXF_RZrhzeAdzHYKKu-stqZ0wTyfInH148nghyGkkc
+id: react_simple_page_title
+theme: react_simple
+region: content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/*\r\n/user/*\r\n<front>"
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,20 @@
+uuid: 92e3f44f-4d17-436e-a6bc-0323e55a839e
+langcode: de
+status: true
+dependencies:
+  module:
+    - schulische_vorbildung
+  theme:
+    - react_simple
+id: react_simple_myblock
+theme: react_simple
+region: content
+weight: 0
+provider: null
+plugin: ZSB
+settings:
+  id: ZSB
+  label: 'My Block'
+  provider: schulische_vorbildung
+  label_display: visible
+visibility: {  }

@@ -1,0 +1,11 @@
+uuid: aa79ce17-2dd2-4701-81f0-0493c1bc6330
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.studiengang
+id: node.studiengang
+target_entity_type_id: node
+target_bundle: studiengang
+default_langcode: site_default
+language_alterable: false

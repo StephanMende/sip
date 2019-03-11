@@ -1,0 +1,22 @@
+uuid: 3f197f86-bb2e-4068-9b8c-561d13d02f00
+langcode: de
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - sip_theme
+_core:
+  default_config_hash: R1Bw-VUXlHEK8Aaqg7dQaDXtcJ2OJoAtJUk32ecbZ1A
+id: sip_theme_help
+theme: sip_theme
+region: content
+weight: 2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

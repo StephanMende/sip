@@ -1,0 +1,25 @@
+uuid: 6b6a5705-2c55-43dc-b392-f51c23fc6d54
+langcode: de
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - sip_theme
+_core:
+  default_config_hash: gz9cbY_x1Kl9ufIguk78KLFfQmJBbWS-ZBL32FSu81w
+id: sip_theme_branding
+theme: sip_theme
+region: header_first
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

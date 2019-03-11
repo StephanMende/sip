@@ -1,0 +1,38 @@
+uuid: c53f865e-14c6-4e3b-8bdf-2aae96c8404d
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_rgb
+    - node.type.page
+  module:
+    - field_example
+    - text
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rgb:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_example_simple_text
+    region: content
+  links:
+    weight: 101
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,18 @@
+uuid: bfbb1c86-63d7-47ec-a3c6-ac867a56b586
+langcode: de
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Beruf
+type: beruf
+description: 'Beschreibt einen Beruf'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,11 @@
+uuid: 7725e6fc-dfd3-4c0b-9321-0c342887bbff
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.schulabschluss
+id: node.schulabschluss
+target_entity_type_id: node
+target_bundle: schulabschluss
+default_langcode: site_default
+language_alterable: false

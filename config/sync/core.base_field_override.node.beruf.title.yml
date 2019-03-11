@@ -1,0 +1,18 @@
+uuid: 75560d65-8d24-4e7b-935d-34ba96570ad1
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.beruf
+id: node.beruf.title
+field_name: title
+entity_type: node
+bundle: beruf
+label: 'Name des Berufs'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

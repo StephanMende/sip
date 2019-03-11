@@ -1,0 +1,19 @@
+uuid: e2d6643d-b9ca-4218-afc5-4e659e2941c7
+langcode: de
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_fragen
+field_name: field_fragen
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

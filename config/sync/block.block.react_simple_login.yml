@@ -1,0 +1,22 @@
+uuid: 62248c34-7c12-444d-a741-135a4c249e16
+langcode: de
+status: false
+dependencies:
+  module:
+    - user
+  theme:
+    - react_simple
+_core:
+  default_config_hash: ekZSNbfY2urJtjnmrPcpPL1LVegysLdJ9BGZ2SDUKQg
+id: react_simple_login
+theme: react_simple
+region: content
+weight: 20
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

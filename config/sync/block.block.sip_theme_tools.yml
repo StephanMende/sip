@@ -1,0 +1,26 @@
+uuid: eb3fa75f-d7f9-453d-a401-754fdff4203f
+langcode: de
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - sip_theme
+_core:
+  default_config_hash: hQ1cX-WzGqUXC-sKdtvY9gH9HoQKAe5xDC0GZjth5I0
+id: sip_theme_tools
+theme: sip_theme
+region: sidebar_second
+weight: 10
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

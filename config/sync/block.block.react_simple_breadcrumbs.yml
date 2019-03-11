@@ -1,0 +1,27 @@
+uuid: f8149bfc-fc49-4c14-95b7-ca98f8171fe8
+langcode: de
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - react_simple
+_core:
+  default_config_hash: d3QowhQENbknlhknfixYrp66UFjJP3HCQ7GmBMij2p4
+id: react_simple_breadcrumbs
+theme: react_simple
+region: content
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,13 @@
+palette:
+  base: '#fff'
+  text: '#4d4d4d'
+  link: '#e3001b'
+logo: 'public://color/sip_theme-045fb9dc/logo_uni.svg.bak'
+stylesheets:
+  - 'public://color/sip_theme-045fb9dc/color.css'
+  - 'public://color/sip_theme-045fb9dc/tabs.css'
+files:
+  - ''
+  - 'public://color/sip_theme-045fb9dc/logo.png'
+  - 'public://color/sip_theme-045fb9dc/color.css'
+  - 'public://color/sip_theme-045fb9dc/tabs.css'

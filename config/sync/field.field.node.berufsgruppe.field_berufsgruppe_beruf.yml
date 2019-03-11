@@ -1,0 +1,28 @@
+uuid: 55c50fe4-4690-4700-b49f-8b81aca72528
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_berufsgruppe_beruf
+    - node.type.beruf
+    - node.type.berufsgruppe
+id: node.berufsgruppe.field_berufsgruppe_beruf
+field_name: field_berufsgruppe_beruf
+entity_type: node
+bundle: berufsgruppe
+label: Berufe
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      beruf: beruf
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

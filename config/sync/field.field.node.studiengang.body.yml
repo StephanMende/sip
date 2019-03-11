@@ -1,0 +1,22 @@
+uuid: 6734e4ef-9d02-444b-96b7-afd0f7c654ae
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.studiengang
+  module:
+    - text
+id: node.studiengang.body
+field_name: body
+entity_type: node
+bundle: studiengang
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

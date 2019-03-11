@@ -1,0 +1,22 @@
+uuid: 6b5be37d-7b9a-4f58-b49f-06c676ce94d1
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.assessment
+id: node.assessment.promote
+field_name: promote
+entity_type: node
+bundle: assessment
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

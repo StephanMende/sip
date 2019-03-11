@@ -1,0 +1,22 @@
+uuid: f8b68d12-e88a-423b-aece-483b818efae9
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.berufsgruppe
+  module:
+    - text
+id: node.berufsgruppe.body
+field_name: body
+entity_type: node
+bundle: berufsgruppe
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,22 @@
+uuid: 99c51cb4-636e-4747-881e-40ccd24bdebe
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.studiengang
+id: node.studiengang.promote
+field_name: promote
+entity_type: node
+bundle: studiengang
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

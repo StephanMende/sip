@@ -1,0 +1,22 @@
+uuid: 00fca973-8236-4da7-8345-30d6df5aef5f
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - react_simple
+_core:
+  default_config_hash: OdX86qGqF3JVuLoCXvQFkF_04ZOSJOxl1aU-IFHpi7w
+id: react_simple_messages
+theme: react_simple
+region: content
+weight: -100
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

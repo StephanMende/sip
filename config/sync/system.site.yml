@@ -1,0 +1,14 @@
+uuid: 530599b4-ed5f-46eb-9ad6-25e9b5fd8882
+name: Studierendeninformationsportal
+mail: hoferj@uni-hildesheim.de
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: de
+default_langcode: de
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

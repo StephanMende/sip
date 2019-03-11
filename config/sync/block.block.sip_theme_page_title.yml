@@ -1,0 +1,27 @@
+uuid: a0084154-0b01-4dbb-9dee-1755055a3646
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sip_theme
+_core:
+  default_config_hash: rlXF_RZrhzeAdzHYKKu-stqZ0wTyfInH148nghyGkkc
+id: sip_theme_page_title
+theme: sip_theme
+region: content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/*\r\n/user/*\r\n<front>"
+    negate: true
+    context_mapping: {  }

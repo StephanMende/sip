@@ -1,0 +1,11 @@
+uuid: 2aee2e5b-9ced-4c82-b1f1-b27c4f76f1ee
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.beruf
+id: node.beruf
+target_entity_type_id: node
+target_bundle: beruf
+default_langcode: site_default
+language_alterable: false

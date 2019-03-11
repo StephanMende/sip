@@ -1,0 +1,28 @@
+uuid: 48922ee0-1d4c-4ad2-8a90-d5be45ce9fc6
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_studiengang_schulabschluss
+    - node.type.schulabschluss
+    - node.type.studiengang
+id: node.studiengang.field_studiengang_schulabschluss
+field_name: field_studiengang_schulabschluss
+entity_type: node
+bundle: studiengang
+label: 'Referenzierte Schulabschlüsse'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      schulabschluss: schulabschluss
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

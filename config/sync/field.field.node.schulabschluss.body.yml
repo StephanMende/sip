@@ -1,0 +1,22 @@
+uuid: fbf3ea8e-b628-4fd4-923d-27c56abb32d1
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.schulabschluss
+  module:
+    - text
+id: node.schulabschluss.body
+field_name: body
+entity_type: node
+bundle: schulabschluss
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

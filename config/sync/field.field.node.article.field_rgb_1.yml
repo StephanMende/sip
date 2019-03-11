@@ -1,0 +1,21 @@
+uuid: db649caa-7774-4e59-9e57-ec125e1b7aee
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rgb_1
+    - node.type.article
+  module:
+    - field_example
+id: node.article.field_rgb_1
+field_name: field_rgb_1
+entity_type: node
+bundle: article
+label: RGB
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_example_rgb

@@ -1,0 +1,11 @@
+uuid: d3c54b6a-b8a3-426c-b6f4-b1623237e108
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.berufsgruppe
+id: node.berufsgruppe
+target_entity_type_id: node
+target_bundle: berufsgruppe
+default_langcode: site_default
+language_alterable: false

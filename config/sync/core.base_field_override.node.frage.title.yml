@@ -1,0 +1,18 @@
+uuid: 17f9e6c9-54d4-4302-ab44-582d80f7614a
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.frage
+id: node.frage.title
+field_name: title
+entity_type: node
+bundle: frage
+label: 'Titel der Frage'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: 7b2cd16a-5c9c-4a02-a455-bd38a97c7f17
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.beruf.body
+    - node.type.beruf
+  module:
+    - text
+    - user
+id: node.beruf.default
+targetEntityType: node
+bundle: beruf
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

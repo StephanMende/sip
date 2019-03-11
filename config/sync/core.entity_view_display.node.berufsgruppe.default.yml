@@ -1,0 +1,38 @@
+uuid: d2e0a94c-a71d-4d7c-9778-57781f1134fc
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.berufsgruppe.body
+    - field.field.node.berufsgruppe.field_berufsgruppe_beruf
+    - node.type.berufsgruppe
+  module:
+    - text
+    - user
+id: node.berufsgruppe.default
+targetEntityType: node
+bundle: berufsgruppe
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_berufsgruppe_beruf:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

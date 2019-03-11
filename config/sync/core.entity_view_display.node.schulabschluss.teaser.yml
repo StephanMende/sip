@@ -1,0 +1,31 @@
+uuid: b84c93c5-78dc-4fb5-8670-fd17d37b17d7
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.schulabschluss.body
+    - node.type.schulabschluss
+  module:
+    - text
+    - user
+id: node.schulabschluss.teaser
+targetEntityType: node
+bundle: schulabschluss
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

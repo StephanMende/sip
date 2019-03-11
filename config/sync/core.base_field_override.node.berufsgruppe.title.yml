@@ -1,0 +1,18 @@
+uuid: dc749d7b-cb0e-44bf-9f64-2376543df72e
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.berufsgruppe
+id: node.berufsgruppe.title
+field_name: title
+entity_type: node
+bundle: berufsgruppe
+label: 'Name der Berufsgruppe'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

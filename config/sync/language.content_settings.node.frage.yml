@@ -1,0 +1,11 @@
+uuid: 3eb303c3-07e1-4333-a5b8-03c7c303d6d6
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.frage
+id: node.frage
+target_entity_type_id: node
+target_bundle: frage
+default_langcode: site_default
+language_alterable: false

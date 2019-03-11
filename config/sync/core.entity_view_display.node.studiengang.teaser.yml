@@ -1,0 +1,31 @@
+uuid: 8a088b04-b91a-415a-859b-9e1cfeffd375
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.studiengang.body
+    - node.type.studiengang
+  module:
+    - text
+    - user
+id: node.studiengang.teaser
+targetEntityType: node
+bundle: studiengang
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

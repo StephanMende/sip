@@ -1,0 +1,20 @@
+uuid: 9a23ae69-fdcf-4b23-b5cf-f89cf8e21f75
+langcode: de
+status: true
+dependencies:
+  theme:
+    - sip_theme
+_core:
+  default_config_hash: 4gGZJO7sMzLzFfgqVm4iXLGzx0JcdIc3RAIeSncIr38
+id: sip_theme_local_actions
+theme: sip_theme
+region: content
+weight: 3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

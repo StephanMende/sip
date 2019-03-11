@@ -1,0 +1,22 @@
+uuid: 83170554-db84-4b3c-8bc7-286946605b47
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.beruf
+id: node.beruf.promote
+field_name: promote
+entity_type: node
+bundle: beruf
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: aa895a8d-0de4-4edb-978d-7e0378a19ba2
+langcode: de
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sip_theme
+_core:
+  default_config_hash: fuj0yZJ4l0uv2jzC9fTWnpHDjgXqb52tbS2hd2Ox-CY
+id: sip_theme_content
+theme: sip_theme
+region: content
+weight: 4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
