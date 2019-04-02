@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mariadb:10.2
+    environment:
+      MYSQL_DATABASE: sip
+      MYSQL_ROOT_PASSWORD: sip
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    restart: always
+  drupal:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app
+    restart: always
+volumes:
+  db_data:
