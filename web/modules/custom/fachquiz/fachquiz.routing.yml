@@ -1,0 +1,13 @@
+fachquiz.start:
+  path: 'fachquiz'
+  defaults:
+    _controller: 'Drupal\fachquiz\Controller\FachquizController::content'
+  requirements:
+    _permission: 'access content'
+
+fachquiz.form:
+  path: 'fachquiz/form'
+  defaults:
+    _form: 'Drupal\fachquiz\Form\FachquizForm'
+  requirements:
+    _permission: 'access content'

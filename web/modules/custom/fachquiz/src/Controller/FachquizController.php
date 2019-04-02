@@ -9,6 +9,25 @@
 namespace Drupal\fachquiz\Controller;
 
 
-class FachquizController {
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\fachquiz\Data\FachquizData;
+
+class FachquizController extends ControllerBase {
+
+  public function content() {
+
+
+    //Data
+    $fachquizData = new FachquizData();
+
+    dsm($fachquizData->getData()[0]['aufgabe']);
+
+
+
+    return ['#markup' => 'Fachquiz'];
+
+  }
+
+
 
 }
