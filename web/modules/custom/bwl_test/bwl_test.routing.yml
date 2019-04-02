@@ -1,0 +1,14 @@
+bwl_test.content:
+  path: 'bwl_test/content'
+  defaults:
+    _title: 'BWL Test'
+    _controller: 'Drupal\bwl_test\Controller\BWLTestController::content'
+  requirements:
+    _access: 'TRUE'
+
+bwl_test.form:
+  path: 'bwl_test/test'
+  defaults:
+    _form: 'Drupal\bwl_test\Form\BWLTestForm'
+  requirements:
+    _access: 'TRUE'
