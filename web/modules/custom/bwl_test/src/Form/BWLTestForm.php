@@ -8,6 +8,8 @@
 
 namespace Drupal\bwl_test\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 class BWLTestForm extends FormBase {
@@ -29,6 +31,19 @@ class BWLTestForm extends FormBase {
       '#options' => ['8,50€/h','9,50€/h','34,00€/h','80,75€/h',],
     ];
 
+    $form['task_1']['action'] = [
+      '#type' => 'button',
+      '#value' => $this->t('Submit'),
+      '#ajax' => [
+        'callback' => '::setExplanationMessage',
+      ],
+    ];
+
+    $form['task_1']['explanation'] = [
+      '#type' => 'markup',
+      '#markup' => '<div class="explanation_message"></div>',
+    ];
+
     return $form;
   }
 
@@ -36,5 +51,11 @@ class BWLTestForm extends FormBase {
     // TODO: Implement submitForm() method.
   }
 
+  public function setExplanationMessage(array $form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+    $response->addCommand(new HtmlCommand('.explanation_message', '<div>Explanation</div>'));
+
+    return $response;
+  }
 
 }
