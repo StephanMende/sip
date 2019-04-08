@@ -26,6 +26,7 @@
         "drupal/devel": "^1.2",
         "drupal/examples": "1.x-dev",
         "drupal/jsonapi": "^2.3",
+        "drupal/x_frame_options": "^1.1",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
