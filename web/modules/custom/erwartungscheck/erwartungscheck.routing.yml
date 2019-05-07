@@ -1,0 +1,28 @@
+erwartungscheck.form:
+  path: 'erwartungscheck/form'
+  defaults:
+    _form: 'Drupal\erwartungscheck\Form\ErwartungscheckForm'
+    _title: 'Erwartungscheck'
+  requirements:
+    _access: 'TRUE'
+
+erwartungscheck.info:
+  path: 'erwartungscheck/info'
+  defaults:
+    _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::erwartungscheckInfo'
+  requirements:
+    _access: 'TRUE'
+
+erwartungscheck.quiz:
+  path: 'erwartungscheck/quiz'
+  defaults:
+    _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::erwartungscheckQuiz'
+  requirements:
+    _access: 'TRUE'
+
+erwartungscheck.helper:
+  path: 'erwartungscheck/helper'
+  defaults:
+    _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::erwartungscheckHelp'
+  requirements:
+    _access: 'TRUE'

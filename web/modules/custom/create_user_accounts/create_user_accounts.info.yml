@@ -1,0 +1,5 @@
+name: Create User Accounts
+description: Creates user accounts with random passwords for coureses like TuFM
+type: module
+core: 8.x
+package: ISUM

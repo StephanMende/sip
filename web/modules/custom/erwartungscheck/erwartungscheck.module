@@ -1,0 +1,14 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: julien
+ * Date: 24.04.19
+ * Time: 12:55
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function erwartungscheck_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'erwartungscheck/erwartungscheck';
+}
