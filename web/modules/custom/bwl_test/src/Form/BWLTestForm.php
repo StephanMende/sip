@@ -28,6 +28,7 @@ class BWLTestForm extends FormBase {
       '#type' => 'radios',
       '#title' => $this->t('Wie hoch war sein Stundenlohn?'),
       '#description' => $this->t('Bitte wählen Sie die richtige Antwort aus. Nur eine Antwort ist richtig.'),
+      '#default_value' => 1,
       '#options' => ['8,50€/h','9,50€/h','34,00€/h','80,75€/h',],
     ];
 
@@ -37,6 +38,12 @@ class BWLTestForm extends FormBase {
       '#ajax' => [
         'callback' => '::setExplanationMessage',
       ],
+    ];
+
+    $form['task_1']['next'] = [
+      '#type' => 'button',
+      '#value' => $this->t('Next'),
+
     ];
 
     $form['task_1']['explanation'] = [
@@ -52,8 +59,13 @@ class BWLTestForm extends FormBase {
   }
 
   public function setExplanationMessage(array $form, FormStateInterface $form_state) {
+    $explanation = "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>";
+
     $response = new AjaxResponse();
-    $response->addCommand(new HtmlCommand('.explanation_message', '<div>Explanation</div>'));
+    $response->addCommand(new HtmlCommand('.explanation_message', '<div>' .$explanation . '</div>'));
 
     return $response;
   }

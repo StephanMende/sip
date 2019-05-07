@@ -1,0 +1,49 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: julien
+ * Date: 05.05.19
+ * Time: 19:20
+ */
+
+function erwartungscheck_schema() {
+  $schema['erwartungscheck'] = array(
+    'description' => 'Erwartungscheck Daten',
+    'fields' => array(
+      'erwartungscheck_id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary key for erwartungscheck id',
+      ),
+      'studiengang' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Name of the studiengang',
+      ),
+      'aussage' => array(
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => TRUE,
+        'description' => 'Aussage',
+      ),
+      'gruppe' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Gruppe',
+      ),
+      'richtige_antwort' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'description' => 'Antwort',
+      ),
+      'rueckmeldung' => array(
+        'type' => 'varchar',
+        'not null' => TRUE,
+        'description' => 'Rueckmeldung',
+      ),
+    ),
+    'primary key' => array('erwartungscheck_id'),
+  );
+}
