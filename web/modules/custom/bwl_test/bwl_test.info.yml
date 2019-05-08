@@ -1,5 +1,0 @@
-name: BWL Test
-description: This module is for designing the BWL test
-type: module
-core: 8.x
-package: SIP
