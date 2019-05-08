@@ -2,3 +2,22 @@
   background-color: #0a7bc1;
   visibility: hidden;
 }
+
+.button.form-submit {
+  display: block;
+  margin-top: 10px;
+}
+
+.explanation-header {
+  color: #fff;
+  margin: 0 -10px 10px !important;
+  padding: 10px
+}
+
+.explanation-header > h3 {
+  margin: 0;
+}
+
+#edit-frage .form-type-radio {
+  margin: 0;
+}
