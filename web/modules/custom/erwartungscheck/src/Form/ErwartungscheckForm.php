@@ -113,15 +113,15 @@ class ErwartungscheckForm extends FormBase {
     //dsm($questions[$step]);
 
     if($questions[$this->step]->richtige_antwort == $form_state->getValue('frage')) {
-      $explanation_header = '<div style="background-color: green;"><h3>Ihre Antwort ist richtig.</h3></div>';
+      $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
     } else {
-      $explanation_header = '<div style="background-color: red;"><h3>Ihre Antwort ist falsch.</h3></div>';
+      $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
     }
 
     /**
-    $explanation = "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+    $explanation = "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>" .
       "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>"
       ."Step: " . $this->step . " Count: " . $this->question_count . " Richtige Antwort: " . $questions[$this->step]->richtige_antwort .
@@ -133,7 +133,7 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
     $explanation_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
 
     $response = new AjaxResponse();
-    $response->addCommand(new HtmlCommand('.explanation_message', '<div style="border: dashed red; margin-top: -50px; z-index: 100; transition: margin-top 1s;">' . $explanation_header .$explanation . $explanation_button  . '</div>'));
+    $response->addCommand(new HtmlCommand('.explanation_message', '<div style="border: #6ab023; margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px; ">' . $explanation_header .$explanation . $explanation_button  . '</div>'));
     $response->addCommand(new CssCommand('#button_beantworten', ['visibility' => 'hidden']));
 
 
@@ -186,10 +186,10 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
     $erwartungscheckData->setAussage('Vor dem.');
     $erwartungscheckData->setGruppe('Vor dem Studium / allgemeines');
     $erwartungscheckData->setRichtigeAntwort('falsch');
-    $erwartungscheckData->setRueckmeldung('Der Studien- und Lernaufwand in einem Studium ist im allgemeinen höher als 
-    beispielsweise in der Schulzeit und vergleichbar mit einem Vollzeit Job. Neben dem Studienalltag mit Vorlesungen und weiteren 
+    $erwartungscheckData->setRueckmeldung('Der Studien- und Lernaufwand in einem Studium ist im allgemeinen höher als
+    beispielsweise in der Schulzeit und vergleichbar mit einem Vollzeit Job. Neben dem Studienalltag mit Vorlesungen und weiteren
     Veranstaltungen, müssen anschließend in der Freizeit Nerven und Zeit in Lernen sowie in Vor- und Nachbereitung investiert werden.
-     Während Vorlesung und Tutorien meistens in der Vorlesungszeit stattfinden, werden beispielsweise Klausuren in der 
+     Während Vorlesung und Tutorien meistens in der Vorlesungszeit stattfinden, werden beispielsweise Klausuren in der
      vorlesungsfreien Zeit geschrieben. Die umgangssprachliche Bezeichnung "Semesterferien" ist daher nicht richtig.');
 
     $questions[] = $erwartungscheckData;
@@ -210,8 +210,8 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
     $erwartungscheckData->setAussage('Neben logischem Denken ist es im Wirtschaftsinformatik-Studium auch wichtig, kreativ zu sein.');
     $erwartungscheckData->setGruppe('Während des Studiums');
     $erwartungscheckData->setRichtigeAntwort('wahr');
-    $erwartungscheckData->setRueckmeldung('Verschiedene Prozesse logisch verstehen und nachvollziehen zu können ist als 
-    Wirtschaftsinformatiker_in genauso wichtig, wie selbst kreative Lösungswege zu gestalten. Dabei ist es hilfreich, nicht "in Schubladen" 
+    $erwartungscheckData->setRueckmeldung('Verschiedene Prozesse logisch verstehen und nachvollziehen zu können ist als
+    Wirtschaftsinformatiker_in genauso wichtig, wie selbst kreative Lösungswege zu gestalten. Dabei ist es hilfreich, nicht "in Schubladen"
     zu denken und gelernte Inhalte fächerübergreifend kombinieren und anwenden zu können.');
 
     $questions[] = $erwartungscheckData;
@@ -221,10 +221,10 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
     $erwartungscheckData->setAussage('In der Wirtschaftsinformatik arbeite ich nie im Team und muss keine Präsentation halten.');
     $erwartungscheckData->setGruppe('Während des Studiums');
     $erwartungscheckData->setRichtigeAntwort('falsch');
-    $erwartungscheckData->setRueckmeldung('Teamfähigkeit und Präsentationsstärke sind als Wirtschaftsinformatiker_in sehr 
+    $erwartungscheckData->setRueckmeldung('Teamfähigkeit und Präsentationsstärke sind als Wirtschaftsinformatiker_in sehr
     wichtig. Häufig werden Aufgaben im Team bearbeitet. Gemeinsam werden neue Lösungswege entwickelt und vor Publikum präsentiert.
-    
-    Wer sich dabei nicht so sicher fühlt kann dabei verschiedene Angebote und Möglichkeiten an der Universität nutzen, um diese Kompetenzen 
+
+    Wer sich dabei nicht so sicher fühlt kann dabei verschiedene Angebote und Möglichkeiten an der Universität nutzen, um diese Kompetenzen
     zu vertiefen und aufzufrischen.');
 
     $questions[] = $erwartungscheckData;
@@ -232,30 +232,30 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
 
     $erwartungscheckData = new Data\ErwartungscheckData();
 
-    $erwartungscheckData->setAussage('It is also important to understand and speak English when studying "Wirtschaftsinformatik" at the 
+    $erwartungscheckData->setAussage('It is also important to understand and speak English when studying "Wirtschaftsinformatik" at the
     Universität Hildesheim.');
     $erwartungscheckData->setGruppe('Während des Studiums');
     $erwartungscheckData->setRichtigeAntwort('wahr');
     $erwartungscheckData->setRueckmeldung('Im Bachelor-Studium "Wirtschaftsinformatik" sind Veranstaltungen (fast) alle auf deutscher
-    Sprache Ein Großteil der Fachliteratur ist jedoch in englischer Sprache verfasst. Somit ist es bereits im Bachelor notwendig, Englischkenntnisse 
+    Sprache Ein Großteil der Fachliteratur ist jedoch in englischer Sprache verfasst. Somit ist es bereits im Bachelor notwendig, Englischkenntnisse
     zu haben.
-    
+
     Im Master-Studium sind gute Englischkenntnisse noch wichtiger, da Seminare und eigene Präsentationen auf Englisch sein werden.');
 
     $questions[] = $erwartungscheckData;
 
     $erwartungscheckData = new Data\ErwartungscheckData();
 
-    $erwartungscheckData->setAussage('Wenn ich an einer Universität studiere Wirtschaftsinformatik studieren werde ich später im Bereich 
-    "Forschung" arbeiten.  
+    $erwartungscheckData->setAussage('Wenn ich an einer Universität studiere Wirtschaftsinformatik studieren werde ich später im Bereich
+    "Forschung" arbeiten.
     Universität Hildesheim.');
     $erwartungscheckData->setGruppe('Nach dem Studium');
     $erwartungscheckData->setRichtigeAntwort('wahr');
     $erwartungscheckData->setRueckmeldung('Da stimmt so nicht ganz. Während die Arbeitsweisen in Universitäten und Fachhochschulen (FH)
      früher klar getrennt waren, ist es heutzutage eher gemischt. Universitäten bieten auch praxisorientierte Anwendungen und FHs forschen.
-     
+
      Als Wirtschaftsinformatik-Student_in an der Universität Hildesheim sammeln Sie schon früh praktische Erfahrung und werden anwendungsorientiert
-      ausgebildet. Im Rahmen eines Praktikums erhalten Sie Einblicke in betriebliche Abläufe und Sie können von den vielen starken Kooperationspartnern 
+      ausgebildet. Im Rahmen eines Praktikums erhalten Sie Einblicke in betriebliche Abläufe und Sie können von den vielen starken Kooperationspartnern
       der Universität/des Fachbereichs profitieren. ');
 
     $questions[] = $erwartungscheckData;
