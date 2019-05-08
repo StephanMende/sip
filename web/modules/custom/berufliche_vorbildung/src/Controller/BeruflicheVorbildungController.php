@@ -31,19 +31,28 @@ class BeruflicheVorbildungController extends ControllerBase
             //create content to show the Studiengaenge
             foreach ($nodes as $node) {
                 //ksm($node->get('body')->getString());
+                /**
                 $studiengang_titles[] = [
                     'title' => $node->getTitle(),
                     'beschreibung' => check_markup($node->get('body')->value, $node->get('body')->format),
                 ];
+                **/
+                $studiengang_titles[] = [
+                  '#markup' => '<p><a href="#">' .  $node->getTitle() . '</a></p>',
+                ];
+
+
 
             }
 
-
+            return $studiengang_titles;
+            /**
             return ['#theme' => 'show_studiengaenge',
                 '#studiengang_name' => $this->t('Wirtschaftsinformatik'),
                 '#studiengaenge' => $studiengang_titles,
                 '#title' => 'Empfohlene Studiengänge',
             ];
+             * */
         } else {
             return [
                 '#type' => 'markup',

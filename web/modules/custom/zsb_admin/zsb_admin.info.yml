@@ -1,0 +1,5 @@
+name: ZSB Admin
+description: Provides Admin Functions
+type: module
+core: 8.x
+package: SIP

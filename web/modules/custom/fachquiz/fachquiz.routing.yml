@@ -11,3 +11,17 @@ fachquiz.form:
     _form: 'Drupal\fachquiz\Form\FachquizForm'
   requirements:
     _permission: 'access content'
+
+fachquiz.auswertung:
+  path: 'fachquiz/auswertung'
+  defaults:
+    _controller: 'Drupal\fachquiz\Controller\FachquizController::auswertung'
+  requirements:
+    _permission: 'access content'
+
+fachquiz.helper:
+  path: 'fachquiz/helper'
+  defaults:
+    _controller: 'Drupal\fachquiz\Controller\FachquizController::helper'
+  requirements:
+    _permission: 'access content'

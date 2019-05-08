@@ -5,3 +5,10 @@
  * Date: 08.05.19
  * Time: 10:27
  */
+
+/**
+ * Implements hook_toolbar().
+ */
+function zsb_admin_toolbar() {
+
+}

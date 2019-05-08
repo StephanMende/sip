@@ -5,3 +5,11 @@
  * Date: 07.05.19
  * Time: 22:23
  */
+
+/**
+ * Implements hook_form_alter().
+ */
+function fachquiz_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'fachquiz/fachquiz';
+
+}

@@ -10,47 +10,84 @@ namespace Drupal\fachquiz\Data;
 
 
 class FachquizData {
-private  $data =
-  [
-    [
-      'aufgabe' => '<p>Ein Handwerker erhält für die Herstellung eines Stuhls 4 Euro. Im Rahmen einer 38-Stunden Woche fertigt er 323 Stühle.</p>',
-      'frage' => '<p>Wie hoch ist sein Stundenlohn?',
-      'fragetyp' => 'single choice',
-      'antwortoptionen' => [
-        '8,50€/Stunde',
-        '9,50€/Stunde',
-        '34,00€/Stunde',
-        '80,75€/Stunde',
-      ],
-      'erklaerung' => '<p>Zur Berechnung des Stundenlohns müssen die Anzahl der Stühle mit dem Stücklohn multipliziert und durch die Wochenstunden geteilt werden:</p>
-                           <p>323 Stühle * 4€/Stuhl / 38 Stunden = 34€/Stunde</p>',
-    ],
-    [
-      'aufgabe' => '<p>Ein Handwerker erhält für die Herstellung eines Stuhls 4 Euro. Im Rahmen einer 38-Stunden Woche fertigt er 323 Stühle.</p>',
-      'frage' => '<p>Wie hoch ist sein Stundenlohn?',
-      'fragetyp' => 'single choice',
-      'antwortoptionen' => [
-        '8,50€/Stunde',
-        '9,50€/Stunde',
-        '34,00€/Stunde',
-        '80,75€/Stunde',
-      ],
-      'erklaerung' => '<p>Zur Berechnung des Stundenlohns müssen die Anzahl der Stühle mit dem Stücklohn multipliziert und durch die Wochenstunden geteilt werden:</p>
-                           <p>323 Stühle * 4€/Stuhl / 38 Stunden = 34€/Stunde</p>',
-    ],
-  ];
+
+  public $aufgabe;
+  public $bild;
+  public $frage;
+  public $antwortoptionen;
+  public $erklaerung;
 
   /**
-   * @return array
+   * @return mixed
    */
-  public function getData() {
-    return $this->data;
+  public function getAufgabe() {
+    return $this->aufgabe;
   }
 
   /**
-   * @param array $data
+   * @param mixed $aufgabe
    */
-  public function setData($data) {
-    $this->data = $data;
+  public function setAufgabe($aufgabe) {
+    $this->aufgabe = $aufgabe;
   }
+
+  /**
+   * @return mixed
+   */
+  public function getBild() {
+    return $this->bild;
+  }
+
+  /**
+   * @param mixed $bild
+   */
+  public function setBild($bild) {
+    $this->bild = $bild;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFrage() {
+    return $this->frage;
+  }
+
+  /**
+   * @param mixed $frage
+   */
+  public function setFrage($frage) {
+    $this->frage = $frage;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getAntwortoptionen() {
+    return $this->antwortoptionen;
+  }
+
+  /**
+   * @param mixed $antwortoptionen
+   */
+  public function setAntwortoptionen($antwortoptionen) {
+    $this->antwortoptionen = $antwortoptionen;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getErklaerung() {
+    return $this->erklaerung;
+  }
+
+  /**
+   * @param mixed $erklaerung
+   */
+  public function setErklaerung($erklaerung) {
+    $this->erklaerung = $erklaerung;
+  }
+
+
+
+
 }
