@@ -1,0 +1,19 @@
+uuid: 2d40cbab-d3ca-49f2-b9f4-33b37fbe3138
+langcode: de
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_studiengang_links
+field_name: field_studiengang_links
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

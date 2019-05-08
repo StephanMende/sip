@@ -1,0 +1,11 @@
+uuid: 4d880e47-273a-4b37-85b3-ec269d8d18c9
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.antwortoption
+id: node.antwortoption
+target_entity_type_id: node
+target_bundle: antwortoption
+default_langcode: site_default
+language_alterable: false

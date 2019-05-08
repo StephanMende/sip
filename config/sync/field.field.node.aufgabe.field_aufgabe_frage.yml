@@ -1,0 +1,19 @@
+uuid: 3e398f7e-fe91-4d91-a584-e8beef605aea
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aufgabe_frage
+    - node.type.aufgabe
+id: node.aufgabe.field_aufgabe_frage
+field_name: field_aufgabe_frage
+entity_type: node
+bundle: aufgabe
+label: Frage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

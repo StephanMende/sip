@@ -1,0 +1,38 @@
+uuid: 0d65bfe6-6d51-4498-b0f3-1e795b113ca8
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.fachquiz.body
+    - field.field.node.fachquiz.field_fachquiz_aufgaben
+    - node.type.fachquiz
+  module:
+    - text
+    - user
+id: node.fachquiz.default
+targetEntityType: node
+bundle: fachquiz
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fachquiz_aufgaben:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

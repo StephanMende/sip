@@ -1,0 +1,21 @@
+uuid: 41f2bbed-d86a-4952-8001-57b5557b269a
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rueckmeldung
+    - node.type.aussage
+  module:
+    - text
+id: node.aussage.field_rueckmeldung
+field_name: field_rueckmeldung
+entity_type: node
+bundle: aussage
+label: Rückmeldung
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

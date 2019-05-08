@@ -1,0 +1,11 @@
+uuid: a2d451aa-9860-427b-89b0-5c1bc9d5fe18
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aussage
+id: node.aussage
+target_entity_type_id: node
+target_bundle: aussage
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,28 @@
+uuid: a9ffd37d-1d35-47f0-885a-f9d303f67714
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fachquiz_aufgaben
+    - node.type.aufgabe
+    - node.type.fachquiz
+id: node.fachquiz.field_fachquiz_aufgaben
+field_name: field_fachquiz_aufgaben
+entity_type: node
+bundle: fachquiz
+label: Aufgaben
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      aufgabe: aufgabe
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,28 @@
+uuid: f0e70b69-09cd-4e2e-a8fc-3d7f7a50b9b6
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_erwartungscheck_aussagen
+    - node.type.aussage
+    - node.type.erwartungscheck
+id: node.erwartungscheck.field_erwartungscheck_aussagen
+field_name: field_erwartungscheck_aussagen
+entity_type: node
+bundle: erwartungscheck
+label: Aussagen
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      aussage: aussage
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

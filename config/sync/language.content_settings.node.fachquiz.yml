@@ -1,0 +1,11 @@
+uuid: e7dd0b3f-c4c9-401c-b57c-d2d64b3b5b36
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.fachquiz
+id: node.fachquiz
+target_entity_type_id: node
+target_bundle: fachquiz
+default_langcode: site_default
+language_alterable: false

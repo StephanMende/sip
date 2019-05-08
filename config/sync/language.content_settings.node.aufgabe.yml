@@ -1,0 +1,11 @@
+uuid: 74d0b79c-952f-4a4d-907c-3e0a1a8e5f60
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aufgabe
+id: node.aufgabe
+target_entity_type_id: node
+target_bundle: aufgabe
+default_langcode: site_default
+language_alterable: false

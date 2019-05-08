@@ -1,0 +1,22 @@
+uuid: 9d7126a8-3540-40dd-b79f-48cafbaeefa7
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.fachquiz
+  module:
+    - text
+id: node.fachquiz.body
+field_name: body
+entity_type: node
+bundle: fachquiz
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

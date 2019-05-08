@@ -1,0 +1,22 @@
+uuid: 48bf02c0-f209-438b-9cbf-10179986ee62
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.erwartungscheck
+id: node.erwartungscheck.promote
+field_name: promote
+entity_type: node
+bundle: erwartungscheck
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

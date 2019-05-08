@@ -1,0 +1,18 @@
+uuid: ea6ce1d4-8a88-4697-a8fd-7ec26bfe1434
+langcode: de
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Erwartungscheck
+type: erwartungscheck
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

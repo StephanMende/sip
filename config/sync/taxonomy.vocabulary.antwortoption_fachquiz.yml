@@ -1,0 +1,9 @@
+uuid: 466564cf-0660-4777-9869-0793590d8f3f
+langcode: de
+status: true
+dependencies: {  }
+name: Antwortoption_Fachquiz
+vid: antwortoption_fachquiz
+description: ''
+hierarchy: 0
+weight: 0

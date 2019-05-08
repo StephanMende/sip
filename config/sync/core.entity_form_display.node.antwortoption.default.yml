@@ -1,63 +1,22 @@
-uuid: c444ac50-4206-4b78-8eca-cfbd84a15245
+uuid: 680191e2-e110-40b1-be78-8e48122cec97
 langcode: de
 status: true
 dependencies:
   config:
-    - field.field.node.studiengang.body
-    - field.field.node.studiengang.field_studiengang_berufe
-    - field.field.node.studiengang.field_studiengang_links
-    - field.field.node.studiengang.field_studiengang_schulabschluss
-    - node.type.studiengang
+    - node.type.antwortoption
   module:
-    - link
     - path
-    - text
-id: node.studiengang.default
+id: node.antwortoption.default
 targetEntityType: node
-bundle: studiengang
+bundle: antwortoption
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 121
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_studiengang_berufe:
-    weight: 122
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_studiengang_links:
-    weight: 124
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_studiengang_schulabschluss:
-    weight: 123
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   langcode:
     type: language_select
     weight: 2

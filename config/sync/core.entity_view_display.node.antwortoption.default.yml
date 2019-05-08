@@ -1,0 +1,20 @@
+uuid: 83bff490-0024-40e0-8d2b-68b0aab9d909
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.antwortoption
+  module:
+    - user
+id: node.antwortoption.default
+targetEntityType: node
+bundle: antwortoption
+mode: default
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

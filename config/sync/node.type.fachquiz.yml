@@ -1,0 +1,18 @@
+uuid: a93175c2-4a28-466e-b544-67b4db12940e
+langcode: de
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Fachquiz
+type: fachquiz
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

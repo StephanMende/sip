@@ -1,0 +1,31 @@
+uuid: d75a16c0-5e07-4bb5-81ba-f7c559296510
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.fachquiz.body
+    - node.type.fachquiz
+  module:
+    - text
+    - user
+id: node.fachquiz.teaser
+targetEntityType: node
+bundle: fachquiz
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

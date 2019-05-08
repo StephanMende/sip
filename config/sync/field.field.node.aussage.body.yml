@@ -1,0 +1,22 @@
+uuid: aa577279-412e-4230-b671-eab77bfaf728
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.aussage
+  module:
+    - text
+id: node.aussage.body
+field_name: body
+entity_type: node
+bundle: aussage
+label: Aussage
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

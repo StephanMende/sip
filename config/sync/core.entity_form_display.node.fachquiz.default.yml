@@ -1,20 +1,18 @@
-uuid: c444ac50-4206-4b78-8eca-cfbd84a15245
+uuid: 6251d994-d4cb-4327-9b05-a5c0a75d3926
 langcode: de
 status: true
 dependencies:
   config:
-    - field.field.node.studiengang.body
-    - field.field.node.studiengang.field_studiengang_berufe
-    - field.field.node.studiengang.field_studiengang_links
-    - field.field.node.studiengang.field_studiengang_schulabschluss
-    - node.type.studiengang
+    - field.field.node.fachquiz.body
+    - field.field.node.fachquiz.field_fachquiz_aufgaben
+    - node.type.fachquiz
   module:
-    - link
+    - inline_entity_form
     - path
     - text
-id: node.studiengang.default
+id: node.fachquiz.default
 targetEntityType: node
-bundle: studiengang
+bundle: fachquiz
 mode: default
 content:
   body:
@@ -32,31 +30,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_studiengang_berufe:
+  field_fachquiz_aufgaben:
     weight: 122
     settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Aufgabe
+      label_plural: Aufgaben
+      collapsible: true
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      collapsed: false
+      allow_duplicate: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_studiengang_links:
-    weight: 124
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_studiengang_schulabschluss:
-    weight: 123
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     region: content
   langcode:
     type: language_select

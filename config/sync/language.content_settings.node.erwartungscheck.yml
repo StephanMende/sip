@@ -1,0 +1,11 @@
+uuid: e3e96cd7-5fff-41ae-a64e-7d17e741220a
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.erwartungscheck
+id: node.erwartungscheck
+target_entity_type_id: node
+target_bundle: erwartungscheck
+default_langcode: site_default
+language_alterable: false

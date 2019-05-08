@@ -1,0 +1,48 @@
+uuid: 1b6da868-a679-4f82-8831-efdf5edaf99e
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.erwartungscheck.body
+    - field.field.node.erwartungscheck.field_erwartungscheck_aussagen
+    - node.type.erwartungscheck
+  module:
+    - inline_entity_form
+id: node.erwartungscheck.default
+targetEntityType: node
+bundle: erwartungscheck
+mode: default
+content:
+  field_erwartungscheck_aussagen:
+    weight: 1
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Aussage
+      label_plural: Aussagen
+      collapsible: true
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

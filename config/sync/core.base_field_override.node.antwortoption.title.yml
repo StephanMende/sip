@@ -1,0 +1,18 @@
+uuid: be0d6afb-742b-4752-a1bd-6bf3af2cbf86
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.antwortoption
+id: node.antwortoption.title
+field_name: title
+entity_type: node
+bundle: antwortoption
+label: Antwort
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

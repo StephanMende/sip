@@ -1,0 +1,21 @@
+uuid: 7acf92c2-214c-41ff-afaf-8fdcb1330e2e
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aufgabe_erklaerung
+    - node.type.aufgabe
+  module:
+    - text
+id: node.aufgabe.field_aufgabe_erklaerung
+field_name: field_aufgabe_erklaerung
+entity_type: node
+bundle: aufgabe
+label: Erklärung
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,11 @@
+uuid: c1fa1f4f-d3eb-47ee-946c-ea20915cf6d0
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwort_erwartungscheck
+id: taxonomy_term.antwort_erwartungscheck
+target_entity_type_id: taxonomy_term
+target_bundle: antwort_erwartungscheck
+default_langcode: site_default
+language_alterable: false

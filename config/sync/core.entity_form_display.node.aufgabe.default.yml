@@ -1,0 +1,67 @@
+uuid: 68ffc316-74a9-4142-ab56-f136b5048f1e
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.aufgabe.body
+    - field.field.node.aufgabe.field_aufgabe_antwortoptionen
+    - field.field.node.aufgabe.field_aufgabe_erklaerung
+    - field.field.node.aufgabe.field_aufgabe_frage
+    - node.type.aufgabe
+  module:
+    - text
+id: node.aufgabe.default
+targetEntityType: node
+bundle: aufgabe
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_aufgabe_antwortoptionen:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_aufgabe_erklaerung:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_aufgabe_frage:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

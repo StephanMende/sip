@@ -1,0 +1,11 @@
+uuid: e2733993-b70a-4458-aad6-608509844253
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwortoption_fachquiz
+id: taxonomy_term.antwortoption_fachquiz
+target_entity_type_id: taxonomy_term
+target_bundle: antwortoption_fachquiz
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,22 @@
+uuid: 58bd88bc-924c-4811-9f39-e19961e56685
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.fachquiz
+id: node.fachquiz.promote
+field_name: promote
+entity_type: node
+bundle: fachquiz
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

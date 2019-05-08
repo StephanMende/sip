@@ -1,0 +1,9 @@
+uuid: 59010b7a-ea2e-4e86-9169-176b807e2420
+langcode: de
+status: true
+dependencies: {  }
+name: Gruppe_Erwartungscheck
+vid: gruppe_erwartungscheck
+description: ''
+hierarchy: 0
+weight: 0

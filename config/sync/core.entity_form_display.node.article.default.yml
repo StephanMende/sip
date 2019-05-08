@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_image
     - field.field.node.article.field_rgb_1
+    - field.field.node.article.field_sss
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
@@ -46,6 +47,12 @@ content:
     third_party_settings: {  }
   field_rgb_1:
     weight: 121
+    settings: {  }
+    third_party_settings: {  }
+    type: field_example_text
+    region: content
+  field_sss:
+    weight: 122
     settings: {  }
     third_party_settings: {  }
     type: field_example_text

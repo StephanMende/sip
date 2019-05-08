@@ -1,0 +1,19 @@
+uuid: be5da70d-407e-4808-bf29-e73b37a0030e
+langcode: de
+status: true
+dependencies:
+  module:
+    - field_example
+    - node
+id: node.field_sss
+field_name: field_sss
+entity_type: node
+type: field_example_rgb
+settings: {  }
+module: field_example
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

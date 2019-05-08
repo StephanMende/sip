@@ -1,0 +1,62 @@
+uuid: b2772625-7c21-4a3d-8ab3-023ca34b20b3
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.aussage.body
+    - field.field.node.aussage.field_gruppe
+    - field.field.node.aussage.field_richtige_antwort
+    - field.field.node.aussage.field_rueckmeldung
+    - node.type.aussage
+  module:
+    - text
+id: node.aussage.default
+targetEntityType: node
+bundle: aussage
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 0
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_gruppe:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_richtige_antwort:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_rueckmeldung:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  title:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

@@ -1,0 +1,21 @@
+uuid: 7c049eae-8c24-4c4d-a514-6ff72804f021
+langcode: de
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.antwortoption
+  module:
+    - user
+id: node.antwortoption.teaser
+targetEntityType: node
+bundle: antwortoption
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
