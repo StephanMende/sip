@@ -16,29 +16,30 @@ function zsb_admin_toolbar() {
 
 
   $links['erwartungscheck'] = [
-    'title' => t('Create Erwartungscheck'),
+    'title' => t('Erwartungscheck erstellen'),
     'url' => Url::fromRoute('node.add', ['node_type' => 'erwartungscheck']),
-    //'options' => [
-    //  'title' => t('Enable more examples in on the Extend page.'),
-    //],
-    //'fragment' => 'edit-modules-example-modules',
   ];
 
   $links['fachquiz'] = [
-    'title' => t('Create Fachquiz'),
+    'title' => t('Fachquiz erstellen'),
     'url' => Url::fromRoute('node.add', ['node_type' => 'fachquiz']),
-    //'options' => [
-    //  'title' => t('Enable more examples in on the Extend page.'),
-    //],
-    //'fragment' => 'edit-modules-example-modules',
   ];
+
+  $links['studiengang'] = [
+    'title' => t('Studiengang erstellen'),
+    'url' => Url::fromRoute('node.add', ['node_type' => 'studiengang']),
+  ];
+
+
+
+
 
   //create the zsb admin toolbar array
   $items['zsb_toolbar'] = [
     '#type' => 'toolbar_item',
     'tab' => [
       '#type' => 'link',
-      '#title' => t('ZSB'),
+      '#title' => t('ZSB Administration'),
       '#url' => Url::fromRoute('<front>'),
       '#attributes' => [
         'title' => t('ZSB Administration'),
