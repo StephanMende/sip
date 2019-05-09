@@ -1,0 +1,5 @@
+name: Vorbildung
+description: Provides a form where someone can select betweeen beruflicher or schulischer Vorbildung
+type: module
+core: 8.x
+package: SIP

@@ -1,0 +1,7 @@
+vorbildung.form:
+  path: 'vorbildung'
+  defaults:
+    _title: 'Vorbildung'
+    _form: 'Drupal\vorbildung\Form\VorbildungForm'
+  requirements:
+    _access: 'TRUE'
