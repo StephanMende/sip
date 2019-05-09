@@ -102,9 +102,9 @@ class FachquizForm extends FormBase {
 
 
     if($form_state->getValue('antwort') == 0) {
-      $rueckmeldung_header = '<div style="background-color: green;"><h3>Ihre Antwort ist richtig.</h3></div>';
+      $rueckmeldung_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
     } else {
-      $rueckmeldung_header = '<div style="background-color: red;"><h3>Ihre Antwort ist falsch.</h3></div>';
+      $rueckmeldung_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
     }
 
     $rueckmeldung = $aufgaben[$this->step]->erklaerung;
@@ -113,7 +113,7 @@ class FachquizForm extends FormBase {
    ;
 
     $response = new AjaxResponse();
-    $response->addCommand(new HtmlCommand('.rueckmeldung', '<div style="border: dashed red; margin-top: -50px; z-index: 100; transition: margin-top 1s;">' . $rueckmeldung_header . $rueckmeldung . $rueckmeldung_button  . '</div>'));
+    $response->addCommand(new HtmlCommand('.rueckmeldung', '<div style="border: #6ab023; margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px;">' . $rueckmeldung_header . $rueckmeldung . $rueckmeldung_button  . '</div>'));
     $response->addCommand(new CssCommand('#button_fachquiz_beantworten', ['visibility' => 'hidden']));
 
 

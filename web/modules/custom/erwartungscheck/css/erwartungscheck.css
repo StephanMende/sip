@@ -19,11 +19,13 @@
   margin: 0;
 }
 
-#edit-frage .form-type-radio {
+#edit-frage .form-type-radio,
+#edit-antwort .form-type-radio {
   margin: 0;
 }
 
-#erwartungscheck {
+#erwartungscheck,
+#fachquiz {
   border-style: solid;
   border-width: 5px;
   border-color: #6ab023;
