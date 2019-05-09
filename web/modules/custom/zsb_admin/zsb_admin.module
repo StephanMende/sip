@@ -6,9 +6,58 @@
  * Time: 10:27
  */
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Url;
+
 /**
  * Implements hook_toolbar().
  */
 function zsb_admin_toolbar() {
 
+
+  $links['erwartungscheck'] = [
+    'title' => t('Create Erwartungscheck'),
+    'url' => Url::fromRoute('node.add', ['node_type' => 'erwartungscheck']),
+    //'options' => [
+    //  'title' => t('Enable more examples in on the Extend page.'),
+    //],
+    //'fragment' => 'edit-modules-example-modules',
+  ];
+
+  $links['fachquiz'] = [
+    'title' => t('Create Fachquiz'),
+    'url' => Url::fromRoute('node.add', ['node_type' => 'fachquiz']),
+    //'options' => [
+    //  'title' => t('Enable more examples in on the Extend page.'),
+    //],
+    //'fragment' => 'edit-modules-example-modules',
+  ];
+
+  //create the zsb admin toolbar array
+  $items['zsb_toolbar'] = [
+    '#type' => 'toolbar_item',
+    'tab' => [
+      '#type' => 'link',
+      '#title' => t('ZSB'),
+      '#url' => Url::fromRoute('<front>'),
+      '#attributes' => [
+        'title' => t('ZSB Administration'),
+        'class' => ['toolbar-icon', 'toolbar-icon-examples'],
+      ],
+    ],
+    'tray' => [
+      '#heading' => t('ZSB Examples'),
+      'shortcuts' => [
+        '#theme' => 'links__toolbar_example',
+        '#links' => $links,
+        '#attributes' => [
+          'class' => ['toolbar-menu'],
+        ],
+      ],
+    ],
+
+
+  ];
+
+  return $items;
 }

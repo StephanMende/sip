@@ -21,6 +21,10 @@ class ErwartungscheckForm extends FormBase {
 
   protected $step = 0;
   protected $question_count;
+  protected $correct_answer_flag;
+  protected $correct_answer = 0;
+
+
 
   public function getFormId() {
     return 'erwartungscheck';
@@ -28,31 +32,13 @@ class ErwartungscheckForm extends FormBase {
 
   public function buildForm(array $form, FormStateInterface $form_state) {
 
+
+
     //Hole die Fragen
     $questions = $this->getQuestions();
     //Speichere die Anzahl der Fragen
     $this->question_count = count($questions);
 
-
-
-    /**
-    for($i=0; $i<count($questions); $i++) {
-      if($this->step == $i) {
-        $form['erwartungscheck']['gruppe'] = [
-          '#type' => 'markup',
-          '#markup' => '<h2>' . $questions[$i]->gruppe. '</h2>',
-        ];
-
-        $form['erwartungscheck']['frage'][$i] = [
-          '#type' => 'radios',
-          '#title' => $questions[$i]->aussage,
-          '#options' => [1 => 'wahr', 0 => 'falsch'],
-          //'#required' => TRUE,
-          '#default_value' => 1,
-        ];
-      }
-    }
-    **/
 
     $form['erwartungscheck']['gruppe'] = [
       '#type' => 'markup',
@@ -96,11 +82,21 @@ class ErwartungscheckForm extends FormBase {
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
     if($this->step == ($this->question_count-1)) {
-      $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info');
+
+      $percent = round((1 / $this->question_count),2)*100;
+
+      //\Drupal::messenger()->addMessage('SIe haben: ' . $percent . ' erreicht.');
+
+
+      $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameter('percent', $percent);
       $form_state->setRedirectUrl($url);
 
     } else {
       $form_state->setRebuild();
+      if($this->correct_answer_flag) {
+        $this->correct_answer++;
+
+      }
       $this->step++;
 
     }
@@ -109,31 +105,27 @@ class ErwartungscheckForm extends FormBase {
   public function setExplanationMessage(array $form, FormStateInterface $form_state) {
 
     $questions = $this->getQuestions();
-    $step = $this->step;
-    //dsm($questions[$step]);
+
 
     if($questions[$this->step]->richtige_antwort == $form_state->getValue('frage')) {
       $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
+      $this->correct_answer_flag = TRUE;
+
+      $correct_answers = $this->correct_answer;
     } else {
       $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
     }
-
-    /**
-    $explanation = "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>" .
-      "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>"
-      ."Step: " . $this->step . " Count: " . $this->question_count . " Richtige Antwort: " . $questions[$this->step]->richtige_antwort .
-      " Formularantwort: " . $form_state->getValue('frage');
-     **/
 
 
     $explanation = $questions[$this->step]->rueckmeldung;
     $explanation_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
 
     $response = new AjaxResponse();
-    $response->addCommand(new HtmlCommand('.explanation_message', '<div style="border: #6ab023; margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px; ">' . $explanation_header .$explanation . $explanation_button  . '</div>'));
+    $response->addCommand(new HtmlCommand('.explanation_message',
+      '<div style="border: #6ab023; margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px; ">'
+            . $explanation_header .$explanation . $explanation_button  . 'korrekte Antworten: ' . $correct_answers . '</div>')
+
+    );
     $response->addCommand(new CssCommand('#button_beantworten', ['visibility' => 'hidden']));
 
 

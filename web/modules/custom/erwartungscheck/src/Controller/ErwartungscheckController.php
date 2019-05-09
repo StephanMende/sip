@@ -14,9 +14,9 @@ use Drupal\erwartungscheck\Helper\ErwartungscheckHelper;
 
 class ErwartungscheckController extends ControllerBase {
 
-  public function erwartungscheckInfo() {
+  public function erwartungscheckInfo($percent) {
     return [
-      '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [80%] mit den Erwartungen 
+      '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind sehr realistisch.</p>
                         <p><em>Wenn Sie sich noch weiter informieren möchten, dann schauen Sie sich die <a href="#">Video-Interviews</a>
                         hier im SIP-Portal an. Die <a href="#">Webseite</a> der Universität Hildesheim bietet weitere Informationen an.</em></p>
