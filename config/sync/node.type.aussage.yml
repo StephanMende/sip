@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Aussage
 type: aussage
-description: 'Erwartungscheck Aussage'
+description: 'Hier legen Sie eine Aussage an. Geben Sie bitte im Titelfeld "Aussage 1" für die 1. Aussage und "Aussage 2" für die 2. Aussage usw. an.'
 help: ''
 new_revision: false
 preview_mode: 1

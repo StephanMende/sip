@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_rgb
     - node.type.page
   module:
-    - field_example
     - path
     - text
 _core:
@@ -32,12 +30,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_rgb:
-    weight: 121
-    settings: {  }
-    third_party_settings: {  }
-    type: field_example_text
-    region: content
   langcode:
     type: language_select
     weight: 2

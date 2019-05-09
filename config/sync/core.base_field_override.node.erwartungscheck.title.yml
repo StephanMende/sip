@@ -1,0 +1,18 @@
+uuid: a578ed5a-2192-4636-a92f-56e33d88a48b
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.erwartungscheck
+id: node.erwartungscheck.title
+field_name: title
+entity_type: node
+bundle: erwartungscheck
+label: 'Titel für den Erwartungscheck'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

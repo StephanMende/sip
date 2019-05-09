@@ -11,7 +11,7 @@ field_name: field_gruppe
 entity_type: node
 bundle: aussage
 label: Gruppe
-description: ''
+description: 'Hier wählen Sie die Gruppe, welcher die Aussage zugeordnet werden soll, aus.'
 required: false
 translatable: false
 default_value: {  }

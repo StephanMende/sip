@@ -5,13 +5,10 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_image
-    - field.field.node.article.field_rgb_1
-    - field.field.node.article.field_sss
     - field.field.node.article.field_tags
     - image.style.large
     - node.type.article
   module:
-    - field_example
     - image
     - text
     - user
@@ -38,20 +35,6 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
-  field_rgb_1:
-    weight: 111
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: field_example_simple_text
-    region: content
-  field_sss:
-    weight: 112
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: field_example_simple_text
-    region: content
   field_tags:
     type: entity_reference_label
     weight: 10

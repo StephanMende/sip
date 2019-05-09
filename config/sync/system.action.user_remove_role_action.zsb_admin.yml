@@ -1,0 +1,14 @@
+uuid: 06dcc490-c5a1-4321-9f79-ff5d9321aed9
+langcode: de
+status: true
+dependencies:
+  config:
+    - user.role.zsb_admin
+  module:
+    - user
+id: user_remove_role_action.zsb_admin
+label: 'Den ausgewählten Benutzern die Rolle ZSB_Admin entziehen'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: zsb_admin

@@ -12,7 +12,7 @@ field_name: body
 entity_type: node
 bundle: aussage
 label: Aussage
-description: ''
+description: 'Hier legen Sie eine Aussage an. Geben Sie bitte im obigen Feld <strong>Titel für die Aussage</strong> "Aussage 1" für die 1. Aussage und "Aussage 2" für die 2. Aussage usw. an.'
 required: false
 translatable: true
 default_value: {  }

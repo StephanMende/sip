@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Erwartungscheck
 type: erwartungscheck
-description: ''
+description: 'Hier legen Sie einen Erwartungscheck an. '
 help: ''
 new_revision: false
 preview_mode: 1

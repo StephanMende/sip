@@ -11,7 +11,7 @@ field_name: field_richtige_antwort
 entity_type: node
 bundle: aussage
 label: 'Richtige Antwort'
-description: ''
+description: 'Hier wählen Sie die für die Aussage richtige Antwort.'
 required: false
 translatable: false
 default_value: {  }

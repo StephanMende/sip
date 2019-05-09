@@ -1,0 +1,18 @@
+uuid: 80529989-16d5-464e-b36e-82442e4d550d
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aussage
+id: node.aussage.title
+field_name: title
+entity_type: node
+bundle: aussage
+label: 'Titel für die Aussage'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

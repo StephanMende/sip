@@ -1,0 +1,14 @@
+uuid: a8d39929-1e1c-4059-b993-302f019afe0a
+langcode: de
+status: true
+dependencies:
+  config:
+    - user.role.zsb_admin
+  module:
+    - user
+id: user_add_role_action.zsb_admin
+label: 'Den ausgewählten Benutzern die Rolle ZSB_Admin zuweisen'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: zsb_admin
