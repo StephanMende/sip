@@ -1,6 +1,7 @@
 #button_submit {
   background-color: #0a7bc1;
   visibility: hidden;
+  display: none;  /* completely hide it, so it doesn't affect other elements */
 }
 
 .button.form-submit {
@@ -20,4 +21,16 @@
 
 #edit-frage .form-type-radio {
   margin: 0;
+}
+
+#erwartungscheck {
+  border-style: solid;
+  border-width: 5px;
+  border-color: #6ab023;
+  padding: 15px;
+}
+
+#rid-content {
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #4d4d4d;
 }
