@@ -122,7 +122,7 @@ class ErwartungscheckForm extends FormBase {
 
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.explanation_message',
-      '<div style="border: #6ab023; margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px; ">'
+      '<div class="explanation-msg" style="margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px; ">'
             . $explanation_header .$explanation . $explanation_button . '</div>')
 
     );
