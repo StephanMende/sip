@@ -14,7 +14,7 @@ use Drupal\Core\Url;
  */
 function zsb_admin_toolbar() {
 
-
+  /**
   $links['erwartungscheck'] = [
     'title' => t('Erwartungscheck erstellen'),
     'url' => Url::fromRoute('node.add', ['node_type' => 'erwartungscheck']),
@@ -23,6 +23,17 @@ function zsb_admin_toolbar() {
   $links['fachquiz'] = [
     'title' => t('Fachquiz erstellen'),
     'url' => Url::fromRoute('node.add', ['node_type' => 'fachquiz']),
+  ];
+   */
+
+  $links['fachquiz'] = [
+    'title' => t('Fachquiz bearbeiten'),
+    'url' => Url::fromRoute('entity.node.edit_form', ['node' => 37]), //TODO Change to redirect to a view with all fachquizzes
+  ];
+
+  $links['erwartungscheck'] = [
+    'title' => t('Erwartungscheck bearbeiten'),
+    'url' => Url::fromRoute('entity.node.edit_form', ['node' => 32]), //TODO Change to redirect to a view with all fachquizzes
   ];
 
   $links['studiengang'] = [
