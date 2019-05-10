@@ -30,7 +30,8 @@ class FachquizController extends ControllerBase {
   }
 
   public function auswertung() {
-    return['#markup' => 'Vielen Dank, dass Sie mitgemacht haben. Ihre Auswertung...'];
+    return['#markup' => 'Vielen Dank, dass Sie mitgemacht haben. Ihre Auswertung wird hier auch erscheinen,
+      wir entwickeln diese Komponente gerade...'];
   }
 
   public function helper() {
