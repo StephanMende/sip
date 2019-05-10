@@ -47,18 +47,32 @@ class SchulischeVorbildungController extends ControllerBase
             //create content to show the Studiengaenge
             foreach ($nodes as $node) {
                 //ksm($node->get('body')->getString());
+                /**
                 $studiengang_titles[] = [
                     'title' => $node->getTitle(),
                     'beschreibung' => check_markup($node->get('body')->value, $node->get('body')->format),
                 ];
+                 * */
+
+              $text = '<p>Folgende Studiengänge können wir Ihnen empfehlen:<br/><strong>Hinweis:</strong>Dies 
+                            ist nur eine Empfehlung. Ob Sie letztlich zugelassen werden entscheidet die Universität.</p>';
+              $studiengang_titles[] = [
+                '#markup' => $text . '<p><a href="'. $node->field_studiengang_links->uri .'">' .  $node->getTitle() . '</a></p>',
+              ];
+
+              //dsm($node);
 
             }
-
+            /**
             return ['#theme' => 'show_studiengaenge',
                 '#studiengang_name' => $this->t('Wirtschaftsinformatik'),
                 '#studiengaenge' => $studiengang_titles,
                 '#title' => 'Empfohlene Studiengänge',
             ];
+             * */
+            //dsm($studiengang_titles);
+            return $studiengang_titles;
+
         } else {
 
             return [
