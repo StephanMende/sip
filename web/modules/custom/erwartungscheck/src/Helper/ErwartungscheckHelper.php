@@ -33,8 +33,6 @@ class ErwartungscheckHelper {
           'gruppe' => $this->getTextOfTid($aussage->field_gruppe->target_id),
         ];
       };
-
-
     };
 
     return $aussagen_data;

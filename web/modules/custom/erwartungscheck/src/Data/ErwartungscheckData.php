@@ -85,6 +85,4 @@ public $studiengang;
   public function setStudiengang($studiengang) {
     $this->studiengang = $studiengang;
   }
-
-
 }
