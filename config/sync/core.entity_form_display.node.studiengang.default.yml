@@ -29,7 +29,7 @@ content:
     settings:
       match_operator: CONTAINS
       size: 60
-      placeholder: ''
+      placeholder: 'Erwartungscheck eingeben (Vorschläge durchsuchen)'
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -38,7 +38,7 @@ content:
     settings:
       match_operator: CONTAINS
       size: 60
-      placeholder: ''
+      placeholder: 'Fachquiz eingeben (Vorschläge durchsuchen)'
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -47,7 +47,7 @@ content:
     settings:
       match_operator: CONTAINS
       size: 60
-      placeholder: 'Hier den zugehörigen Beruf eingeben'
+      placeholder: 'Zugehörigen Beruf eingeben (Vorschläge durchsuchen)'
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
