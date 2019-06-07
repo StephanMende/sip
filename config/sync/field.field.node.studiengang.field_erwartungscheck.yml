@@ -1,0 +1,28 @@
+uuid: 7708c7fd-d399-41fb-a3a2-8521f45f34a4
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_erwartungscheck
+    - node.type.erwartungscheck
+    - node.type.studiengang
+id: node.studiengang.field_erwartungscheck
+field_name: field_erwartungscheck
+entity_type: node
+bundle: studiengang
+label: erwartungscheck
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      erwartungscheck: erwartungscheck
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,28 @@
+uuid: 095c4a94-d691-4cc9-b79f-ac4447e249ba
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fachquiz
+    - node.type.fachquiz
+    - node.type.studiengang
+id: node.studiengang.field_fachquiz
+field_name: field_fachquiz
+entity_type: node
+bundle: studiengang
+label: fachquiz
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      fachquiz: fachquiz
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
