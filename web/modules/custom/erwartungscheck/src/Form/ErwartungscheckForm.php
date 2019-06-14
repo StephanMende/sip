@@ -23,8 +23,7 @@ class ErwartungscheckForm extends FormBase {
   protected $question_count;
   protected $correct_answer_flag;
   protected $correct_answer = 0;
-
-
+  protected $targetId;
 
   public function getFormId() {
     return 'erwartungscheck';
@@ -34,11 +33,11 @@ class ErwartungscheckForm extends FormBase {
 
 
 
+    $targetId = $form_state->getBuildInfo()['args'][0];
     //Hole die Fragen
-    $questions = $this->getQuestions();
+    $questions = $this->getQuestions($targetId);
     //Speichere die Anzahl der Fragen
     $this->question_count = count($questions);
-
 
     $form['erwartungscheck']['gruppe'] = [
       '#type' => 'markup',
@@ -53,8 +52,6 @@ class ErwartungscheckForm extends FormBase {
       '#default_value' => 'wahr',
     ];
 
-
-
     $form['erwartungscheck']['button'] = [
       '#type' => 'button',
       '#value' => 'Beantworten',
@@ -63,7 +60,6 @@ class ErwartungscheckForm extends FormBase {
         'callback' => '::setExplanationMessage',
       ],
     ];
-
 
     $form['erwartungscheck']['explanation'] = [
       '#type' => 'markup',
@@ -75,8 +71,6 @@ class ErwartungscheckForm extends FormBase {
       '#type' => 'submit',
       '#value' => $this->t('Next'),
     ];
-
-
     return $form;
   }
 
@@ -86,7 +80,6 @@ class ErwartungscheckForm extends FormBase {
       $percent = round((1 / $this->question_count),2)*100;
 
       //\Drupal::messenger()->addMessage('SIe haben: ' . $percent . ' erreicht.');
-
 
       $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameter('percent', $percent);
       $form_state->setRedirectUrl($url);
@@ -98,14 +91,14 @@ class ErwartungscheckForm extends FormBase {
 
       }
       $this->step++;
-
     }
   }
 
   public function setExplanationMessage(array $form, FormStateInterface $form_state) {
 
-    $questions = $this->getQuestions();
+    $targetId = $form_state->getBuildInfo()['args'][0];
 
+    $questions = $this->getQuestions($targetId);
 
     if($questions[$this->step]->richtige_antwort == $form_state->getValue('frage')) {
       $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
@@ -116,7 +109,6 @@ class ErwartungscheckForm extends FormBase {
       $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
     }
 
-
     $explanation = $questions[$this->step]->rueckmeldung;
     $explanation_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
 
@@ -124,20 +116,16 @@ class ErwartungscheckForm extends FormBase {
     $response->addCommand(new HtmlCommand('.explanation_message',
       '<div class="explanation-msg" style="margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px; ">'
             . $explanation_header .$explanation . $explanation_button . '</div>')
-
     );
     $response->addCommand(new CssCommand('#button_beantworten', ['visibility' => 'hidden']));
-
 
     return $response;
   }
 
-  public function getQuestions() {
+  public function getQuestions($targetId) {
 
     $erwartungscheckHelper = new ErwartungscheckHelper();
-    $erwartungscheckAussagen = $erwartungscheckHelper->getErwartungcheck();
-
-
+    $erwartungscheckAussagen = $erwartungscheckHelper->getErwartungcheck($targetId);
 
     foreach ($erwartungscheckAussagen as $data) {
       $erwartungscheckData = new Data\ErwartungscheckData();
@@ -148,7 +136,6 @@ class ErwartungscheckForm extends FormBase {
 
       $questions[] = $erwartungscheckData;
     }
-
 
     /**
     $erwartungscheckData = new Data\ErwartungscheckData();
@@ -271,10 +258,8 @@ class ErwartungscheckForm extends FormBase {
     $erwartungscheckData->setRueckmeldung('Hier kommt noch ein Erklärungstext hin.');
 
     $questions[] = $erwartungscheckData;
-
     **/
 
     return $questions;
   }
-
 }

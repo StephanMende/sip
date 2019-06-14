@@ -12,10 +12,10 @@ use Drupal\taxonomy\Entity\Term;
 
 class ErwartungscheckHelper {
 
-  public function getErwartungcheck() {
+  public function getErwartungcheck($targetId) {
     //get nids of content type erwartungscheck content type
     $nids = \Drupal::entityQuery('node')
-      ->condition('type','erwartungscheck')->execute();
+      ->condition('type','erwartungscheck')->condition('nid',$targetId)->execute();
 
     //node objects from the nids
     $nodes =  node_load_multiple($nids);

@@ -11,6 +11,7 @@ namespace Drupal\erwartungscheck\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\erwartungscheck\Helper\ErwartungscheckHelper;
+use Drupal\node\Entity\Node;
 
 class ErwartungscheckController extends ControllerBase {
 
@@ -41,5 +42,68 @@ class ErwartungscheckController extends ControllerBase {
 
     dsm($aussagenData);
     return ['#markup' => 'Hallo....'];
+  }
+
+
+
+
+  public function zeigeCheck($check) {
+
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type','studiengang')->condition('title', $check)->execute();
+
+
+    $studiengaenge = Node::loadMultiple($nids);
+
+
+    foreach ($studiengaenge as $studiengang) {
+      $studiengang->field_erwartungscheck->target_id;
+      ksm($studiengang->field_erwartungscheck->target_id);
+
+      $targetId = $studiengang->field_erwartungscheck->target_id;
+
+      $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm', $targetId);
+      return $form;
+    }
+
+
+
+
+
+
+    $array = [
+      '#type' => 'markup',
+      '#markup' => '<b>Erwartungscheck:</b>',
+    ];
+
+    switch ($check) {
+
+      case 1:
+        $array = [
+          '#type' => 'markup',
+          '#markup' => '<b>Erwartungscheck WINF</b>',
+        ];
+        return $array;
+      case 2:
+        $array = [
+          '#type' => 'markup',
+          '#markup' => '<b>Erwartungscheck 2</b>',
+        ];
+        return $array;
+      case 3:
+        $array = [
+          '#type' => 'markup',
+          '#markup' => '<b>Erwartungscheck 3</b>',
+        ];
+        return $array;
+      case 4:
+        $array = [
+          '#type' => 'markup',
+          '#markup' => '<b>Erwartungscheck 4</b>',
+        ];
+        return $array;
+      default:
+        return $array;
+    }
   }
 }

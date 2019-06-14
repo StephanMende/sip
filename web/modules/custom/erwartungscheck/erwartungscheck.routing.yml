@@ -26,3 +26,17 @@ erwartungscheck.helper:
     _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::erwartungscheckHelp'
   requirements:
     _access: 'TRUE'
+
+erwartungscheck.helper2:
+  path: 'erwartungscheck/{check}'
+  defaults:
+    _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::zeigeCheck'
+  requirements:
+    _access: 'TRUE'
+
+erwartungscheck.check:
+  path: 'erwartungscheckjj/{check}'
+  defaluts:
+    _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::zeigeCheck'
+  requirements:
+    _access: 'TRUE'
