@@ -34,9 +34,7 @@ class ErwartungscheckHelper {
         ];
       };
     };
-
     return $aussagen_data;
-
   }
 
   public function getTextOfTid($tid) {

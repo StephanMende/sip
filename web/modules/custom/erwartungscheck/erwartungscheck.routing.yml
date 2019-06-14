@@ -33,10 +33,3 @@ erwartungscheck.helper2:
     _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::zeigeCheck'
   requirements:
     _access: 'TRUE'
-
-erwartungscheck.check:
-  path: 'erwartungscheckjj/{check}'
-  defaluts:
-    _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::zeigeCheck'
-  requirements:
-    _access: 'TRUE'

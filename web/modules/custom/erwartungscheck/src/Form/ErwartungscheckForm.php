@@ -8,7 +8,6 @@
 
 namespace Drupal\erwartungscheck\Form;
 
-
 use Drupal\Core\Ajax\CssCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -30,8 +29,6 @@ class ErwartungscheckForm extends FormBase {
   }
 
   public function buildForm(array $form, FormStateInterface $form_state) {
-
-
 
     $targetId = $form_state->getBuildInfo()['args'][0];
     //Hole die Fragen
@@ -259,7 +256,6 @@ class ErwartungscheckForm extends FormBase {
 
     $questions[] = $erwartungscheckData;
     **/
-
     return $questions;
   }
 }
