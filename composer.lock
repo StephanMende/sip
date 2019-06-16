@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a0db44aea1b3d0a497467f44eb71e4d",
+    "content-hash": "1a945f87b4e59bb8352b63b4360a195f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3053,6 +3053,61 @@
             "homepage": "https://www.drupal.org/project/toolbar_menu",
             "support": {
                 "source": "https://git.drupalcode.org/project/toolbar_menu"
+            }
+        },
+        {
+            "name": "drupal/tour_ui",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tour_ui.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tour_ui-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "d861fe1d0d2aafb3aad74c2ab87829911e740f93"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1541254684",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "GoZ",
+                    "homepage": "https://www.drupal.org/user/226961"
+                },
+                {
+                    "name": "clemens.tolboom",
+                    "homepage": "https://www.drupal.org/user/125814"
+                },
+                {
+                    "name": "nick_schuch",
+                    "homepage": "https://www.drupal.org/user/1412036"
+                }
+            ],
+            "description": "Provides a UI to manage guided tours.",
+            "homepage": "https://www.drupal.org/project/tour_ui",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tour_ui"
             }
         },
         {
@@ -8567,7 +8622,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/examples": 20,
-        "drupal/inline_entity_form": 5
+        "drupal/inline_entity_form": 5,
+        "drupal/tour_ui": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
