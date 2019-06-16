@@ -121,3 +121,11 @@ zsb_admin.aussage.add:
   route_parameters:
     node_type: 'aussage'
 
+###################
+# Administrative menu
+zsb_admin.admin_settings_form:
+  menu_name: zsb-administration
+  parent: zsb-administration
+  title: 'ZSB Administrative Configuration'
+  weight: 99
+  route_name: zsb_admin.admin_settings_form
