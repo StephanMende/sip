@@ -27,7 +27,7 @@ class ErwartungscheckController extends ControllerBase {
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
        ];
        dsm('sehr schlecht');
-    } else if ($percent >= 25 && $percent < 50) {
+    } elseif ($percent >= 25 && $percent < 50) {
       return [
         '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind in Teilen realistisch.</p>
@@ -37,7 +37,7 @@ class ErwartungscheckController extends ControllerBase {
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
       ];
        dsm('schlecht');
-    } else if ($percent >= 50 && $percent < 75) {
+    } elseif ($percent >= 50 && $percent < 75) {
       return [
         '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind weitestgehend realistisch.</p>
@@ -47,7 +47,7 @@ class ErwartungscheckController extends ControllerBase {
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
       ];
        dsm('mittel');
-    } else if ($percent >= 75 && $percent < 100) {
+    } elseif ($percent >= 75 && $percent < 100) {
       return [
         '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind sehr realistisch.</p>
@@ -57,7 +57,7 @@ class ErwartungscheckController extends ControllerBase {
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
       ];
        dsm('gut');
-    } else if ($percent == 100) {
+    } elseif ($percent == 100) {
       return [
         '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind komplett realistisch.</p>
