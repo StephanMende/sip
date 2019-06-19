@@ -63,3 +63,4 @@ permissions:
   - 'edit terms in antwort_erwartungscheck'
   - 'edit terms in antwortoption_fachquiz'
   - 'edit terms in gruppe_erwartungscheck'
+  - 'view zsb_administration in toolbar'

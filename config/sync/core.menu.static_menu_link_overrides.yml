@@ -5,6 +5,102 @@ definitions:
     parent: ''
     weight: 0
     expanded: false
+  zsb_admin__beruf__add:
+    weight: -48
+    menu_name: zsb-administration
+    parent: zsb_admin.studyfinder
+    expanded: false
+    enabled: true
+  zsb_admin__schulabschluss__add:
+    weight: -47
+    menu_name: zsb-administration
+    parent: zsb_admin.studyfinder
+    expanded: false
+    enabled: true
+  zsb_admin__studiengang__add:
+    weight: -49
+    menu_name: zsb-administration
+    parent: zsb_admin.studyfinder
+    expanded: false
+    enabled: true
+  zsb_admin__studiengang__overview:
+    weight: -50
+    menu_name: zsb-administration
+    parent: zsb_admin.studyfinder
+    expanded: false
+    enabled: true
+  zsb_admin__erwartungscheck:
+    weight: -49
+    menu_name: zsb-administration
+    parent: ''
+    enabled: true
+    expanded: false
+  zsb_admin__erwartungscheck__add:
+    weight: -49
+    menu_name: zsb-administration
+    parent: zsb_admin.erwartungscheck
+    expanded: false
+    enabled: true
+  zsb_admin__aussage__add:
+    weight: -47
+    menu_name: zsb-administration
+    parent: zsb_admin.erwartungscheck
+    expanded: false
+    enabled: true
+  zsb_admin__aussage__overview:
+    weight: -48
+    menu_name: zsb-administration
+    parent: zsb_admin.erwartungscheck
+    expanded: false
+    enabled: true
+  zsb_admin__erwartungscheck__overview:
+    weight: -50
+    menu_name: zsb-administration
+    parent: zsb_admin.erwartungscheck
+    expanded: false
+    enabled: true
+  zsb_admin__fachquiz:
+    weight: -48
+    menu_name: zsb-administration
+    parent: ''
+    expanded: false
+    enabled: true
+  zsb_admin__aufgabe__add:
+    weight: -47
+    menu_name: zsb-administration
+    parent: zsb_admin.fachquiz
+    expanded: false
+    enabled: true
+  zsb_admin__fachquiz__add:
+    weight: -49
+    menu_name: zsb-administration
+    parent: zsb_admin.fachquiz
+    expanded: false
+    enabled: true
+  zsb_admin__fachquiz__overview:
+    weight: -50
+    menu_name: zsb-administration
+    parent: zsb_admin.fachquiz
+    expanded: false
+    enabled: true
+  zsb_admin__aufgabe__overview:
+    weight: -48
+    menu_name: zsb-administration
+    parent: zsb_admin.fachquiz
+    expanded: false
+    enabled: true
+  zsb_admin__studyfinder:
+    weight: -50
+    menu_name: zsb-administration
+    parent: ''
+    expanded: false
+    enabled: true
+  zsb_admin__berufsgruppe__add:
+    weight: -46
+    menu_name: zsb-administration
+    parent: zsb_admin.studyfinder
+    expanded: false
+    enabled: true
 _core:
   default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM
 langcode: de

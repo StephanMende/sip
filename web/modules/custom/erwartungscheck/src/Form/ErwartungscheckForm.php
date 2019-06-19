@@ -31,6 +31,8 @@ class ErwartungscheckForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     $targetId = $form_state->getBuildInfo()['args'][0];
+    $this->targetId = $form_state->getBuildInfo()['args'][0];
+
     //Hole die Fragen
     $questions = $this->getQuestions($targetId);
     //Speichere die Anzahl der Fragen
@@ -72,9 +74,15 @@ class ErwartungscheckForm extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    if($this->step == ($this->question_count-1)) {
+    $questions = $this->getQuestions($this->targetId);
 
-      $percent = round((1 / $this->question_count),2)*100;
+    if($questions[$this->step]->richtige_antwort === $form_state->getValue('frage')) {
+      $this->correct_answer++;
+    }
+
+    if($this->step === ($this->question_count-1)) {
+
+      $percent = round($this->correct_answer / $this->question_count,2)*100;
 
       //\Drupal::messenger()->addMessage('SIe haben: ' . $percent . ' erreicht.');
 
@@ -83,10 +91,6 @@ class ErwartungscheckForm extends FormBase {
 
     } else {
       $form_state->setRebuild();
-      if($this->correct_answer_flag) {
-        $this->correct_answer++;
-
-      }
       $this->step++;
     }
   }
@@ -257,5 +261,9 @@ class ErwartungscheckForm extends FormBase {
     $questions[] = $erwartungscheckData;
     **/
     return $questions;
+  }
+
+  public function setCorrectFlag(): void {
+    $this->correct_answer_flag = true;
   }
 }

@@ -1,0 +1,131 @@
+###################
+# Studyfinder-Tool tab
+zsb_admin.studyfinder:
+  menu_name: zsb-administration
+  parent: zsb-administration
+  title: 'Studyfinder-Tool'
+  description: 'Funktionen des Studyfinder-Tools'
+  url: internal:/overview-studiengang
+
+# Studyfinder drop-down elements
+zsb_admin.studiengang.overview:
+  menu_name: zsb-administration
+  parent: zsb_admin.studyfinder
+  title: 'Übersicht Studiengänge'
+  url: internal:/overview-studiengang
+
+zsb_admin.studiengang.add:
+  menu_name: zsb-administration
+  parent: zsb_admin.studyfinder
+  title: 'Studiengang hinzufügen'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'studiengang'
+
+zsb_admin.beruf.add:
+  menu_name: zsb-administration
+  parent: zsb_admin.studyfinder
+  title: 'Beruf hinzufügen'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'beruf'
+
+zsb_admin.berufsgruppe.add:
+  menu_name: zsb-administration
+  parent: zsb_admin.studyfinder
+  title: 'Berufsgruppe hinzufügen'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'berufsgruppe'
+
+zsb_admin.schulabschluss.add:
+  menu_name: zsb-administration
+  parent: zsb_admin.studyfinder
+  title: 'Schulabschluss hinzufügen'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'schulabschluss'
+
+
+###################
+# Fachquiz-Tool tab
+zsb_admin.fachquiz:
+  menu_name: zsb-administration
+  parent: zsb-administration
+  title: 'Fachquiz-Tool'
+  description: 'Funktionen des Fachquiz-Tools'
+  url: internal:/overview-quiz
+
+zsb_admin.fachquiz.overview:
+  menu_name: zsb-administration
+  parent: zsb_admin.fachquiz
+  title: 'Übersicht Fachquiz'
+  url: internal:/overview-quiz
+
+zsb_admin.fachquiz.add:
+  menu_name: zsb-administration
+  parent: zsb_admin.fachquiz
+  title: 'Fachquiz hinzufügen'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'fachquiz'
+
+zsb_admin.aufgabe.overview:
+  menu_name: zsb-administration
+  parent: zsb_admin.fachquiz
+  title: 'Übersicht Quiz-Aufgaben'
+  url: internal:/overview-aufgabe
+
+zsb_admin.aufgabe.add:
+  menu_name: zsb-administration
+  parent: zsb_admin.fachquiz
+  title: 'Aufgabe hinzufügen'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'aufgabe'
+
+###################
+# Erwartungscheck-Tool tab
+zsb_admin.erwartungscheck:
+  menu_name: zsb-administration
+  parent: zsb-administration
+  title: 'Erwartungscheck-Tool'
+  description: 'Funktionen des Erwartungscheck-Tools'
+  url: internal:/overview-check
+
+zsb_admin.erwartungscheck.overview:
+  menu_name: zsb-administration
+  parent: zsb_admin.erwartungscheck
+  title: 'Übersicht Erwartungschecks'
+  url: internal:/overview-check
+
+zsb_admin.erwartungscheck.add:
+  menu_name: zsb-administration
+  parent: zsb_admin.erwartungscheck
+  title: 'Erwartungscheck hinzufügen'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'erwartungscheck'
+
+zsb_admin.aussage.overview:
+  menu_name: zsb-administration
+  parent: zsb_admin.erwartungscheck
+  title: 'Übersicht Erwartungscheck-Aussagen'
+  url: internal:/overview-aussage
+
+zsb_admin.aussage.add:
+  menu_name: zsb-administration
+  parent: zsb_admin.erwartungscheck
+  title: 'Erwartungscheck-Aussage hinzufügen'
+  route_name: 'node.add'
+  route_parameters:
+    node_type: 'aussage'
+
+###################
+# Administrative menu
+zsb_admin.admin_settings_form:
+  menu_name: zsb-administration
+  parent: zsb-administration
+  title: 'ZSB Administrative Configuration'
+  weight: 99
+  route_name: zsb_admin.admin_settings_form

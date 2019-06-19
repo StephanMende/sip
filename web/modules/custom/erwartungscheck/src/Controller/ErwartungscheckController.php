@@ -71,23 +71,24 @@ class ErwartungscheckController extends ControllerBase {
 
      /**
     return [
-      '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
+      '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind sehr realistisch.</p>
                         <p><em>Wenn Sie sich noch weiter informieren möchten, dann schauen Sie sich die <a href="#">Video-Interviews</a>
                         hier im SIP-Portal an. Die <a href="#">Webseite</a> der Universität Hildesheim bietet weitere Informationen an.</em></p>
-                        <p><em>Die Fächer Mathe, Informatik und Wirtschaft spielen eine wichtige Rolle. Wie gut Sie mit den fachlichen Inhalten 
+                        <p><em>Die Fächer Mathe, Informatik und Wirtschaft spielen eine wichtige Rolle. Wie gut Sie mit den fachlichen Inhalten
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
     ];
       */
   }
 
   public function erwartungscheckQuiz() {
+    // TODO remove function and corresponding routing
     //Pruefe welcher Studiengang
-    $studiengang = "Wirtschaftsinformatik"; //TODO Parameterisieren
+    $studiengang = 32; // "Erwartungscheck Wirtschaftsinformatik"
     //TODO Lade Fragen
 
     //TODO Gebe Fragen in einer Form aus
-    $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm');
+    $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm', $studiengang);
     return $form;
   }
 
