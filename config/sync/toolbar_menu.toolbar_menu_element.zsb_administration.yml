@@ -1,9 +1,0 @@
-uuid: 9ff0cc6e-f1f1-481a-a4ee-5ab8641e036d
-langcode: de
-status: true
-dependencies: {  }
-id: zsb_administration
-label: 'ZSB Administration'
-weight: null
-menu: zsb-administration
-rewrite_label: true

@@ -1,8 +1,0 @@
-uuid: ebd68739-1f49-4f84-976c-f6832133e559
-langcode: de
-status: true
-dependencies: {  }
-id: zsb-administration
-label: 'ZSB Administration'
-description: 'Links für ZSB Aufgaben'
-locked: false
