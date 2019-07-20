@@ -15,7 +15,6 @@ use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\CssCommand;
 use Drupal\fachquiz\Helper\FachquizHelper;
 
-
 class FachquizForm extends FormBase {
 
   protected $step = 0;
@@ -24,7 +23,6 @@ class FachquizForm extends FormBase {
   public function getFormId() {
     return 'fachquiz';
   }
-
 
   public function buildForm(array $form, FormStateInterface $form_state) {
     $aufgaben = $this->getAufgaben();
@@ -39,7 +37,6 @@ class FachquizForm extends FormBase {
    $form['fachquiz']['bild'] = [
      '#type' => 'markup',
      '#markup' => '<img src="">',
-
    ];
 
    $form['fachquiz']['frage'] = [
@@ -53,7 +50,6 @@ class FachquizForm extends FormBase {
      '#default_value' => 1,
    ];
 
-
     $form['fachquiz']['button'] = [
       '#type' => 'button',
       '#value' => 'Beantworten',
@@ -63,25 +59,18 @@ class FachquizForm extends FormBase {
       ],
     ];
 
-
    $form['fachquiz']['rueckmeldung'] = [
      '#type' => 'markup',
      '#markup' => '<div class="rueckmeldung"></div>',
    ];
-
 
    $form['fachquiz']['submit'] = [
      '#id' => 'button_submit',
      '#type' => 'submit',
      '#value' => $this->t('Next'),
    ];
-
-
-
     return $form;
   }
-
-
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // TODO: Implement submitForm() method.
@@ -93,13 +82,11 @@ class FachquizForm extends FormBase {
 
       $this->step++;
     }
-
   }
 
   public function setRueckmeldungMessage(array $form, FormStateInterface $form_state) {
     $aufgaben = $this->getAufgaben();
     $step = $this->step;
-
 
     if($form_state->getValue('antwort') == 0) {
       $rueckmeldung_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
@@ -109,13 +96,11 @@ class FachquizForm extends FormBase {
 
     $rueckmeldung = $aufgaben[$this->step]->erklaerung;
     $rueckmeldung_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
-
    ;
 
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.rueckmeldung', '<div class="explanation-msg" style="margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px;">' . $rueckmeldung_header . $rueckmeldung . $rueckmeldung_button  . '</div>'));
     $response->addCommand(new CssCommand('#button_fachquiz_beantworten', ['visibility' => 'hidden']));
-
 
     return $response;
   }
@@ -163,7 +148,6 @@ class FachquizForm extends FormBase {
     foreach ($keys as $key) {
       $shuffled_array[$key] = $antworten[$key];
     }
-
     return $shuffled_array;
   }
 }

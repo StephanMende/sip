@@ -9,76 +9,72 @@
 namespace Drupal\erwartungscheck\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\erwartungscheck\Data\ErwartungscheckData;
 use Drupal\erwartungscheck\Helper\ErwartungscheckHelper;
 use Drupal\node\Entity\Node;
-use Drupal\stringgenerator\StringGenerator\StringGenerator;
 
 class ErwartungscheckController extends ControllerBase {
 
   public function erwartungscheckInfo($percent) {
 
-    $percentAch = $this->percent;
+    $percentErreicht = $this->percent;
 
     //TODO String in der DB speichern bzw. an die Session anhängen, damit der User bei seinem Bewerbungsprozess darauf zugreifen kann.
-    $userResponseString = new StringGenerator();
-    $userResponseString.randomString();
+    $userData = new ErwartungscheckData();
+    $userString = $userData->randomString();
 
      //Je nach erreichter Prozentzahl, wird entsprechend der Text mit den erreichten Prozent ausgegeben.
-     if($percentAch < 25) {
+     //Leider wird immer nur der Text aus dem ersten if Teil ausgegeben.
+     if($percentErreicht < 25) {
        return [
          '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>
-                        <p>Nutzen Sie diesen Code, später bei Ihrer Bewerbung: [' . $userResponseString .']</p>
+                        <p>Hier Ihr Code [' . $userString . ']</p>
                         <p><em>Wenn Sie sich noch weiter informieren möchten, dann schauen Sie sich die <a href="#">Video-Interviews</a>
                         hier im SIP-Portal an. Die <a href="#">Webseite</a> der Universität Hildesheim bietet weitere Informationen an.</em></p>
                         <p><em>Die Fächer Mathe, Informatik und Wirtschaft spielen eine wichtige Rolle. Wie gut Sie mit den fachlichen Inhalten 
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
        ];
-       dsm('sehr schlecht');
-    } elseif ($percentAch >= 25 && $percentAch < 50) {
+    } elseif ($percentErreicht >= 25 && $percentErreicht < 50) {
       return [
         '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind in Teilen realistisch.</p>
-                        <p>Nutzen Sie diesen Code, später bei Ihrer Bewerbung: [' . $userResponseString .']</p>
+                        <p>Hier Ihr Code [' . $userString . ']</p>
                         <p><em>Wenn Sie sich noch weiter informieren möchten, dann schauen Sie sich die <a href="#">Video-Interviews</a>
                         hier im SIP-Portal an. Die <a href="#">Webseite</a> der Universität Hildesheim bietet weitere Informationen an.</em></p>
                         <p><em>Die Fächer Mathe, Informatik und Wirtschaft spielen eine wichtige Rolle. Wie gut Sie mit den fachlichen Inhalten 
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
       ];
-       dsm('schlecht');
-    } elseif ($percentAch >= 50 && $percentAch < 75) {
+    } elseif ($percentErreicht >= 50 && $percentErreicht < 75) {
       return [
         '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind weitestgehend realistisch.</p>
-                        <p>Nutzen Sie diesen Code, später bei Ihrer Bewerbung: [' . $userResponseString .']</p>
+                        <p>Hier Ihr Code [' . $userString . ']</p>
                         <p><em>Wenn Sie sich noch weiter informieren möchten, dann schauen Sie sich die <a href="#">Video-Interviews</a>
                         hier im SIP-Portal an. Die <a href="#">Webseite</a> der Universität Hildesheim bietet weitere Informationen an.</em></p>
                         <p><em>Die Fächer Mathe, Informatik und Wirtschaft spielen eine wichtige Rolle. Wie gut Sie mit den fachlichen Inhalten 
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
       ];
-       dsm('mittel');
-    } elseif ($percentAch >= 75 && $percentAch < 100) {
+    } elseif ($percentErreicht >= 75 && $percentErreicht < 100) {
       return [
         '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind sehr realistisch.</p>
-                        <p>Nutzen Sie diesen Code, später bei Ihrer Bewerbung: [' . $userResponseString .']</p>
+                        <p>Hier Ihr Code [' . $userString . ']</p>
                         <p><em>Wenn Sie sich noch weiter informieren möchten, dann schauen Sie sich die <a href="#">Video-Interviews</a>
                         hier im SIP-Portal an. Die <a href="#">Webseite</a> der Universität Hildesheim bietet weitere Informationen an.</em></p>
                         <p><em>Die Fächer Mathe, Informatik und Wirtschaft spielen eine wichtige Rolle. Wie gut Sie mit den fachlichen Inhalten 
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
       ];
-       dsm('gut');
-    } elseif ($percentAch == 100) {
+    } elseif ($percentErreicht == 100) {
       return [
         '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 
                         von Studierenden und Lehrenden aus dem Fachbereich überein und sind komplett realistisch.</p>
-                        <p>Nutzen Sie diesen Code, später bei Ihrer Bewerbung: [' . $userResponseString .']</p>
+                        <p>Hier Ihr Code [' . $userString . ']</p>
                         <p><em>Wenn Sie sich noch weiter informieren möchten, dann schauen Sie sich die <a href="#">Video-Interviews</a>
                         hier im SIP-Portal an. Die <a href="#">Webseite</a> der Universität Hildesheim bietet weitere Informationen an.</em></p>
                         <p><em>Die Fächer Mathe, Informatik und Wirtschaft spielen eine wichtige Rolle. Wie gut Sie mit den fachlichen Inhalten 
                         zurechtkommen, können Sie <a href="#">hier</a> in den verschiedenen Fach-Quizzes testen.</em></p>',
       ];
-       dsm('sehr gut');
     }
 
      /**

@@ -8,8 +8,8 @@
 
 namespace Drupal\stringgenerator\StringGenerator;
 
-class StringGenerator
-{
+class StringGenerator {
+
     function randomString($length = 8) {
         $str = "";
         $characters = array_merge(range('A','Z'), range('0','9'));
