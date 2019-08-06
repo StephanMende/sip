@@ -17,7 +17,7 @@ class FachquizController extends ControllerBase {
   public function content() {
 
     //Data
-    $fachquizData = new FachquizData();
+    //$fachquizData = new FachquizData();
 
     //dsm($fachquizData->getData()[0]['aufgabe']);
 
@@ -32,6 +32,7 @@ class FachquizController extends ControllerBase {
 
     return['#markup' => 'Vielen Dank, dass Sie mitgemacht haben. Ihre Auswertung wird hier auch erscheinen,
       wir entwickeln diese Komponente gerade... Ihr Bewerbungscode: ' . $userString . ' Bla'];
+
   }
 
   public function helper() {

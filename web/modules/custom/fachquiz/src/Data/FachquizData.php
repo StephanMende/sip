@@ -94,6 +94,7 @@ class FachquizData {
     for ($i = 0; $i < $length; $i++) {
       $rand = mt_rand(0, $max);
       $str .= $characters[$rand];
+
     }
     return $str;
   }
