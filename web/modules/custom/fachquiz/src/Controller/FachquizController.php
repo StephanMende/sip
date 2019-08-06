@@ -31,8 +31,7 @@ class FachquizController extends ControllerBase {
     $userString = $userData->randomString();
 
     return['#markup' => 'Vielen Dank, dass Sie mitgemacht haben. Ihre Auswertung wird hier auch erscheinen,
-      wir entwickeln diese Komponente gerade... Ihr Bewerbungscode: ' . $userString . ' Bla'];
-
+      wir entwickeln diese Komponente gerade... Ihr Bewerbungscode: ' . $userString . ' '];
   }
 
   public function helper() {
