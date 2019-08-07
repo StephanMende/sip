@@ -12,19 +12,22 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\erwartungscheck\Data\ErwartungscheckData;
 use Drupal\erwartungscheck\Helper\ErwartungscheckHelper;
 use Drupal\node\Entity\Node;
+use Drupal\erwartungscheck\StringGenerator\StringGenerator;
 
 class ErwartungscheckController extends ControllerBase {
 
   public function erwartungscheckInfo($percent) {
 
-    $percentErreicht = $this->percent;
+    $percentErreicht = $percent;
 
-    //TODO String in der DB speichern bzw. an die Session anhängen, damit der User bei seinem Bewerbungsprozess darauf zugreifen kann.
     $userData = new ErwartungscheckData();
     $userString = $userData->randomString();
 
+    //$generator = new StringGenerator();
+    //$neuerString = $generator->randomString();
+    //dsm($neuerString);
+
      //Je nach erreichter Prozentzahl, wird entsprechend der Text mit den erreichten Prozent ausgegeben.
-     //Leider wird immer nur der Text aus dem ersten if Teil ausgegeben.
      if($percentErreicht < 25) {
        return [
          '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen 

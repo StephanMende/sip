@@ -6,7 +6,7 @@
  * Time: 19:45
  */
 
-namespace Drupal\stringgenerator\StringGenerator;
+namespace Drupal\erwatungscheck\StringGenerator;
 
 class StringGenerator {
 

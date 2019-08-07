@@ -22,6 +22,14 @@ zsb_admin.studiengang.add:
   route_parameters:
     node_type: 'studiengang'
 
+zsb_admin.studiengang.edit:
+  menu_name: zsb-administration
+  parent: zsb_admin.studyfinder
+  title: 'Studiengang bearbeiten'
+  route_name: 'node.edit'
+  route_parameters:
+    node_type: 'studiengang'
+
 zsb_admin.beruf.add:
   menu_name: zsb-administration
   parent: zsb_admin.studyfinder
