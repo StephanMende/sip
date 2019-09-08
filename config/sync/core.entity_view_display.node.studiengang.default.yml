@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.studiengang.body
+    - field.field.node.studiengang.field_ausgabeerwartungscheck
     - field.field.node.studiengang.field_erwartungscheck
     - field.field.node.studiengang.field_fachquiz
     - field.field.node.studiengang.field_studiengang_berufe
@@ -25,6 +26,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_ausgabeerwartungscheck:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_erwartungscheck:
     weight: 105

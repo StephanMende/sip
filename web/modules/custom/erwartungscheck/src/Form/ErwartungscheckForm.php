@@ -23,6 +23,7 @@ class ErwartungscheckForm extends FormBase {
   protected $correct_answer_flag;
   protected $correct_answer = 0;
   protected $targetId;
+  protected $check;
 
   public function getFormId() {
     return 'erwartungscheck';
@@ -32,6 +33,11 @@ class ErwartungscheckForm extends FormBase {
 
     $targetId = $form_state->getBuildInfo()['args'][0];
     $this->targetId = $form_state->getBuildInfo()['args'][0];
+
+    $check = $form_state->getBuildInfo()['args'][1];
+    $this->check = $form_state->getBuildInfo()['args'][1];
+
+    kint($check);
 
     //Hole die Fragen
     $questions = $this->getQuestions($targetId);
@@ -84,9 +90,7 @@ class ErwartungscheckForm extends FormBase {
 
       $percent = round($this->correct_answer / $this->question_count,2)*100;
 
-      //\Drupal::messenger()->addMessage('SIe haben: ' . $percent . ' erreicht.');
-
-      $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameter('percent', $percent);
+      $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameters(['percent'=> $percent, 'check'=> 'Wirtschaftsinformatik']);
       $form_state->setRedirectUrl($url);
 
     } else {
