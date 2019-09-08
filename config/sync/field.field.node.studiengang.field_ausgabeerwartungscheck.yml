@@ -1,0 +1,21 @@
+uuid: 2a31d771-c974-41bf-abe3-c925cbec0c9e
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ausgabeerwartungscheck
+    - node.type.studiengang
+  module:
+    - text
+id: node.studiengang.field_ausgabeerwartungscheck
+field_name: field_ausgabeerwartungscheck
+entity_type: node
+bundle: studiengang
+label: AusgabeErwartungscheck
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

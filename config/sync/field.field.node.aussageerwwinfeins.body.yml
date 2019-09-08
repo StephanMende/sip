@@ -1,0 +1,22 @@
+uuid: df82a2ed-e865-486b-8bd0-8ae10d2aaa72
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.aussageerwwinfeins
+  module:
+    - text
+id: node.aussageerwwinfeins.body
+field_name: body
+entity_type: node
+bundle: aussageerwwinfeins
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
