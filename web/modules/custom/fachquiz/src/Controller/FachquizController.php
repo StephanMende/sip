@@ -44,6 +44,7 @@ class FachquizController extends ControllerBase {
   }
 
 /*
+
     //SOll, wenn mehrere Fachquizes vorhanden sind auf eine Auswahlseite weiter leite, von der sich dann
     // der Mitarbeiter die Links holen kann
      public function zeigeCheckfq($checkfq) {
