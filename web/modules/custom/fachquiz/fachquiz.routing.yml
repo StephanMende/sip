@@ -25,3 +25,10 @@ fachquiz.helper:
     _controller: 'Drupal\fachquiz\Controller\FachquizController::helper'
   requirements:
     _permission: 'access content'
+
+fachquiz.helper2:
+  path: 'fachquiz/{checkfq}'
+  defaults:
+    _controller: 'Drupal\fachquiz\Controller\FachquizController::zeigeCheckfq'
+  requirements:
+    _access: 'TRUE'

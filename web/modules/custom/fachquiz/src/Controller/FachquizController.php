@@ -11,6 +11,8 @@ namespace Drupal\fachquiz\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\fachquiz\Data\FachquizData;
 use Drupal\fachquiz\Helper\FachquizHelper;
+use Drupal\node\Entity\Node;
+
 
 class FachquizController extends ControllerBase {
 
@@ -40,4 +42,31 @@ class FachquizController extends ControllerBase {
     dsm($fachquiz_data);
     return ['#markup' => 'Helper'];
   }
+
+/*
+
+    //SOll, wenn mehrere Fachquizes vorhanden sind auf eine Auswahlseite weiter leite, von der sich dann
+    // der Mitarbeiter die Links holen kann
+     public function zeigeCheckfq($checkfq) {
+
+        $nids = \Drupal::entityQuery('node')
+            ->condition('type','studiengang')->condition('title', $checkfq)->execute();
+
+        $studiengaenge = Node::loadMultiple($nids);
+
+
+        foreach ($studiengaenge as $studiengang) {
+            $studiengang->field_fachquiz->target_id;
+            //kint($studiengang);
+
+            $targetId = $studiengang->field_fachquiz->target_id;
+            if(count($studiengang->field_fachquiz) === 1){
+            $form = \Drupal::formBuilder()->getForm('Drupal\fachquiz\Form\fachquizForm', $targetId);
+            return $form;}
+            else{
+                print target_id;
+
+            }
+        }
+    }*/
 }
