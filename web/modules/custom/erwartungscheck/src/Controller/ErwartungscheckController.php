@@ -40,6 +40,7 @@ class ErwartungscheckController extends ControllerBase {
     }
 
     //Wenn nur ein Feld angelegt wurde, wird der Wert hier ausgegeben.
+    //Test
     if (count($n->field_ausgabeerwartungscheck) == 1) {
 
       return [
