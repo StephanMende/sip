@@ -19,7 +19,7 @@ class ErwartungscheckController extends ControllerBase {
 
     public function erwartungscheckInfo($check, $percent) {
         //hole den Prozent-Wert aus der URL
-        $percentErreicht = $percent;
+        $percent = $percent;
         //Generiere den Random String
         //TODO Flag für Informatikstudiengang einfügen bzw. abgfragen
         $userData = new ErwartungscheckData();
@@ -47,116 +47,137 @@ class ErwartungscheckController extends ControllerBase {
         foreach($node->field_ausgabeerwartungscheck as $item) {
           $ausgabeText[] = $item->value;
         };
+        //Gebe den Auswertungstext aus
+        $markup = $this->erwartungcheckErgebnisAusgabe($ausgabeText, $percent, $userString, false);
 
+        return ['#markup' => $markup];
+    }
+
+    /**
+     * Diese Funktion erstellt das HTML-Markup für den Ergebnistext, der am Ende des Erwartungschecks
+     * dargestellt wird. Der Parameter @param codeFlag dient dazu einen Zufallsstring mit auszugeben.
+     *
+     * @param array $ausgabeText
+     * @param [type] $percent
+     * @param [type] $userString
+     * @param [type] $codeFlag
+     * @return void
+     */
+    public function erwartungcheckErgebnisAusgabe(array $ausgabeText, $percent, $userString, $codeFlag) {
         //Wenn nur ein Feld angelegt wurde, wird der Wert hier ausgegeben.
         //Test
         if (count($ausgabeText) == 1) {
+              $markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+              $markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+              if ($codeFlag) {
+                  $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+              }
+              $markup .= '<p>Hier Ihr Text [' . $ausgabeText[0] . ']</p>';
 
-        return [
-            '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen
-                        von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>
-                        <p>Hier Ihr Code [' . $userString . ']</p>
-                        <p>Hier Ihr Text [' . $ausgabeText[0] . ']</p>',
-            ];
+              return $markup;
 
-            //Wenn zwei Felder angelegt wurden, soll je nach erreichter Prozentzahl das passende Feld ausgegeben werden.
-        } else if (count($n->field_ausgabeerwartungscheck) == 2) {
+              //Wenn zwei Felder angelegt wurden, soll je nach erreichter Prozentzahl das passende Feld ausgegeben werden.
+          } else if (count($ausgabeText) == 2) {
+
+              $bereich = 0;
+
+              if ($percent > 50) {
+                  $bereich = 1;
+              }
+
+
+                $markup =  '<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+                $markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+                if ($codeFlag) {
+                    $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+                }
+                $markup .= '<p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>';
+
+              return $markup;
+
+          //Analog fuer drei Felder
+          } else if (count($ausgabeText) == 3) {
+
+              $bereich = 0;
+
+              if ($percent > 33 && $percent <= 66) {
+                  $bereich = 1;
+              } else if ($percent > 66) {
+                  $bereich = 2;
+              }
+
+
+                $markup ='<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+                $markup .=  'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+                if ($codeFlag) {
+                    $markup .=  '<p>Hier Ihr Code [' . $userString . ']</p>';
+                }
+                $markup .=  '<p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>';
+
+              return $markup;
+
+        //Analog fuer vier Felder
+          } else if (count($ausgabeText) == 4) {
 
             $bereich = 0;
 
-            if ($percentErreicht > 50) {
-                $bereich = 1;
+            if ($percent > 25 && $percent <= 50) {
+              $bereich = 1;
             }
 
-            return [
-              '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen
-                            von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>
-                            <p>Hier Ihr Code [' . $userString . ']</p>
-                            <p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>
-                            <p>Hier Ihr Text Hallo2</p>',
-            ];
+            else if ($percent > 50 && $percent <= 75) {
+              $bereich = 2;
+            }
 
-        //Analog fuer drei Felder
-        } else if (count($ausgabeText) == 3) {
+            else if ($percent > 75) {
+              $bereich = 3;
+            }
+
+
+
+                $markup =  '<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+                $markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+                if ($codeFlag) {
+                    $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+                }
+                $markup .= '<p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>';
+              return $markup;
+
+            //Analog fuer fuenf Felder
+          } else if (count($ausgabeText) == 5) {
 
             $bereich = 0;
 
-            if ($percentErreicht > 33 && $percentErreicht <= 66) {
-                $bereich = 1;
-            } else if ($percentErreicht > 66) {
-                $bereich = 2;
+            if ($percent > 20 && $percent <= 40) {
+              $bereich = 1;
             }
 
-            return [
-              '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen
-                                    von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>
-                                    <p>Hier Ihr Code [' . $userString . ']</p>
-                                    <p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>
-                                    <p>Hier Ihr Text Hallo3</p>',
-            ];
+            else if ($percent > 40 && $percent <= 60) {
+              $bereich = 2;
+            }
 
-      //Analog fuer vier Felder
-        } else if (count($ausgabeText) == 4) {
+            else if ($percent > 60 && $percent <= 80) {
+              $bereich = 3;
+            }
 
-          $bereich = 0;
+            else if ($percent > 80) {
+              $bereich = 4;
+            }
 
-          if ($percentErreicht > 25 && $percentErreicht <= 50) {
-            $bereich = 1;
+
+              $markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+              $markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>';
+              if ($codeFlag) {
+                  $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+              }
+              $markup .= '<p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>';
+            return $markup;
+
+          } else {
+
+              $markup = '<p>Falls nichts zutrifft</p>';
+            return $markup;
           }
-
-          else if ($percentErreicht > 50 && $percentErreicht <= 75) {
-            $bereich = 2;
-          }
-
-          else if ($percentErreicht > 75) {
-            $bereich = 3;
-          }
-
-
-            return [
-              '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen
-                                      von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>
-                                      <p>Hier Ihr Code [' . $userString . ']</p>
-                                      <p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>
-                                      <p>Hier Ihr Text Hallo4</p>',
-            ];
-
-          //Analog fuer fuenf Felder
-        } else if (count($ausgabeText) == 5) {
-
-          $bereich = 0;
-
-          if ($percentErreicht > 20 && $percentErreicht <= 40) {
-            $bereich = 1;
-          }
-
-          else if ($percentErreicht > 40 && $percentErreicht <= 60) {
-            $bereich = 2;
-          }
-
-          else if ($percentErreicht > 60 && $percentErreicht <= 80) {
-            $bereich = 3;
-          }
-
-          else if ($percentErreicht > 80) {
-            $bereich = 4;
-          }
-
-          return [
-            '#markup' => '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen
-                                    von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>
-                                    <p>Hier Ihr Code [' . $userString . ']</p>
-                                    <p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>
-                                    <p>Hier Ihr Text Hallo5</p>',
-          ];
-
-        } else {
-          return [
-            '#markup' => '<p>Falls nichts zutrifft</p>',
-          ];
-        }
-
-
     }
 
 
