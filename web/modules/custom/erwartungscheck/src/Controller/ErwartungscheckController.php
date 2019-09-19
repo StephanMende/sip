@@ -72,7 +72,7 @@ class ErwartungscheckController extends ControllerBase {
               if ($codeFlag) {
                   $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
               }
-              $markup .= '<p>Hier Ihr Text [' . $ausgabeText[0] . ']</p>';
+              $markup .= $ausgabeText[0];
 
               return $markup;
 
@@ -91,7 +91,7 @@ class ErwartungscheckController extends ControllerBase {
                 if ($codeFlag) {
                     $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
                 }
-                $markup .= '<p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>';
+                $markup .= $ausgabeText[$bereich];
 
               return $markup;
 
@@ -112,7 +112,7 @@ class ErwartungscheckController extends ControllerBase {
                 if ($codeFlag) {
                     $markup .=  '<p>Hier Ihr Code [' . $userString . ']</p>';
                 }
-                $markup .=  '<p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>';
+                $markup .= $ausgabeText[$bereich];
 
               return $markup;
 
@@ -140,7 +140,7 @@ class ErwartungscheckController extends ControllerBase {
                 if ($codeFlag) {
                     $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
                 }
-                $markup .= '<p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>';
+                $markup .= $ausgabeText[$bereich];
               return $markup;
 
             //Analog fuer fuenf Felder
@@ -170,7 +170,7 @@ class ErwartungscheckController extends ControllerBase {
               if ($codeFlag) {
                   $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
               }
-              $markup .= '<p>Hier Ihr Text [' . $ausgabeText[$bereich] . ']</p>';
+              $markup .= $ausgabeText[$bereich];
             return $markup;
 
           } else {
