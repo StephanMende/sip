@@ -18,256 +18,135 @@ use Drupal\erwartungscheck\Helper\ErwartungscheckHelper;
 
 class ErwartungscheckForm extends FormBase {
 
-  protected $step = 0;
-  protected $question_count;
-  protected $correct_answer_flag;
-  protected $correct_answer = 0;
-  protected $targetId;
-  protected $check;
+    protected $step = 0;
+    protected $question_count;
+    protected $correct_answer_flag;
+    protected $correct_answer = 0;
+    protected $targetId;
+    protected $check;
 
-  public function getFormId() {
-    return 'erwartungscheck';
-  }
-
-  public function buildForm(array $form, FormStateInterface $form_state) {
-
-    $targetId = $form_state->getBuildInfo()['args'][0];
-    $this->targetId = $form_state->getBuildInfo()['args'][0];
-
-    $check = $form_state->getBuildInfo()['args'][1];
-    $this->check = $form_state->getBuildInfo()['args'][1];
-
-    kint($check);
-
-    //Hole die Fragen
-    $questions = $this->getQuestions($targetId);
-    //Speichere die Anzahl der Fragen
-    $this->question_count = count($questions);
-
-    $form['erwartungscheck']['gruppe'] = [
-      '#type' => 'markup',
-      '#markup' => '<h2>' . $questions[$this->step]->gruppe. '</h2>',
-    ];
-
-    $form['erwartungscheck']['frage'] = [
-      '#type' => 'radios',
-      '#title' => $questions[$this->step]->aussage,
-      '#options' => ['wahr' => 'wahr', 'falsch' => 'falsch'],
-      //'#required' => TRUE,
-      '#default_value' => 'wahr',
-    ];
-
-    $form['erwartungscheck']['button'] = [
-      '#type' => 'button',
-      '#value' => 'Beantworten',
-      '#id' => 'button_beantworten',
-      '#ajax' => [
-        'callback' => '::setExplanationMessage',
-      ],
-    ];
-
-    $form['erwartungscheck']['explanation'] = [
-      '#type' => 'markup',
-      '#markup' => '<div class="explanation_message"></div>',
-    ];
-
-    $form['erwartungscheck']['submit'] = [
-      '#id' => 'button_submit',
-      '#type' => 'submit',
-      '#value' => $this->t('Next'),
-    ];
-    return $form;
-  }
-
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    $questions = $this->getQuestions($this->targetId);
-
-    if($questions[$this->step]->richtige_antwort === $form_state->getValue('frage')) {
-      $this->correct_answer++;
+    public function getFormId() {
+      return 'erwartungscheck';
     }
 
-    if($this->step === ($this->question_count-1)) {
+    public function buildForm(array $form, FormStateInterface $form_state) {
 
-      $percent = round($this->correct_answer / $this->question_count,2)*100;
+        $targetId = $form_state->getBuildInfo()['args'][0];
+        $this->targetId = $form_state->getBuildInfo()['args'][0];
 
-      $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameters(['percent'=> $percent, 'check'=> 'Wirtschaftsinformatik']);
-      $form_state->setRedirectUrl($url);
+        $check = $form_state->getBuildInfo()['args'][1];
+        $this->check = $form_state->getBuildInfo()['args'][1];
 
-    } else {
-      $form_state->setRebuild();
-      $this->step++;
-    }
-  }
+        //kint($check);
 
-  public function setExplanationMessage(array $form, FormStateInterface $form_state) {
+        //Hole die Fragen
+        $questions = $this->getQuestions($targetId);
+        //Speichere die Anzahl der Fragen
+        $this->question_count = count($questions);
 
-    $targetId = $form_state->getBuildInfo()['args'][0];
+        $form['erwartungscheck']['gruppe'] = [
+          '#type' => 'markup',
+          '#markup' => '<h2>' . $questions[$this->step]->gruppe. '</h2>',
+        ];
 
-    $questions = $this->getQuestions($targetId);
+        $form['erwartungscheck']['frage'] = [
+          '#type' => 'radios',
+          '#title' => $questions[$this->step]->aussage,
+          '#options' => ['wahr' => 'wahr', 'falsch' => 'falsch'],
+          //'#required' => TRUE,
+          '#default_value' => 'wahr',
+        ];
 
-    if($questions[$this->step]->richtige_antwort == $form_state->getValue('frage')) {
-      $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
-      $this->correct_answer_flag = TRUE;
+        $form['erwartungscheck']['button'] = [
+          '#type' => 'button',
+          '#value' => 'Beantworten',
+          '#id' => 'button_beantworten',
+          '#ajax' => [
+            'callback' => '::setExplanationMessage',
+          ],
+        ];
 
-      $correct_answers = $this->correct_answer;
-    } else {
-      $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
-    }
+        $form['erwartungscheck']['explanation'] = [
+          '#type' => 'markup',
+          '#markup' => '<div class="explanation_message"></div>',
+        ];
 
-    $explanation = $questions[$this->step]->rueckmeldung;
-    $explanation_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
-
-    $response = new AjaxResponse();
-    $response->addCommand(new HtmlCommand('.explanation_message',
-      '<div class="explanation-msg" style="margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px; ">'
-            . $explanation_header .$explanation . $explanation_button . '</div>')
-    );
-    $response->addCommand(new CssCommand('#button_beantworten', ['visibility' => 'hidden']));
-
-    return $response;
-  }
-
-  public function getQuestions($targetId) {
-
-    $erwartungscheckHelper = new ErwartungscheckHelper();
-    $erwartungscheckAussagen = $erwartungscheckHelper->getErwartungcheck($targetId);
-
-    foreach ($erwartungscheckAussagen as $data) {
-      $erwartungscheckData = new Data\ErwartungscheckData();
-      $erwartungscheckData->setAussage($data['aussage']);
-      $erwartungscheckData->setGruppe($data['gruppe']); //TODO Change to term reference
-      $erwartungscheckData->setRichtigeAntwort($data['richtige_antwort']);
-      $erwartungscheckData->setRueckmeldung($data['rueckmeldung']);
-
-      $questions[] = $erwartungscheckData;
+        $form['erwartungscheck']['submit'] = [
+          '#id' => 'button_submit',
+          '#type' => 'submit',
+          '#value' => $this->t('Next'),
+        ];
+        return $form;
     }
 
-    /**
-    $erwartungscheckData = new Data\ErwartungscheckData();
+    public function submitForm(array &$form, FormStateInterface $form_state) {
+        $questions = $this->getQuestions($this->targetId);
 
-    $erwartungscheckData->setAussage('Es ist einem Studium wichtig, selbst die Initiative zu ergreifen.');
-    $erwartungscheckData->setGruppe('Vor dem Studium / allgemeines');
-    $erwartungscheckData->setRichtigeAntwort('wahr');
-    $erwartungscheckData->setRueckmeldung('Im Studium werden Sie als Student_in nicht für jeden Schritt aufgefordert oder
-    angeleitet. Ein Studium bedeutet, dass man selbst die Initiative ergriffen werden muss, um die eigenen Ziele zu erreichen.
-     Selbstständigkeit und Zuverlässigkeit sind dabei zwei wichtige Eigenschaften, die helfen, das Studium erflogreich abzuschließen.');
+        if ($questions[$this->step]->richtige_antwort === $form_state->getValue('frage')) {
+            $this->correct_answer++;
+        }
 
-    $questions[] = $erwartungscheckData;
+        if ($this->step === ($this->question_count-1)) {
 
-    $erwartungscheckData = new Data\ErwartungscheckData();
+            $percent = round($this->correct_answer / $this->question_count, 2)*100;
 
-    $erwartungscheckData->setAussage('Das Studium "Wirtschaftsinformatik" erfordert ein hohes Maß an Selbstorganisation.');
-    $erwartungscheckData->setGruppe('Vor dem Studium / allgemeines');
-    $erwartungscheckData->setRichtigeAntwort('wahr');
-    $erwartungscheckData->setRueckmeldung('Die Hausarbeiten stapeln sich, für die Klausur wurde noch nicht gelernt und eigentlich hat
-     man den Überblick über die eigenen Aufgaben und die Zeit verloren... Damit das nicht passiert, ist es wichtig, sich selbst organisieren
-      zu können und seine Zeit richtig zu managen.');
+            $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameters(['percent'=> $percent, 'check'=> 'Wirtschaftsinformatik']);
+            $form_state->setRedirectUrl($url);
 
-    $questions[] = $erwartungscheckData;
+        } else {
+            $form_state->setRebuild();
+            $this->step++;
+        }
+    }
 
-    $erwartungscheckData = new Data\ErwartungscheckData();
+    public function setExplanationMessage(array $form, FormStateInterface $form_state) {
 
-    $erwartungscheckData->setAussage('Vor dem.');
-    $erwartungscheckData->setGruppe('Vor dem Studium / allgemeines');
-    $erwartungscheckData->setRichtigeAntwort('falsch');
-    $erwartungscheckData->setRueckmeldung('Der Studien- und Lernaufwand in einem Studium ist im allgemeinen höher als
-    beispielsweise in der Schulzeit und vergleichbar mit einem Vollzeit Job. Neben dem Studienalltag mit Vorlesungen und weiteren
-    Veranstaltungen, müssen anschließend in der Freizeit Nerven und Zeit in Lernen sowie in Vor- und Nachbereitung investiert werden.
-     Während Vorlesung und Tutorien meistens in der Vorlesungszeit stattfinden, werden beispielsweise Klausuren in der
-     vorlesungsfreien Zeit geschrieben. Die umgangssprachliche Bezeichnung "Semesterferien" ist daher nicht richtig.');
+        $targetId = $form_state->getBuildInfo()['args'][0];
 
-    $questions[] = $erwartungscheckData;
+        $questions = $this->getQuestions($targetId);
 
-    $erwartungscheckData = new Data\ErwartungscheckData();
+        if ($questions[$this->step]->richtige_antwort == $form_state->getValue('frage')) {
+            $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
+            $this->correct_answer_flag = true;
 
-    $erwartungscheckData->setAussage('Das Wissen bekomme ich in Vorlesungen vermittelt, deswegen muss ich nur für Vorlesungen anwesend sein.');
-    $erwartungscheckData->setGruppe('Während des Studiums');
-    $erwartungscheckData->setRichtigeAntwort('falsch');
-    $erwartungscheckData->setRueckmeldung('Neben Vorlesungen gibt es weitere Veranstaltungsformen, die im Studium sehr wichtig sind.
-    Während Vorlesungen das Wissen eher theoretisch vermitteln, werden Tutorien und in Übungen das Gelernte praktisch umgesetzt. Ob es eine
-    Anwesenheitspflicht gibt oder nicht die – die Teilnahme lohnt sich.');
+            $correct_answers = $this->correct_answer;
+        } else {
+            $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
+        }
 
-    $questions[] = $erwartungscheckData;
+        $explanation = $questions[$this->step]->rueckmeldung;
+        $explanation_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
 
-    $erwartungscheckData = new Data\ErwartungscheckData();
+        $response = new AjaxResponse();
+        $response->addCommand(
+            new HtmlCommand('.explanation_message',
+                '<div class="explanation-msg" style="margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px; ">'
+                . $explanation_header .$explanation . $explanation_button . '</div>'
+            )
+        );
+        $response->addCommand(new CssCommand('#button_beantworten', ['visibility' => 'hidden']));
 
-    $erwartungscheckData->setAussage('Neben logischem Denken ist es im Wirtschaftsinformatik-Studium auch wichtig, kreativ zu sein.');
-    $erwartungscheckData->setGruppe('Während des Studiums');
-    $erwartungscheckData->setRichtigeAntwort('wahr');
-    $erwartungscheckData->setRueckmeldung('Verschiedene Prozesse logisch verstehen und nachvollziehen zu können ist als
-    Wirtschaftsinformatiker_in genauso wichtig, wie selbst kreative Lösungswege zu gestalten. Dabei ist es hilfreich, nicht "in Schubladen"
-    zu denken und gelernte Inhalte fächerübergreifend kombinieren und anwenden zu können.');
+        return $response;
+    }
 
-    $questions[] = $erwartungscheckData;
+    public function getQuestions($targetId) {
 
-    $erwartungscheckData = new Data\ErwartungscheckData();
+        $erwartungscheckHelper = new ErwartungscheckHelper();
+        $erwartungscheckAussagen = $erwartungscheckHelper->getErwartungcheck($targetId);
 
-    $erwartungscheckData->setAussage('In der Wirtschaftsinformatik arbeite ich nie im Team und muss keine Präsentation halten.');
-    $erwartungscheckData->setGruppe('Während des Studiums');
-    $erwartungscheckData->setRichtigeAntwort('falsch');
-    $erwartungscheckData->setRueckmeldung('Teamfähigkeit und Präsentationsstärke sind als Wirtschaftsinformatiker_in sehr
-    wichtig. Häufig werden Aufgaben im Team bearbeitet. Gemeinsam werden neue Lösungswege entwickelt und vor Publikum präsentiert.
+        foreach ($erwartungscheckAussagen as $data) {
+            $erwartungscheckData = new Data\ErwartungscheckData();
+            $erwartungscheckData->setAussage($data['aussage']);
+            $erwartungscheckData->setGruppe($data['gruppe']); //TODO Change to term reference
+            $erwartungscheckData->setRichtigeAntwort($data['richtige_antwort']);
+            $erwartungscheckData->setRueckmeldung($data['rueckmeldung']);
 
-    Wer sich dabei nicht so sicher fühlt kann dabei verschiedene Angebote und Möglichkeiten an der Universität nutzen, um diese Kompetenzen
-    zu vertiefen und aufzufrischen.');
+            $questions[] = $erwartungscheckData;
+        }
+        return $questions;
+    }
 
-    $questions[] = $erwartungscheckData;
-
-
-    $erwartungscheckData = new Data\ErwartungscheckData();
-
-    $erwartungscheckData->setAussage('It is also important to understand and speak English when studying "Wirtschaftsinformatik" at the
-    Universität Hildesheim.');
-    $erwartungscheckData->setGruppe('Während des Studiums');
-    $erwartungscheckData->setRichtigeAntwort('wahr');
-    $erwartungscheckData->setRueckmeldung('Im Bachelor-Studium "Wirtschaftsinformatik" sind Veranstaltungen (fast) alle auf deutscher
-    Sprache Ein Großteil der Fachliteratur ist jedoch in englischer Sprache verfasst. Somit ist es bereits im Bachelor notwendig, Englischkenntnisse
-    zu haben.
-
-    Im Master-Studium sind gute Englischkenntnisse noch wichtiger, da Seminare und eigene Präsentationen auf Englisch sein werden.');
-
-    $questions[] = $erwartungscheckData;
-
-    $erwartungscheckData = new Data\ErwartungscheckData();
-
-    $erwartungscheckData->setAussage('Wenn ich an einer Universität studiere Wirtschaftsinformatik studieren werde ich später im Bereich
-    "Forschung" arbeiten.
-    Universität Hildesheim.');
-    $erwartungscheckData->setGruppe('Nach dem Studium');
-    $erwartungscheckData->setRichtigeAntwort('wahr');
-    $erwartungscheckData->setRueckmeldung('Da stimmt so nicht ganz. Während die Arbeitsweisen in Universitäten und Fachhochschulen (FH)
-     früher klar getrennt waren, ist es heutzutage eher gemischt. Universitäten bieten auch praxisorientierte Anwendungen und FHs forschen.
-
-     Als Wirtschaftsinformatik-Student_in an der Universität Hildesheim sammeln Sie schon früh praktische Erfahrung und werden anwendungsorientiert
-      ausgebildet. Im Rahmen eines Praktikums erhalten Sie Einblicke in betriebliche Abläufe und Sie können von den vielen starken Kooperationspartnern
-      der Universität/des Fachbereichs profitieren. ');
-
-    $questions[] = $erwartungscheckData;
-
-    $erwartungscheckData = new Data\ErwartungscheckData();
-
-    $erwartungscheckData->setAussage('Die meisten Absolventen steigen nach dem Bachelor-Studium Wirtschaftsinformatik sofort ins Berufsleben
-    ein.');
-    $erwartungscheckData->setGruppe('Nach dem Studium');
-    $erwartungscheckData->setRichtigeAntwort('falsch');
-    $erwartungscheckData->setRueckmeldung('Hier kommt noch ein Erklärungstext hin.');
-
-    $questions[] = $erwartungscheckData;
-
-    $erwartungscheckData = new Data\ErwartungscheckData();
-
-    $erwartungscheckData->setAussage('Ich muss schon vor dem Wirtschaftsinformatik-Studium wissen, welchen Beruf ich nach dem Studium
-     ausüben möchte.');
-    $erwartungscheckData->setGruppe('Nach dem Studium');
-    $erwartungscheckData->setRichtigeAntwort('falsch');
-    $erwartungscheckData->setRueckmeldung('Hier kommt noch ein Erklärungstext hin.');
-
-    $questions[] = $erwartungscheckData;
-    **/
-    return $questions;
-  }
-
-  public function setCorrectFlag(): void {
-    $this->correct_answer_flag = true;
-  }
+    public function setCorrectFlag(): void {
+        $this->correct_answer_flag = true;
+    }
 }
