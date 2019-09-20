@@ -212,22 +212,4 @@ class ErwartungscheckController extends ControllerBase {
 
 
     }
-
-    public function zeigeCheck($check) {
-
-        $nids = \Drupal::entityQuery('node')->condition('type','studiengang')->condition('title', $check)->execute();
-
-        $studiengaenge = Node::loadMultiple($nids);
-
-        foreach ($studiengaenge as $studiengang) {
-            $studiengang->field_erwartungscheck->target_id;
-
-            $targetId = $studiengang->field_erwartungscheck->target_id;
-
-            kint($check);
-
-            $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm', $targetId, $check);
-            return $form;
-        }
-    }
 }
