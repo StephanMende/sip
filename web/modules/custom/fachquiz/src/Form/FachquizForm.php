@@ -19,36 +19,45 @@ class FachquizForm extends FormBase {
 
   protected $step = 0;
   protected $aufgaben_count;
+  protected $correct_answer_flag;
+  protected $correct_answer = 0;
+  protected $targetId;
 
   public function getFormId() {
     return 'fachquiz';
   }
 
-  public function buildForm(array $form, FormStateInterface $form_state) {
-    $aufgaben = $this->getAufgaben();
+  public function buildForm(array $form, FormStateInterface $form_state, $fachquiz_nid = null) {
+
+    //$targetId = $form_state->getBuildInfo()['args'][0];
+    $this->targetId = $fachquiz_nid;
+
+    //Hole die Aufgaben
+    $aufgaben = $this->getAufgaben($this->targetId);
+    //Setze den Aufgaben Count, dies ist wichtig um eine Multi-Step-Form zu haben
     $this->aufgaben_count = count($aufgaben);
 
+    //Erstelle die Form
+    $form['fachquiz']['aufgabe'] = [
+      '#type' => 'markup',
+      '#markup' => '<p>' . $aufgaben[$this->step]->aufgabe . '</p>',
+    ];
 
-   $form['fachquiz']['aufgabe'] = [
-     '#type' => 'markup',
-     '#markup' => '<p>' . $aufgaben[$this->step]->aufgabe . '</p>',
-   ];
+    $form['fachquiz']['bild'] = [
+      '#type' => 'markup',
+      '#markup' => '<img src="">',
+    ];
 
-   $form['fachquiz']['bild'] = [
-     '#type' => 'markup',
-     '#markup' => '<img src="">',
-   ];
+    $form['fachquiz']['frage'] = [
+      '#type' => 'markup',
+      '#markup' => $aufgaben[$this->step]->frage,
+    ];
 
-   $form['fachquiz']['frage'] = [
-     '#type' => 'markup',
-     '#markup' => $aufgaben[$this->step]->frage,
-   ];
-
-   $form['fachquiz']['antwort'] = [
-     '#type' => 'radios',
-     '#options' => $this->randomizeAntworten($aufgaben[$this->step]->antwortoptionen),
-     '#default_value' => 1,
-   ];
+    $form['fachquiz']['antwort'] = [
+      '#type' => 'radios',
+      '#options' => $this->randomizeAntworten($aufgaben[$this->step]->antwortoptionen),
+      '#default_value' => 1,
+    ];
 
     $form['fachquiz']['button'] = [
       '#type' => 'button',
@@ -59,23 +68,31 @@ class FachquizForm extends FormBase {
       ],
     ];
 
-   $form['fachquiz']['rueckmeldung'] = [
-     '#type' => 'markup',
-     '#markup' => '<div class="rueckmeldung"></div>',
-   ];
+    $form['fachquiz']['rueckmeldung'] = [
+      '#type' => 'markup',
+      '#markup' => '<div class="rueckmeldung"></div>',
+    ];
 
-   $form['fachquiz']['submit'] = [
-     '#id' => 'button_submit',
-     '#type' => 'submit',
-     '#value' => $this->t('Next'),
-   ];
+    $form['fachquiz']['submit'] = [
+      '#id' => 'button_submit',
+      '#type' => 'submit',
+      '#value' => $this->t('Next'),
+    ];
     return $form;
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // TODO: Implement submitForm() method.
+    //Erhoehe den correct_answer counter um 1, wenn eine richtige Antwort gegeben wurde
+    if ($form_state->getValue('antwort') == 0) {
+      $this->correct_answer++;
+    }
+
+    //Pruefe ob alle Fragen beantwortet wurden
     if($this->step == ($this->aufgaben_count-1)) {
-      $url = \Drupal\Core\Url::fromRoute('fachquiz.auswertung');
+      //Berechne den Prozentwert
+      $percent = round($this->correct_answer/$this->aufgaben_count,2) * 100;
+      //TODO: Gehe zur URL die den Auswertungstext anzeigt und gebe die nid des Fachquizzes mit
+      $url = \Drupal\Core\Url::fromRoute('fachquiz.auswertung')->setRouteParameters(['percent' => $percent]);
       $form_state->setRedirectUrl($url);
     } else {
       $form_state->setRebuild();
@@ -85,10 +102,11 @@ class FachquizForm extends FormBase {
   }
 
   public function setRueckmeldungMessage(array $form, FormStateInterface $form_state) {
-    $aufgaben = $this->getAufgaben();
+    $aufgaben = $this->getAufgaben($this->targetId);
     $step = $this->step;
 
     if($form_state->getValue('antwort') == 0) {
+      $this->correct_answer_flag = true;
       $rueckmeldung_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
     } else {
       $rueckmeldung_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
@@ -105,10 +123,10 @@ class FachquizForm extends FormBase {
     return $response;
   }
 
-  public function getAufgaben() {
+  public function getAufgaben($targetId) {
 
     $fachquizHelper = new FachquizHelper();
-    $fachquizAufgaben = $fachquizHelper->getFachquiz();
+    $fachquizAufgaben = $fachquizHelper->getFachquiz($targetId); //TODO: Parameter einbauen
 
     foreach ($fachquizAufgaben as $data) {
       $fachquizData = new FachquizData();
@@ -119,25 +137,6 @@ class FachquizForm extends FormBase {
 
       $aufgaben[] = $fachquizData;
     }
-    /**
-    $fachquizData = new FachquizData();
-
-    $fachquizData->setAufgabe('Ein Handwerker erhält für die Herstellung eines Stuhls 4 Euro. Im Rahmen einer 38-Stunden Woche fertigt er 323 Stühle.');
-    $fachquizData->setFrage('Wie hoch ist sein Stundenlohn?');
-    $fachquizData->setAntwortoptionen([0 => '34,00€/Stunde', 1 => '8,50€/Stunde', 2 => '9,50€/Stunde', 3 => '80,75€/Stunde']);
-    $fachquizData->setErklaerung('Zur Berechnung ...');
-
-    $aufgaben[] = $fachquizData;
-
-    $fachquizData = new FachquizData();
-
-    $fachquizData->setAufgabe('Ein Unternehmen befragt...');
-    $fachquizData->setFrage('Welche der drei Handlungsalternativen sollte das Unternehmen wählen?');
-    $fachquizData->setAntwortoptionen([0=>'Werbebudgeterhöhung', 1 => 'Preissenkung(P)', 2 => 'Sortimentserweiterung (S)']);
-    $fachquizData->setErklaerung('Zur Berechnung ...');
-
-    $aufgaben[] = $fachquizData;
-    **/
     return $aufgaben;
   }
 
