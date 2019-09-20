@@ -31,6 +31,7 @@ class ErwartungscheckForm extends FormBase {
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
+        //Hole die nid des Erwartungschecks aus dem uebergebenen Parameter
         $targetId = $form_state->getBuildInfo()['args'][0];
         $this->targetId = $form_state->getBuildInfo()['args'][0];
 
@@ -80,16 +81,17 @@ class ErwartungscheckForm extends FormBase {
     }
 
     public function submitForm(array &$form, FormStateInterface $form_state) {
+        //Hole die Fragen
         $questions = $this->getQuestions($this->targetId);
-
+        //Erhoehe den correct_answer counter um 1, wenn eine richtige Antwort gegeben wurde
         if ($questions[$this->step]->richtige_antwort === $form_state->getValue('frage')) {
             $this->correct_answer++;
         }
-
+        //Pruefe ob alle Fragen beantwortet wurden
         if ($this->step === ($this->question_count-1)) {
-
+            //Berechne den Prozentwert
             $percent = round($this->correct_answer / $this->question_count, 2)*100;
-
+            //Gehe zur URL die den Auswertungstext anzeigt und geben den Prozentwert und den Titel des Studiengange mit
             $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameters(['percent'=> $percent, 'check'=> 'Wirtschaftsinformatik']);
             $form_state->setRedirectUrl($url);
 
@@ -100,23 +102,27 @@ class ErwartungscheckForm extends FormBase {
     }
 
     public function setExplanationMessage(array $form, FormStateInterface $form_state) {
-
+        //Hole die nid des Erwartungschecks aus dem uebergebenen Parameter
         $targetId = $form_state->getBuildInfo()['args'][0];
-
+        //Hole die Fragen zum Erwartungscheck
         $questions = $this->getQuestions($targetId);
-
+        //Pruefe ob die Frage richtig beantwortet wurde, wenn ja style den Erklärungscontainer
+        //und setze die $correct_answer_flag auf true.
         if ($questions[$this->step]->richtige_antwort == $form_state->getValue('frage')) {
             $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
             $this->correct_answer_flag = true;
 
             $correct_answers = $this->correct_answer;
+        //Wenn die Frage falsch beantwortet wurde
         } else {
             $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
         }
-
+        //Gebe die Rueckmeldung zur Frage aus
         $explanation = $questions[$this->step]->rueckmeldung;
+        //Erstelle einen Weiter-Button damit in Sumbit ausgelöst wird
         $explanation_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
 
+        //Gebe eine AJAX Antwort zurück, dadurch muss die Seite nicht neu geladeen werden
         $response = new AjaxResponse();
         $response->addCommand(
             new HtmlCommand('.explanation_message',
@@ -129,6 +135,12 @@ class ErwartungscheckForm extends FormBase {
         return $response;
     }
 
+    /**
+     * Diese Funktion holt die Aussagen/Fragen des Erwartungschecks aus der Datenbank und speichert jede
+     * Aussage als Objekt in dem array $questions
+     * @param [type] $targetId
+     * @return void
+     */
     public function getQuestions($targetId) {
 
         $erwartungscheckHelper = new ErwartungscheckHelper();
