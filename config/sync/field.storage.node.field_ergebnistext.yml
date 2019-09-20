@@ -1,0 +1,19 @@
+uuid: 49ec2e12-7e01-4d5d-90c8-7fcd59233497
+langcode: de
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_ergebnistext
+field_name: field_ergebnistext
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

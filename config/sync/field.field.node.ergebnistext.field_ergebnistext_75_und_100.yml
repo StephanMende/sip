@@ -1,0 +1,21 @@
+uuid: 97f589d4-8bd7-443c-9be8-0b7c3b6347b7
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ergebnistext_75_und_100
+    - node.type.ergebnistext
+  module:
+    - text
+id: node.ergebnistext.field_ergebnistext_75_und_100
+field_name: field_ergebnistext_75_und_100
+entity_type: node
+bundle: ergebnistext
+label: 'Ergebnistext zwischen 75% und 100%'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

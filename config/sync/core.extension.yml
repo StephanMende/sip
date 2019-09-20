@@ -1,4 +1,5 @@
 module:
+  admin_toolbar: 0
   at_theme_generator: 0
   at_tools: 0
   automated_cron: 0
@@ -18,7 +19,9 @@ module:
   devel: 0
   dynamic_page_cache: 0
   editor: 0
+  entityreference_dragdrop: 0
   erwartungscheck: 0
+  erwartungscheck_ergebnis: 0
   fachquiz: 0
   field: 0
   field_ui: 0
@@ -47,6 +50,7 @@ module:
   taxonomy: 0
   text: 0
   toolbar: 0
+  toolbar_menu: 0
   tour: 0
   update: 0
   user: 0

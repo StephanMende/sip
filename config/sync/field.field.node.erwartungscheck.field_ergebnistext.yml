@@ -1,0 +1,28 @@
+uuid: f20411e4-6455-4acf-b817-989978af52c7
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ergebnistext
+    - node.type.ergebnistext
+    - node.type.erwartungscheck
+id: node.erwartungscheck.field_ergebnistext
+field_name: field_ergebnistext
+entity_type: node
+bundle: erwartungscheck
+label: Ergebnistext
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      ergebnistext: ergebnistext
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

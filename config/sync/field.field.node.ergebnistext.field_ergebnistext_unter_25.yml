@@ -1,0 +1,21 @@
+uuid: cd5f8489-fa4a-47e9-aa7e-0800a06ff475
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ergebnistext_unter_25
+    - node.type.ergebnistext
+  module:
+    - text
+id: node.ergebnistext.field_ergebnistext_unter_25
+field_name: field_ergebnistext_unter_25
+entity_type: node
+bundle: ergebnistext
+label: 'Ergebnistext < 25%'
+description: 'Geben Sie hier den Ergebnistext für ein Ergebnis unter 25% ein.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

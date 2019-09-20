@@ -1,0 +1,21 @@
+uuid: f5c63f19-afef-4b6f-abba-5895832fa54b
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fachquiz_auswertungstext
+    - node.type.fachquiz
+  module:
+    - text
+id: node.fachquiz.field_fachquiz_auswertungstext
+field_name: field_fachquiz_auswertungstext
+entity_type: node
+bundle: fachquiz
+label: Auswertungstext
+description: 'Hier können Sie den Auswertungstext für das Fachquiz eingeben. Sie können bis zu fünf unterscheidungen machen. Dies bedeutet das für 5 Unterscheidungen 20%-Schritte, für 4 Unterscheidungen 25%-Schritte, für 3 Unterscheidungen 33%-Schritte, für 2 Unterscheidungen 50%-Schritte und für gar keine Untercheidung ein 100%-Schritt bei der Auswertung erfolgt. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

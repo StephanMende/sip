@@ -1,12 +1,12 @@
-uuid: c698d9c3-cd85-4dd8-945c-ad5a738abca1
+uuid: c38339cb-2ec7-4f6b-a2b5-4e16bcdb4e89
 langcode: de
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_ausgabeerwartungscheck
-field_name: field_ausgabeerwartungscheck
+id: node.field_fachquiz_auswertungstext
+field_name: field_fachquiz_auswertungstext
 entity_type: node
 type: text_long
 settings: {  }

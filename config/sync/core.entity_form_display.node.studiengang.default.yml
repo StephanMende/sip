@@ -45,12 +45,9 @@ content:
     region: content
   field_fachquiz:
     weight: 27
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: 'Fachquiz eingeben (Vorschläge durchsuchen)'
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_buttons
     region: content
   field_studiengang_berufe:
     weight: 8

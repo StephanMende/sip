@@ -1,0 +1,61 @@
+uuid: 0eb58b77-d5cc-4e30-a10f-e06045070e41
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.ergebnistext.body
+    - field.field.node.ergebnistext.field_ergebnistext_25_und_50
+    - field.field.node.ergebnistext.field_ergebnistext_50_und_75
+    - field.field.node.ergebnistext.field_ergebnistext_75_und_100
+    - field.field.node.ergebnistext.field_ergebnistext_unter_25
+    - node.type.ergebnistext
+  module:
+    - text
+    - user
+id: node.ergebnistext.default
+targetEntityType: node
+bundle: ergebnistext
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ergebnistext_25_und_50:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ergebnistext_50_und_75:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ergebnistext_75_und_100:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ergebnistext_unter_25:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

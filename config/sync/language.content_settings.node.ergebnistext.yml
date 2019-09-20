@@ -1,0 +1,11 @@
+uuid: fea34847-82e7-4850-bea1-29538172340b
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.ergebnistext
+id: node.ergebnistext
+target_entity_type_id: node
+target_bundle: ergebnistext
+default_langcode: site_default
+language_alterable: false

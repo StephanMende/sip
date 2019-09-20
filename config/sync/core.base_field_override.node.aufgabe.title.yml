@@ -1,0 +1,18 @@
+uuid: d2986f27-760b-44b1-9e5a-7ebf78ccc1d8
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aufgabe
+id: node.aufgabe.title
+field_name: title
+entity_type: node
+bundle: aufgabe
+label: Aufgabentitel
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

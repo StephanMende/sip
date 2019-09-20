@@ -1,0 +1,21 @@
+uuid: 8c47977c-bb1a-4420-8228-031e218fc9be
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ergebnistext_50_und_75
+    - node.type.ergebnistext
+  module:
+    - text
+id: node.ergebnistext.field_ergebnistext_50_und_75
+field_name: field_ergebnistext_50_und_75
+entity_type: node
+bundle: ergebnistext
+label: 'Ergebnistext zwischen 50% und 75%'
+description: 'Geben Sie hier Ihren Text für Ergebnisse zwischen 50% und 75% ein.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

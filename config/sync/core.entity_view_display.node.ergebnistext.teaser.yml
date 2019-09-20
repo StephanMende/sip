@@ -1,17 +1,17 @@
-uuid: 281fc057-93eb-403d-ac89-406adc4f751a
+uuid: 2a77506b-8341-4bc9-aeaf-4dad12e8041b
 langcode: de
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.aussageerwwinfeins.body
-    - node.type.aussageerwwinfeins
+    - field.field.node.ergebnistext.body
+    - node.type.ergebnistext
   module:
     - text
     - user
-id: node.aussageerwwinfeins.teaser
+id: node.ergebnistext.teaser
 targetEntityType: node
-bundle: aussageerwwinfeins
+bundle: ergebnistext
 mode: teaser
 content:
   body:
@@ -28,5 +28,4 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_infotexterwartung: true
   langcode: true

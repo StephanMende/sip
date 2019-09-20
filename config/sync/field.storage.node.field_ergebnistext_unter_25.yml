@@ -1,18 +1,18 @@
-uuid: c698d9c3-cd85-4dd8-945c-ad5a738abca1
+uuid: 822c2b88-d848-4afe-816d-b895af1c3668
 langcode: de
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_ausgabeerwartungscheck
-field_name: field_ausgabeerwartungscheck
+id: node.field_ergebnistext_unter_25
+field_name: field_ergebnistext_unter_25
 entity_type: node
 type: text_long
 settings: {  }
 module: text
 locked: false
-cardinality: 5
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.fachquiz.body
     - field.field.node.fachquiz.field_fachquiz_aufgaben
+    - field.field.node.fachquiz.field_fachquiz_auswertungstext
     - node.type.fachquiz
   module:
     - text
@@ -28,6 +29,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_fachquiz_auswertungstext:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   links:
     weight: 100

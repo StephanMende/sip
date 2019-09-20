@@ -1,0 +1,22 @@
+uuid: d4399c46-52c2-4402-955c-6f83e29b42d5
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.ergebnistext
+id: node.ergebnistext.promote
+field_name: promote
+entity_type: node
+bundle: ergebnistext
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

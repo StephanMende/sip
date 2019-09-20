@@ -1,0 +1,22 @@
+uuid: 4828228e-80e5-447e-b2df-4b13ec61002e
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.ergebnistext
+  module:
+    - text
+id: node.ergebnistext.body
+field_name: body
+entity_type: node
+bundle: ergebnistext
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
