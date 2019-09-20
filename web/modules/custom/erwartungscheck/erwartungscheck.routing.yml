@@ -20,16 +20,4 @@ erwartungscheck.quiz:
   requirements:
     _access: 'TRUE'
 
-erwartungscheck.helper:
-  path: 'erwartungscheck/helper'
-  defaults:
-    _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::erwartungscheckHelp'
-  requirements:
-    _access: 'TRUE'
 
-erwartungscheck.helper2:
-  path: 'erwartungscheck/{check}'
-  defaults:
-    _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::zeigeCheck'
-  requirements:
-    _access: 'TRUE'
