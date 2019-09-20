@@ -10,7 +10,6 @@ namespace Drupal\erwartungscheck\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\erwartungscheck\Data\ErwartungscheckData;
-use Drupal\erwartungscheck\Helper\ErwartungscheckHelper;
 use Drupal\node\Entity\Node;
 use Drupal\erwartungscheck\StringGenerator\StringGenerator;
 
@@ -212,14 +211,6 @@ class ErwartungscheckController extends ControllerBase {
         return ['#markup' => '<p>Für diesen Studiengang wurde bisher kein Erwartungscheck angelegt!'];
 
 
-    }
-
-    public function erwartungscheckHelp($targetId) {
-        $erwartungscheckHelper = new ErwartungscheckHelper();
-        $aussagenData = $erwartungscheckHelper->getErwartungcheck($targetId);
-
-        dsm($aussagenData);
-        return ['#markup' => 'Hallo....'];
     }
 
     public function zeigeCheck($check) {
