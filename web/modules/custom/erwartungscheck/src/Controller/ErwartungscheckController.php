@@ -204,7 +204,7 @@ class ErwartungscheckController extends ControllerBase {
           //diese befindet sich in $erwartungchecks[0], da es nur einen Erwartungscheck pro Studiengang geben darf
           $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm', $erwartungschecks[0]);
           return $form;
-        //Falls es mehrere Erwartungschecks fuer einen Studiengang gibt, zeige eine Nachricht  
+        //Falls es mehrere Erwartungschecks fuer einen Studiengang gibt, zeige eine Nachricht
         } else if (count($erwartungschecks > 1)) {
           return ['#markup' => '<p>Für diesen Studiengang existieren mehrere Erwartungschecks!'];
         }
