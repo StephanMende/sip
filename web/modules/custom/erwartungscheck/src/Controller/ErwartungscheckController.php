@@ -181,7 +181,6 @@ class ErwartungscheckController extends ControllerBase {
 
 
     public function erwartungscheckQuiz($studiengang_nid) {
-        // TODO remove function and corresponding routing
         //Pruefe welcher Studiengang
         //$studiengang = 32; // "Erwartungscheck Wirtschaftsinformatik"
         //Pruefe ob zum Studiengang ein Erwartungscheck existiert
