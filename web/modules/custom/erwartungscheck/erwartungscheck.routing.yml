@@ -14,7 +14,7 @@ erwartungscheck.info:
     _access: 'TRUE'
 
 erwartungscheck.quiz:
-  path: 'erwartungscheck/quiz'
+  path: 'erwartungscheck/quiz/{studiengang_nid}'
   defaults:
     _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::erwartungscheckQuiz'
   requirements:

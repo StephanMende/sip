@@ -181,15 +181,37 @@ class ErwartungscheckController extends ControllerBase {
     }
 
 
-    public function erwartungscheckQuiz() {
+    public function erwartungscheckQuiz($studiengang_nid) {
         // TODO remove function and corresponding routing
         //Pruefe welcher Studiengang
-        $studiengang = 32; // "Erwartungscheck Wirtschaftsinformatik"
-        //TODO Lade Fragen
+        //$studiengang = 32; // "Erwartungscheck Wirtschaftsinformatik"
+        //Pruefe ob zum Studiengang ein Erwartungscheck existiert
+        $nid = $studiengang_nid;
+        $node_storage = \Drupal::entityManager()->getStorage('node');
+        $node = $node_storage->load($nid);
+        //Pruefe ob es sich um einen Studiengang Node handelt
+        if (!$node->bundle() === 'studiengang') {
+          \Drupal::messenger()->addMessage('Die URL weist keinen Verweis auf einen Studiengang auf.');
+        }
 
-        //TODO Gebe Fragen in einer Form aus
-        $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm', $studiengang);
-        return $form;
+        //dsm($node);
+        foreach($node->field_erwartungscheck as $reference) {
+          $erwartungschecks[] = $reference->target_id;
+        }
+        //Pruefe das es genau einen Erwartungscheck gibt
+        if (count($erwartungschecks) == 1) {
+          //Gebe Fragen in einer Form aus sende dazu die nid des referenzierten Erwartungschecks,
+          //diese befindet sich in $erwartungchecks[0], da es nur einen Erwartungscheck pro Studiengang geben darf
+          $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm', $erwartungschecks[0]);
+          return $form;
+        //Falls es mehrere Erwartungschecks fuer einen Studiengang gibt, zeige eine Nachricht  
+        } else if (count($erwartungschecks > 1)) {
+          return ['#markup' => '<p>Für diesen Studiengang existieren mehrere Erwartungschecks!'];
+        }
+        //Falls es keine Erwartungschecks gibt, zeige eine Nachricht
+        return ['#markup' => '<p>Für diesen Studiengang wurde bisher kein Erwartungscheck angelegt!'];
+
+
     }
 
     public function erwartungscheckHelp($targetId) {
