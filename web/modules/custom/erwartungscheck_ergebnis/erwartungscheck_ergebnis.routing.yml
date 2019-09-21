@@ -1,0 +1,23 @@
+erwartungscheck_ergebnis.zeige_ergebnis:
+  path: '/erwartungscheck_ergebnis/{studiengang}/{prozentzahl}'
+  defaults:
+    _title: 'Ergebnis'
+    _controller: 'Drupal\erwartungscheck_ergebnis\Controller\ErwartungscheckErgebnisController::content'
+  requirements:
+    _access: 'TRUE'
+
+erwartungscheck_ergebnis.ergebnis_nachricht:
+  path: '/erwartungscheck_ergebnis/nachricht'
+  defaults:
+    _title: 'Ergebnis'
+    _controller: 'Drupal\erwartungscheck_ergebnis\Controller\ErwartungscheckErgebnisController::nachricht'
+  requirements:
+    _access: 'TRUE'
+
+erwartungscheck_ergebnis.zeige_ergebnis.form:
+  path: '/erwartungscheck_ergebnis/form/{arg1}'
+  defaults:
+    _title: 'Ergebnis Text erstellen'
+    _form: 'Drupal\erwartungscheck_ergebnis\Form\ErwartungscheckErgebnisForm'
+  requirements:
+    _access: 'TRUE'
