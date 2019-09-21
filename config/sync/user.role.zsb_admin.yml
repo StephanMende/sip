@@ -63,3 +63,5 @@ permissions:
   - 'edit terms in antwort_erwartungscheck'
   - 'edit terms in antwortoption_fachquiz'
   - 'edit terms in gruppe_erwartungscheck'
+  - 'use text format basic_html'
+  - 'use text format full_html'
