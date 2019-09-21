@@ -44,6 +44,10 @@ class FachquizController extends ControllerBase {
       foreach($node->field_fachquiz as $reference) {
         $fachquizzes[] = $reference->target_id;
       }
+
+      // Auslesen ob nach Abschluss des Erwartungschecks ein Token ausgegeben werden soll oder nicht
+      $codeFlag = $node->field_fachquiz_token->value;
+
       //Pruefe das es genau einen Erwartungscheck gibt
       if (count($fachquizzes) == 1) {
         //Gebe Fragen in einer Form aus sende dazu die nid des referenzierten Erwartungschecks,
@@ -56,8 +60,8 @@ class FachquizController extends ControllerBase {
       } else if (count($fachquizzes > 1)) {
         foreach ($fachquizzes as $fachquiz_id) {
           $node = $node_storage->load($fachquiz_id);
-          dsm($node->title->value);
-          $links[] = Link::fromTextAndUrl($node->title->value, Url::fromRoute('fachquiz.form', ['fachquiz_nid' => $fachquiz_id]));
+          //dsm($node->title->value);
+          $links[] = Link::fromTextAndUrl($node->title->value, Url::fromRoute('fachquiz.form', ['fachquiz_nid' => $fachquiz_id, 'codeFlag' => $codeFlag]));
         }
         //Erzeuge ungeordnete Liste
         $html_list = [
@@ -72,13 +76,20 @@ class FachquizController extends ControllerBase {
       return ['#markup' => '<p>Für diesen Studiengang wurde bisher kein Erwartungscheck angelegt!'];
 
   }
-  public function auswertung($percent) {
+  public function auswertung($percent, $codeFlag) {
 
     $userData = new FachquizData();
-    $userString = $userData->randomString();
 
-    return['#markup' => 'Vielen Dank, dass Sie mitgemacht haben. Sie haben ' . $percent .'% erreicht. Ihre Auswertung wird hier auch erscheinen,
-      wir entwickeln diese Komponente gerade... Ihr Bewerbungscode: ' . $userString . ' '];
+    $markup = 'Vielen Dank, dass Sie mitgemacht haben. Sie haben ' . $percent .'% erreicht. Ihre Auswertung wird hier auch erscheinen,
+      wir entwickeln diese Komponente gerade...';
+
+    // Access Token nur generieren und ausgeben, wenn diese Option für den Studiengang aktiviert ist
+    if ($codeFlag === TRUE) {
+      $userString = $userData->randomString();
+      $markup .=  '\nIhr Bewerbungscode: ' . $userString . ' ';
+    }
+
+    return['#markup' => $markup];
   }
 
   public function helper($nid) {
