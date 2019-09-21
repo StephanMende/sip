@@ -23,11 +23,13 @@
         "drupal/admin_toolbar": "^1.27",
         "drupal/at_tools": "^3.2",
         "drupal/console": "~1.0",
-        "drupal/core": "^8.6.0",
-        "drupal/devel": "^1.2",
+        "drupal/core": "~8.7",
+        "drupal/devel": "2.x-dev",
+        "drupal/entityreference_dragdrop": "^1.1",
         "drupal/examples": "1.x-dev",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi": "^2.3",
+        "drupal/mathjax": "^2.7",
         "drupal/multi_step": "^1.1",
         "drupal/node_title_help_text": "^1.0",
         "drupal/toolbar_menu": "^2.1",
@@ -37,9 +39,6 @@
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
-    },
-    "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.6.0"
     },
     "conflict": {
         "drupal/drupal": "*"
