@@ -84,9 +84,9 @@ class FachquizController extends ControllerBase {
       wir entwickeln diese Komponente gerade...';
 
     // Access Token nur generieren und ausgeben, wenn diese Option für den Studiengang aktiviert ist
-    if ($codeFlag === TRUE) {
+    if ($codeFlag == TRUE) {
       $userString = $userData->randomString();
-      $markup .=  '\nIhr Bewerbungscode: ' . $userString . ' ';
+      $markup .=  '<br>Ihr Bewerbungscode: ' . $userString . ' ';
     }
 
     return['#markup' => $markup];
