@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.studiengang.field_studiengang_schulabschluss
     - node.type.studiengang
   module:
+    - entityreference_dragdrop
     - link
     - path
     - text
@@ -37,17 +38,22 @@ content:
   field_erwartungscheck:
     weight: 26
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: 'Erwartungscheck eingeben (Vorschläge durchsuchen)'
+      view_mode: title
+      available_entities_label: 'Verfügbare Erwartungschecks'
+      selected_entities_label: 'Ausgewählter Erwartungscheck'
+      display_filter: 0
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: entityreference_dragdrop
     region: content
   field_fachquiz:
     weight: 27
-    settings: {  }
+    settings:
+      view_mode: title
+      available_entities_label: 'Verfügbare Fachquiz'
+      selected_entities_label: 'Ausgewählte Fachquiz'
+      display_filter: 0
     third_party_settings: {  }
-    type: options_buttons
+    type: entityreference_dragdrop
     region: content
   field_studiengang_berufe:
     weight: 8
