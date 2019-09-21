@@ -27,7 +27,7 @@ class FachquizHelper {
           'aufgabe' => $aufgabe->body->value,
           'frage' => $aufgabe->field_aufgabe_frage->value,
           'antwortoptionen' => $antworten,
-          'erklaerung' => $aufgabe->field_aufgabe_erklaerung->value,
+          'erklaerung' => drupal_render($aufgabe->field_aufgabe_erklaerung->view()),
         ];
       }
     }

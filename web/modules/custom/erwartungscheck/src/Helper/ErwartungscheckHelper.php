@@ -27,8 +27,8 @@ class ErwartungscheckHelper {
 
 
         $aussagen_data[] = [
-          'aussage' => $aussage->body->value,
-          'rueckmeldung' => $aussage->field_rueckmeldung->value,
+          'aussage' => drupal_render($aussage->body->view()),
+          'rueckmeldung' => drupal_render($aussage->field_rueckmeldung->view()),
           'richtige_antwort' => $this->getTextOfTid($aussage->field_richtige_antwort->target_id),
           'gruppe' => $this->getTextOfTid($aussage->field_gruppe->target_id),
         ];
