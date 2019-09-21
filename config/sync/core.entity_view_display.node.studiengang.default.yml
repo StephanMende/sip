@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.studiengang.body
     - field.field.node.studiengang.field_ausgabeerwartungscheck
     - field.field.node.studiengang.field_erwartungscheck
+    - field.field.node.studiengang.field_erwartungscheck_token
     - field.field.node.studiengang.field_fachquiz
+    - field.field.node.studiengang.field_fachquiz_token
     - field.field.node.studiengang.field_studiengang_berufe
     - field.field.node.studiengang.field_studiengang_links
     - field.field.node.studiengang.field_studiengang_schulabschluss
@@ -42,6 +44,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_erwartungscheck_token:
+    weight: 109
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_fachquiz:
     weight: 106
     label: above
@@ -49,6 +61,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_fachquiz_token:
+    weight: 110
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_studiengang_berufe:
     weight: 102

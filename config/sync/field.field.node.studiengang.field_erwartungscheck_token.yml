@@ -1,0 +1,23 @@
+uuid: 8fe59a7c-bda1-4a11-b458-614773d321fb
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_erwartungscheck_token
+    - node.type.studiengang
+id: node.studiengang.field_erwartungscheck_token
+field_name: field_erwartungscheck_token
+entity_type: node
+bundle: studiengang
+label: 'Erwartungscheck Token ausgeben'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

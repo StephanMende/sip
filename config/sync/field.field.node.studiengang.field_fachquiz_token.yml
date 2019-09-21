@@ -1,0 +1,23 @@
+uuid: 0d40f113-b8fb-4fd0-9f3d-5aec794e0197
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fachquiz_token
+    - node.type.studiengang
+id: node.studiengang.field_fachquiz_token
+field_name: field_fachquiz_token
+entity_type: node
+bundle: studiengang
+label: 'Fachquiz Token ausgeben'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

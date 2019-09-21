@@ -20,7 +20,6 @@ class ErwartungscheckController extends ControllerBase {
         //hole den Prozent-Wert aus der URL
         $percent = $percent;
         //Generiere den Random String
-        //TODO Flag für Informatikstudiengang einfügen bzw. abgfragen
         $userData = new ErwartungscheckData();
         $userString = $userData->randomString();
 
@@ -45,9 +44,13 @@ class ErwartungscheckController extends ControllerBase {
          */
         foreach($node->field_ausgabeerwartungscheck as $item) {
           $ausgabeText[] = $item->value;
-        };
-        //Gebe den Auswertungstext aus
-        $markup = $this->erwartungcheckErgebnisAusgabe($ausgabeText, $percent, $userString, false);
+        }
+
+      // Auslesen ob nach Abschluss des Erwartungschecks ein Token ausgegeben werden soll oder nicht
+        $codeFlag = $node->field_erwartungscheck_token->value;
+
+      //Gebe den Auswertungstext aus
+        $markup = $this->erwartungcheckErgebnisAusgabe($ausgabeText, $percent, $userString, $codeFlag);
 
         return ['#markup' => $markup];
     }
