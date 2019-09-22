@@ -1,4 +1,4 @@
-admin: '0'
+admin: sip_theme
 default: sip_theme
 _core:
   default_config_hash: fOjer9hADYYnbCJVZMFZIIM1azTFWyg84ZkFDHfAbUg
