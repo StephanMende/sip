@@ -16,7 +16,7 @@ use Drupal\erwartungscheck\StringGenerator\StringGenerator;
 class ErwartungscheckController extends ControllerBase {
 
 
-    public function erwartungscheckInfo($check, $percent) {
+    public function erwartungscheckInfo($studiengang_nid, $percent) {
         //hole den Prozent-Wert aus der URL
         $percent = $percent;
         //Generiere den Random String
@@ -30,14 +30,14 @@ class ErwartungscheckController extends ControllerBase {
         * angelegt und mit dem gewuenschten Text befuellt. Hier funktioniert es nur für maximal fuenf Felder. Bisher wird
         * zwar je nach Anzahl der Infotexte in den richtigen if-Block gesprungen, allerdings wird der Feldwert nicht ausgegeben.
         */
-        $query = \Drupal::entityQuery('node')->condition('type', 'studiengang')->condition('title', $check);
-        $result = $query->execute();
+        //$query = \Drupal::entityQuery('node')->condition('type', 'studiengang')->condition('title', $check);
+        //$result = $query->execute();
         //Da entityQuery ein Array zurückgibt und wir den Wert haben wollen hier noch foreach
-        foreach ($result as $row) {
-          $nid = $row;
-        }
+        //foreach ($result as $row) {
+        //  $nid = $row;
+        // }
         //Lade den Node
-        $node = $node_storage->load($nid);
+        $node = $node_storage->load($studiengang_nid);
         /**
          * Hier wird über das Feld field_ausgabeerwartungscheck itertiert und alle Wert aus diesem
          * im array $ausgabeText gespeichert.
@@ -187,9 +187,8 @@ class ErwartungscheckController extends ControllerBase {
         //Pruefe welcher Studiengang
         //$studiengang = 32; // "Erwartungscheck Wirtschaftsinformatik"
         //Pruefe ob zum Studiengang ein Erwartungscheck existiert
-        $nid = $studiengang_nid;
         $node_storage = \Drupal::entityManager()->getStorage('node');
-        $node = $node_storage->load($nid);
+        $node = $node_storage->load($studiengang_nid);
         //Pruefe ob es sich um einen Studiengang Node handelt
         if (!$node->bundle() === 'studiengang') {
           \Drupal::messenger()->addMessage('Die URL weist keinen Verweis auf einen Studiengang auf.');
@@ -203,7 +202,7 @@ class ErwartungscheckController extends ControllerBase {
         if (count($erwartungschecks) == 1) {
           //Gebe Fragen in einer Form aus sende dazu die nid des referenzierten Erwartungschecks,
           //diese befindet sich in $erwartungchecks[0], da es nur einen Erwartungscheck pro Studiengang geben darf
-          $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm', $erwartungschecks[0]);
+          $form = \Drupal::formBuilder()->getForm('Drupal\erwartungscheck\Form\ErwartungscheckForm', $erwartungschecks[0], $studiengang_nid);
           return $form;
         //Falls es mehrere Erwartungschecks fuer einen Studiengang gibt, zeige eine Nachricht
         } else if (count($erwartungschecks > 1)) {

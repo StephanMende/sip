@@ -7,7 +7,7 @@ erwartungscheck.form:
     _access: 'TRUE'
 
 erwartungscheck.info:
-  path: 'erwartungscheck/info/{check}/{percent}'
+  path: 'erwartungscheck/info/{studiengang_nid}/{percent}'
   defaults:
     _controller: 'Drupal\erwartungscheck\Controller\ErwartungscheckController::erwartungscheckInfo'
   requirements:

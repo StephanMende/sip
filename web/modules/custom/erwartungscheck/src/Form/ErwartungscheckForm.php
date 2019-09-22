@@ -23,7 +23,7 @@ class ErwartungscheckForm extends FormBase {
     protected $correct_answer_flag;
     protected $correct_answer = 0;
     protected $targetId;
-    protected $check;
+    protected $studiengang_nid;
 
     public function getFormId() {
       return 'erwartungscheck';
@@ -35,8 +35,7 @@ class ErwartungscheckForm extends FormBase {
         $targetId = $form_state->getBuildInfo()['args'][0];
         $this->targetId = $form_state->getBuildInfo()['args'][0];
 
-        $check = $form_state->getBuildInfo()['args'][1];
-        $this->check = $form_state->getBuildInfo()['args'][1];
+        $this->studiengang_nid = $form_state->getBuildInfo()['args'][1];
 
         //kint($check);
 
@@ -92,7 +91,7 @@ class ErwartungscheckForm extends FormBase {
             //Berechne den Prozentwert
             $percent = round($this->correct_answer / $this->question_count, 2)*100;
             //Gehe zur URL die den Auswertungstext anzeigt und geben den Prozentwert und den Titel des Studiengange mit
-            $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameters(['percent'=> $percent, 'check'=> 'Wirtschaftsinformatik']);
+            $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameters(['percent'=> $percent, 'studiengang_nid'=> $this->studiengang_nid]);
             $form_state->setRedirectUrl($url);
 
         } else {
