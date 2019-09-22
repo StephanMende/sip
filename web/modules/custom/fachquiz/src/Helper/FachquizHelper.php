@@ -23,11 +23,12 @@ class FachquizHelper {
       $aufgaben = $node->get('field_fachquiz_aufgaben')->referencedEntities();
       foreach ($aufgaben as $aufgabe) {
         $antworten = $this->createAntwortOptionen($aufgabe->get('field_aufgabe_antwortoptionen')->referencedEntities());
+        $valueErklaerung = ($aufgabe->field_aufgabe_erklaerung->view());
         $aufgaben_data[] = [
           'aufgabe' => $aufgabe->body->value,
           'frage' => $aufgabe->field_aufgabe_frage->value,
           'antwortoptionen' => $antworten,
-          'erklaerung' => drupal_render($aufgabe->field_aufgabe_erklaerung->view()),
+          'erklaerung' => drupal_render($valueErklaerung),
         ];
       }
     }
