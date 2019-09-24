@@ -76,6 +76,35 @@ class FachquizController extends ControllerBase {
       return ['#markup' => '<p>Für diesen Studiengang wurde bisher kein Erwartungscheck angelegt!'];
 
   }
+
+  public function fachquizInfo($fachquiz_nid, $percent) {
+    //Hole den Prozentwert aus der URL
+    $percent = $percent;
+    $codeFlag = false; //TODO: Aendern, wenn der Config Import Fehler behoben wurde
+    //Generiere den Random String
+    $userData = new FachquizData();
+    // Access Token nur generieren und ausgeben, wenn diese Option für den Studiengang aktiviert ist
+    if ($codeFlag == TRUE) {
+      $userString = $userData->randomString();
+    }
+    //Lese die Felder aus dem Fachquiz aus
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $node = $node_storage->load($fachquiz_nid);
+    /**
+    * Hier wird über das Feld field_ausgabeerwartungscheck itertiert und alle Wert aus diesem
+    * im array $ausgabeText gespeichert.
+    */
+    foreach($node->field_fachquiz_auswertungstext as $item) {
+        $ausgabeText[] = $item->value;
+    }
+
+    //dsm($ausgabeText);
+
+    //$markup = ['#markup' => 'hhhh'];
+    $markup = $this->fachquizErgebnisAusgabe($ausgabeText, $percent, $userString, $codeFlag);
+    return ['#markup' => $markup];
+
+  }
   public function auswertung($percent, $codeFlag) {
 
     $userData = new FachquizData();
@@ -91,6 +120,119 @@ class FachquizController extends ControllerBase {
 
     return['#markup' => $markup];
   }
+
+  public function fachquizErgebnisAusgabe(array $ausgabeText, $percent, $userString, $codeFlag) {
+    //Wenn nur ein Feld angelegt wurde, wird der Wert hier ausgegeben.
+    //Test
+    if (count($ausgabeText) == 1) {
+          $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+          if ($codeFlag) {
+              $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+          }
+          $markup .= $ausgabeText[0];
+
+          return $markup;
+
+          //Wenn zwei Felder angelegt wurden, soll je nach erreichter Prozentzahl das passende Feld ausgegeben werden.
+      } else if (count($ausgabeText) == 2) {
+
+          $bereich = 0;
+
+          if ($percent > 50) {
+              $bereich = 1;
+          }
+
+
+            $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+            if ($codeFlag) {
+                $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+            }
+            $markup .= $ausgabeText[$bereich];
+
+          return $markup;
+
+      //Analog fuer drei Felder
+      } else if (count($ausgabeText) == 3) {
+
+          $bereich = 0;
+
+          if ($percent > 33 && $percent <= 66) {
+              $bereich = 1;
+          } else if ($percent > 66) {
+              $bereich = 2;
+          }
+
+
+            $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+            $markup .=  'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+            if ($codeFlag) {
+                $markup .=  '<p>Hier Ihr Code [' . $userString . ']</p>';
+            }
+            $markup .= $ausgabeText[$bereich];
+
+          return $markup;
+
+    //Analog fuer vier Felder
+      } else if (count($ausgabeText) == 4) {
+
+        $bereich = 0;
+
+        if ($percent > 25 && $percent <= 50) {
+          $bereich = 1;
+        }
+
+        else if ($percent > 50 && $percent <= 75) {
+          $bereich = 2;
+        }
+
+        else if ($percent > 75) {
+          $bereich = 3;
+        }
+
+
+
+        $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+            if ($codeFlag) {
+                $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+            }
+            $markup .= $ausgabeText[$bereich];
+          return $markup;
+
+        //Analog fuer fuenf Felder
+      } else if (count($ausgabeText) == 5) {
+
+        $bereich = 0;
+
+        if ($percent > 20 && $percent <= 40) {
+          $bereich = 1;
+        }
+
+        else if ($percent > 40 && $percent <= 60) {
+          $bereich = 2;
+        }
+
+        else if ($percent > 60 && $percent <= 80) {
+          $bereich = 3;
+        }
+
+        else if ($percent > 80) {
+          $bereich = 4;
+        }
+
+
+        $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+          if ($codeFlag) {
+              $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+          }
+          $markup .= $ausgabeText[$bereich];
+        return $markup;
+
+      } else {
+
+          $markup = '<p>Falls nichts zutrifft</p>';
+        return $markup;
+      }
+}
 
   public function helper($nid) {
     $fachzquizHelper = new FachquizHelper();

@@ -28,11 +28,11 @@ class FachquizForm extends FormBase {
     return 'fachquiz';
   }
 
-  public function buildForm(array $form, FormStateInterface $form_state, $fachquiz_nid = null, $codeFlag = null) {
+  public function buildForm(array $form, FormStateInterface $form_state, $fachquiz_nid = null) {
 
     //$targetId = $form_state->getBuildInfo()['args'][0];
     $this->targetId = $fachquiz_nid;
-    $this->codeFlag = $codeFlag;
+    //$this->codeFlag = $codeFlag;
     //Hole die Aufgaben
     $aufgaben = $this->getAufgaben($this->targetId);
     //Setze den Aufgaben Count, dies ist wichtig um eine Multi-Step-Form zu haben
@@ -93,7 +93,7 @@ class FachquizForm extends FormBase {
       //Berechne den Prozentwert
       $percent = round($this->correct_answer/$this->aufgaben_count,2) * 100;
       //TODO: Gehe zur URL die den Auswertungstext anzeigt und gebe die nid des Fachquizzes mit
-      $url = \Drupal\Core\Url::fromRoute('fachquiz.auswertung')->setRouteParameters(['percent' => $percent, 'codeFlag' => $this->codeFlag]);
+      $url = \Drupal\Core\Url::fromRoute('fachquiz.auswertung')->setRouteParameters(['percent' => $percent, 'fachquiz_nid' => $this->targetId]);
       $form_state->setRedirectUrl($url);
     } else {
       $form_state->setRebuild();

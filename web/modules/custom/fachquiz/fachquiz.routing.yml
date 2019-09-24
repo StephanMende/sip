@@ -13,16 +13,16 @@ fachquiz.quiz:
     _access: 'TRUE'
 
 fachquiz.form:
-  path: 'fachquiz/form/{fachquiz_nid}/{codeFlag}'
+  path: 'fachquiz/form/{fachquiz_nid}'
   defaults:
     _form: 'Drupal\fachquiz\Form\FachquizForm'
   requirements:
     _permission: 'access content'
 
 fachquiz.auswertung:
-  path: 'fachquiz/auswertung/{percent}/{codeFlag}'
+  path: 'fachquiz/auswertung/{percent}/{fachquiz_nid}'
   defaults:
-    _controller: 'Drupal\fachquiz\Controller\FachquizController::auswertung'
+    _controller: 'Drupal\fachquiz\Controller\FachquizController::fachquizInfo'
   requirements:
     _permission: 'access content'
 
