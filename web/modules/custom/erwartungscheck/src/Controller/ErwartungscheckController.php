@@ -47,8 +47,8 @@ class ErwartungscheckController extends ControllerBase {
         }
 
       // Auslesen ob nach Abschluss des Erwartungschecks ein Token ausgegeben werden soll oder nicht
-        $codeFlag = $node->field_erwartungscheck_token->value;
-
+      //  $codeFlag = $node->field_erwartungscheck_token->value; //TODO: Auskommentieren, wenn der Config Import Fehler behoben wurde
+          $codeFlag = false;
       //Gebe den Auswertungstext aus
         $markup = $this->erwartungcheckErgebnisAusgabe($ausgabeText, $percent, $userString, $codeFlag);
 
