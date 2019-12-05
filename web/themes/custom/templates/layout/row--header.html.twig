@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Row template suggestion to display the header row.
+ *
+ * Available variables:
+ * - row_name: the name of the row.
+ * - regions: contains regions data to appear in this row.
+ * - row_attributes: HTML attributes for the row outer wrapper
+ * - wrapper_attributes: HTML attributes for the row inner wrapper.
+ * - container_attributes: HTML attributes for the row container.
+ * - row_prefix: insert content/markup etc before the row.
+ * - row_suffix: insert content/markup etc after the row.
+ *
+ * @see at_core_preprocess_row()
+ */
+#}
+
+<div class="zsb-container">
+<div class="navbar-brand">
+  <a href="https://www.uni-hildesheim.de/">
+    <img class="logo-main" src="/{{ directory }}/images/logo-uni.svgz.svg" alt="Logo der Stiftung Universität Hildesheim">
+  </a>
+</div>
+</div>
+
+
+<div class="brand-border">
+
+  <ul class="zsb-container">
+    <li class="home"><a href="https://www.uni-hildesheim.de/zsb/"><span class="sr-only">Zur Homepage</span><span class="icon-home" aria-hidden="true"></span></a></li>
+    <li class="first-brand onlyinst"><a href="https://www.uni-hildesheim.de/zsb/">Zentrale Studienberatung (ZSB)</a></li>
+  </ul>
+
+</div>
+
+<div class="zsb-container">
+  <img id="sip-image" src="/{{ directory }}/images/studieninformationsportal-sip.png"  alt="Studieninformationsportal" title="Studieninformationsportal" style="">
+</div>
+
+
+ {# <div{{ row_attributes }}>
+    {{ row_prefix }}
+    <header{{ wrapper_attributes }}>
+      <div{{ container_attributes }}>
+        {{ regions }}
+      </div>
+    </header>
+    {{ row_suffix }}
+  </div>#}
