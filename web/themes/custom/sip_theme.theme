@@ -161,7 +161,29 @@ function sip_theme_preprocess_comment(&$variables) {
 /**
  * Preprocess variables for block templates.
  */
-/* -- Delete this line if you want to use this function
 function sip_theme_preprocess_block(&$variables) {
+
+  // as each tool (Studyfinder, Erwartungscheck, Fachquiz) is composed of
+  // completely separate forms we identify the tools by their defined route
+  // names and set their headers accordingly.
+  $currentRouteName = \Drupal::routeMatch()->getRouteName();
+  $callingModule = explode('.', $currentRouteName)[0];
+
+  // set all the different modules that create output for the tools
+  $routesStudyfinder = ['vorbildung', 'schulische_vorbildung', 'berufliche_vorbildung'];
+  $routesFachquiz = ['fachquiz'];
+  $routesErwartungscheck = ['erwartungscheck', 'erwartungscheck_ergebnis'];
+
+  if (in_array($callingModule, $routesStudyfinder)) {
+    $variables['tool_title'] = t('Studyfinder');
+    $variables['tool_class'] = 'studyfinder';
+  } else if (in_array($callingModule, $routesFachquiz)) {
+    $variables['tool_title'] = t('Fachquiz');
+    $variables['tool_class'] = 'fachquiz';
+  } else if (in_array($callingModule, $routesErwartungscheck)) {
+    $variables['tool_title'] = t('Erwartungscheck');
+    $variables['tool_class'] = 'erwartungscheck';
+  }
+
 }
 // */
