@@ -14,7 +14,7 @@ dependencies:
     - field.field.node.studiengang.field_studiengang_schulabschluss
     - node.type.studiengang
   module:
-    - entityreference_dragdrop
+    - inline_entity_form
     - link
     - path
     - text
@@ -40,45 +40,40 @@ content:
   field_erwartungscheck:
     weight: 11
     settings:
-      view_mode: title
-      available_entities_label: 'Verfügbare Erwartungschecks'
-      selected_entities_label: 'Ausgewählter Erwartungscheck'
-      display_filter: 0
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsed: false
+      allow_duplicate: false
     third_party_settings: {  }
-    type: entityreference_dragdrop
-    region: content
-  field_erwartungscheck_token:
-    weight: 13
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
+    type: inline_entity_form_complex
     region: content
   field_fachquiz:
-    weight: 14
-    settings:
-      view_mode: title
-      available_entities_label: 'Verfügbare Fachquiz'
-      selected_entities_label: 'Ausgewählte Fachquiz'
-      display_filter: 0
+    weight: 13
+    settings: {  }
     third_party_settings: {  }
-    type: entityreference_dragdrop
-    region: content
-  field_fachquiz_token:
-    weight: 15
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
+    type: options_buttons
     region: content
   field_studiengang_berufe:
     weight: 8
     settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Beruf
+      label_plural: Berufe
+      collapsible: true
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
-      placeholder: 'Zugehörigen Beruf eingeben (Vorschläge durchsuchen)'
+      collapsed: false
+      allow_duplicate: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     region: content
   field_studiengang_links:
     weight: 10
@@ -91,11 +86,18 @@ content:
   field_studiengang_schulabschluss:
     weight: 9
     settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Schulabschluss
+      label_plural: Schulabschluss
+      collapsible: true
+      allow_new: true
+      allow_existing: true
       match_operator: CONTAINS
-      size: 60
-      placeholder: 'Zugehörigen Schulabschluss eingeben (Vorschläge durchsuchen)'
+      collapsed: false
+      allow_duplicate: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     region: content
   langcode:
     type: language_select
@@ -150,3 +152,5 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_erwartungscheck_token: true
+  field_fachquiz_token: true

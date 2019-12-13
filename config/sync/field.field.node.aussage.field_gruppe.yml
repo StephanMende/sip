@@ -12,7 +12,7 @@ entity_type: node
 bundle: aussage
 label: Gruppe
 description: 'Hier wählen Sie die Gruppe, welcher die Aussage zugeordnet werden soll, aus.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

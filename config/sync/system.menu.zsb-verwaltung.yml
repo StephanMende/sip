@@ -1,0 +1,8 @@
+uuid: e1f85690-2108-4c0e-b153-8bb8bb7a2108
+langcode: de
+status: true
+dependencies: {  }
+id: zsb-verwaltung
+label: 'ZSB Verwaltung'
+description: ''
+locked: false

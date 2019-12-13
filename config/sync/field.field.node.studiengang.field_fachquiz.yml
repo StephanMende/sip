@@ -10,8 +10,8 @@ id: node.studiengang.field_fachquiz
 field_name: field_fachquiz
 entity_type: node
 bundle: studiengang
-label: fachquiz
-description: ''
+label: Fachquizzes
+description: 'Selektieren Sie hier alle Fachquizzes, die diesem Studiengang zugeordnet werden sollen.'
 required: false
 translatable: false
 default_value: {  }

@@ -1,0 +1,9 @@
+uuid: 658410d8-b9b3-47fd-bd2f-bb6ebcac8089
+langcode: de
+status: true
+dependencies: {  }
+id: zsb_verwaltung
+label: 'ZSB Verwaltung'
+weight: null
+menu: zsb-verwaltung
+rewrite_label: false

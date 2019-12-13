@@ -10,8 +10,8 @@ id: node.studiengang.field_erwartungscheck
 field_name: field_erwartungscheck
 entity_type: node
 bundle: studiengang
-label: erwartungscheck
-description: ''
+label: Erwartungscheck
+description: 'Hier können Sie den Erwartungscheck zum Studiengang anlegen und bearbeiten.'
 required: false
 translatable: false
 default_value: {  }
@@ -23,6 +23,6 @@ settings:
       erwartungscheck: erwartungscheck
     sort:
       field: _none
-    auto_create: false
+    auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

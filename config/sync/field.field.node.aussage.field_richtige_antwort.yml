@@ -12,7 +12,7 @@ entity_type: node
 bundle: aussage
 label: 'Richtige Antwort'
 description: 'Hier wählen Sie die für die Aussage richtige Antwort.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

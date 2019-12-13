@@ -14,15 +14,6 @@ targetEntityType: node
 bundle: erwartungscheck
 mode: default
 content:
-  field_ergebnistext:
-    weight: 26
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_erwartungscheck_aussagen:
     weight: 1
     settings:
@@ -50,6 +41,7 @@ content:
 hidden:
   body: true
   created: true
+  field_ergebnistext: true
   langcode: true
   path: true
   promote: true

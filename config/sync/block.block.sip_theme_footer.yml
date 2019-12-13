@@ -1,6 +1,6 @@
 uuid: 5bdd04f5-5579-4982-99f4-07a7b0dd5798
 langcode: de
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -23,4 +23,5 @@ settings:
   label_display: '0'
   level: 1
   depth: 0
+  expand_all_items: false
 visibility: {  }

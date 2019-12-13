@@ -1,18 +1,16 @@
-uuid: 07b0fd3d-2ac6-46d7-bfc5-4d17e72647bd
+uuid: a8f43ea6-58e6-4369-aa7f-29e58a6057dd
 langcode: de
 status: true
 dependencies:
   module:
     - node
+    - text
 id: node.field_aufgabe_frage
 field_name: field_aufgabe_frage
 entity_type: node
-type: string
-settings:
-  max_length: 1000
-  is_ascii: false
-  case_sensitive: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true
