@@ -20,7 +20,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/adaptivetheme": "^3.1",
-        "drupal/admin_toolbar": "^1.27",
+        "drupal/admin_toolbar": "2.x",
         "drupal/at_tools": "^3.2",
         "drupal/console": "~1.0",
         "drupal/core": "~8.7",
@@ -29,7 +29,6 @@
         "drupal/examples": "1.x-dev",
         "drupal/field_group": "^1.0",
         "drupal/inline_entity_form": "^1.0@RC",
-        "drupal/jsonapi": "^2.3",
         "drupal/mathjax": "^2.7",
         "drupal/multi_step": "^1.1",
         "drupal/node_title_help_text": "^1.0",
@@ -87,5 +86,8 @@
                 ".gitattributes": "../.gitattributes"
             }
         }
+    },
+    "require-dev": {
+        "drupal/core-dev": "^8.8"
     }
 }
