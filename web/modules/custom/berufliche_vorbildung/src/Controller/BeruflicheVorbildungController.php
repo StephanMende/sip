@@ -29,6 +29,7 @@ class BeruflicheVorbildungController extends ControllerBase
             //load the studiengang nodes
             $nodes = node_load_multiple($studiengang_nids);
             //create content to show the Studiengaenge
+            $text = '<p>Folgenden Studiengang können wir Ihnen auf Grund Ihrer beruflichen Vorbildung empfehlen:<br><strong>Hinweis:</strong>Dies ist nur eine Empfehlung, ob Sie letztendlich zugelassen werden entscheidet die Universität.</p>';
             foreach ($nodes as $node) {
                 //ksm($node->get('body')->getString());
                 /**
@@ -38,7 +39,7 @@ class BeruflicheVorbildungController extends ControllerBase
                 ];
                 **/
                 $studiengang_titles[] = [
-                  '#markup' => '<p><a href="#">' .  $node->getTitle() . '</a></p>',
+                  '#markup' => $text . '<p><a href="#">' .  $node->getTitle() . '</a></p>',
                 ];
 
 

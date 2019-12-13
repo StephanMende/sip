@@ -1,0 +1,7 @@
+name: Allow site to be iframed
+description: Watch out
+type: module
+package: Security
+configure: allow_iframed_site.settings
+core: 8.x
+
