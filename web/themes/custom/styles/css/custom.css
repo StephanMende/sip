@@ -28,3 +28,22 @@
   src: url('../../fonts/unihildesheim.woff') format('woff')
 }
 
+/**
+ * Clipboard.js styles
+ */
+input.clipboardjs {
+  padding: 7px 8px;
+  margin-top: 5px;
+  width: 700px;
+  min-height: 32px;
+}
+
+.clipboardjs-button {
+  margin-top: 5px;
+}
+
+.clipboardjs-button > img {
+  height: 16px;
+  width: 14px;
+}
+

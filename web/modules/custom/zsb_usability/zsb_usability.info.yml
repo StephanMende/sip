@@ -1,0 +1,8 @@
+name: zsb_usability
+type: module
+description: Various usability improvements to ZSB admin tools.
+package: zsb
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - clipboardjs

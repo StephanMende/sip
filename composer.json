@@ -13,6 +13,19 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "zenorocha/clipboard.js",
+                "version": "v1.7.1",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/zenorocha/clipboard.js.git",
+                    "type": "git",
+                    "reference": "tags/v1.7.1"
+                }
+            }
         }
     ],
     "require": {
@@ -22,6 +35,7 @@
         "drupal/adaptivetheme": "^3.1",
         "drupal/admin_toolbar": "2.x",
         "drupal/at_tools": "^3.2",
+        "drupal/clipboardjs": "^1.0@alpha",
         "drupal/console": "~1.0",
         "drupal/core": "~8.7",
         "drupal/devel": "2.x-dev",
@@ -38,7 +52,8 @@
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+        "zenorocha/clipboard.js": "^1.7"
     },
     "conflict": {
         "drupal/drupal": "*"

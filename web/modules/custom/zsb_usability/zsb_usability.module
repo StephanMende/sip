@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for zsb_usability module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function zsb_usability_studiengang_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+
+  $asd = 0;
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function zsb_usability_entity_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+
+
+  /*if ($entity->bundle() === 'studiengang') {
+
+    $studiengangId = $entity->id();
+    $host = \Drupal::request()->getSchemeAndHttpHost();
+
+    $fachquiz = $entity->get('field_fachquiz')->getValue();
+    $erwartungscheck = $entity->get('field_erwartungscheck')->getValue();
+
+    if (count($fachquiz) >= 1) {
+      $quizUrl = $host . '/fachquiz/quiz/' . $studiengangId;
+
+      $build['copy_fachquiz'] = array(
+        '#theme' => 'clipboardjs',
+        '#text' => $quizUrl,
+        '#alert_style' => 'tooltip',
+        '#alert_text' => 'Copy CopyCopyCopy',
+        '#button_label' => 'Click'
+      );
+    }
+
+    if (count($erwartungscheck) >= 1) {
+      $quizUrl = $host . '/erwartungscheck/quiz/' . $studiengangId;
+
+      $build['copy_erwartungscheck'] = array(
+        '#theme' => 'clipboardjs',
+        '#text' => $quizUrl,
+        '#alert_style' => 'tooltip',
+        '#alert_text' => 'Copy CopyCopyCopy',
+        '#button_label' => 'Click'
+      );
+    }
+
+
+  }*/
+}
