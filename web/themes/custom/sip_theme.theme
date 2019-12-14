@@ -174,10 +174,6 @@ function sip_theme_preprocess_block(&$variables) {
   $routesFachquiz = ['fachquiz'];
   $routesErwartungscheck = ['erwartungscheck', 'erwartungscheck_ergebnis'];
   $urlParameters = \Drupal::routeMatch()->getParameters();
-  $studiengangNid = $urlParameters->get('studiengang_nid');
-  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
-  $studiengangNode = $node_storage->load($studiengangNid);
-  $studiengangTitle = $studiengangNode->getTitle();
 
 
 
@@ -185,9 +181,19 @@ function sip_theme_preprocess_block(&$variables) {
     $variables['tool_title'] = t('Studyfinder');
     $variables['tool_class'] = 'studyfinder';
   } else if (in_array($callingModule, $routesFachquiz)) {
-    $variables['tool_title'] = t('Fachquiz @studiengang', ['@studiengang' => $studiengangTitle]);
+    $fachquizNid = $urlParameters->get('fachquiz_nid');
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $fachquizNode = $node_storage->load($fachquizNid);
+    $fachquizTitle = $fachquizNode->getTitle();
+
+    $variables['tool_title'] = t($fachquizTitle);
     $variables['tool_class'] = 'fachquiz';
   } else if (in_array($callingModule, $routesErwartungscheck)) {
+    $studiengangNid = $urlParameters->get('studiengang_nid');
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $studiengangNode = $node_storage->load($studiengangNid);
+    $studiengangTitle = $studiengangNode->getTitle();
+
     $variables['tool_title'] = t('Erwartungscheck @studiengang', ['@studiengang' => $studiengangTitle]);
     $variables['tool_class'] = 'erwartungscheck';
   }
