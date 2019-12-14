@@ -173,15 +173,22 @@ function sip_theme_preprocess_block(&$variables) {
   $routesStudyfinder = ['vorbildung', 'schulische_vorbildung', 'berufliche_vorbildung'];
   $routesFachquiz = ['fachquiz'];
   $routesErwartungscheck = ['erwartungscheck', 'erwartungscheck_ergebnis'];
+  $urlParameters = \Drupal::routeMatch()->getParameters();
+  $studiengangNid = $urlParameters->get('studiengang_nid');
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  $studiengangNode = $node_storage->load($studiengangNid);
+  $studiengangTitle = $studiengangNode->getTitle();
+
+
 
   if (in_array($callingModule, $routesStudyfinder)) {
     $variables['tool_title'] = t('Studyfinder');
     $variables['tool_class'] = 'studyfinder';
   } else if (in_array($callingModule, $routesFachquiz)) {
-    $variables['tool_title'] = t('Fachquiz');
+    $variables['tool_title'] = t('Fachquiz @studiengang', ['@studiengang' => $studiengangTitle]);
     $variables['tool_class'] = 'fachquiz';
   } else if (in_array($callingModule, $routesErwartungscheck)) {
-    $variables['tool_title'] = t('Erwartungscheck');
+    $variables['tool_title'] = t('Erwartungscheck @studiengang', ['@studiengang' => $studiengangTitle]);
     $variables['tool_class'] = 'erwartungscheck';
   }
 
