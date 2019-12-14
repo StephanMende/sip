@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.studiengang.body
     - field.field.node.studiengang.field_ausgabeerwartungscheck
     - field.field.node.studiengang.field_erwartungscheck
+    - field.field.node.studiengang.field_erwartungscheck_token
     - field.field.node.studiengang.field_fachquiz
+    - field.field.node.studiengang.field_fachquiz_token
     - field.field.node.studiengang.field_studiengang_berufe
     - field.field.node.studiengang.field_studiengang_links
     - field.field.node.studiengang.field_studiengang_schulabschluss
@@ -15,6 +17,7 @@ dependencies:
     - link
     - text
     - user
+    - zsb_usability
 id: node.studiengang.default
 targetEntityType: node
 bundle: studiengang
@@ -40,7 +43,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: zsb_link
     region: content
   field_fachquiz:
     weight: 106
@@ -48,7 +51,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    type: zsb_link
     region: content
   field_studiengang_berufe:
     weight: 102
@@ -80,8 +83,10 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
+  field_erwartungscheck_token: true
+  field_fachquiz_token: true
   langcode: true

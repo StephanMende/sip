@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\r\n/berufliche-vorbildung*\r\n/erwartungscheck*\r\n/erwartungscheck_ergebnis*\r\n/fachquiz*\r\n/schulische-vorbildung*\r\n/vorbildung*"
+    pages: "<front>\r\n/berufliche-vorbildung/*\r\n/erwartungscheck/*\r\n/erwartungscheck_ergebnis/*\r\n/fachquiz/*\r\n/schulische-vorbildung/*\r\n/vorbildung/*"
     negate: false
     context_mapping: {  }
