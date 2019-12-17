@@ -11,8 +11,8 @@ id: node.aufgabe.field_aufgabe_erklaerung
 field_name: field_aufgabe_erklaerung
 entity_type: node
 bundle: aufgabe
-label: Erklärung
-description: ''
+label: 'Erklärung bei falscher Antwort'
+description: 'Feedback / Erklärung wenn eine <b>falsche</b> Antwort gegeben wird'
 required: false
 translatable: false
 default_value: {  }

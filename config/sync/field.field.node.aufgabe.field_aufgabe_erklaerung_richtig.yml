@@ -1,0 +1,21 @@
+uuid: 56601196-279c-4045-afd0-744f258847a2
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_aufgabe_erklaerung_richtig
+    - node.type.aufgabe
+  module:
+    - text
+id: node.aufgabe.field_aufgabe_erklaerung_richtig
+field_name: field_aufgabe_erklaerung_richtig
+entity_type: node
+bundle: aufgabe
+label: 'Erklärung bei richtiger Antwort'
+description: 'Feedback / Erklärung wenn eine <b>richtige</b> Antwort gegeben wird'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

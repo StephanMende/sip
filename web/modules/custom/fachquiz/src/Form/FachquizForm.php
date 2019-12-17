@@ -113,9 +113,13 @@ class FachquizForm extends FormBase {
       $rueckmeldung_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
     }
 
-    $rueckmeldung = $aufgaben[$this->step]->erklaerung;
+    if ($this->correct_answer_flag === true) {
+      $rueckmeldung = $aufgaben[$this->step]->erklaerungRichtig;
+    } else {
+      $rueckmeldung = $aufgaben[$this->step]->erklaerungFalsch;
+    }
+
     $rueckmeldung_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
-   ;
 
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.rueckmeldung', '<div class="explanation-msg" style="margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px;">' . $rueckmeldung_header . $rueckmeldung . $rueckmeldung_button  . '</div>'));
@@ -134,7 +138,8 @@ class FachquizForm extends FormBase {
       $fachquizData->setAufgabe($data['aufgabe']);
       $fachquizData->setFrage($data['frage']);
       $fachquizData->setAntwortoptionen($data['antwortoptionen']);
-      $fachquizData->setErklaerung($data['erklaerung']);
+      $fachquizData->setErklaerungFalsch($data['erklaerungFalsch']);
+      $fachquizData->setErklaerungRichtig($data['erklaerungRichtig']);
 
       $aufgaben[] = $fachquizData;
     }
