@@ -15,7 +15,9 @@ class FachquizData {
   public $bild;
   public $frage;
   public $antwortoptionen;
-  public $erklaerung;
+  public $erklaerungFalsch;
+  public $erklaerungRichtig;
+
 
   /**
    * @return mixed
@@ -76,15 +78,29 @@ class FachquizData {
   /**
    * @return mixed
    */
-  public function getErklaerung() {
-    return $this->erklaerung;
+  public function getErklaerungFalsch() {
+    return $this->erklaerungFalsch;
   }
 
   /**
-   * @param mixed $erklaerung
+   * @return mixed
    */
-  public function setErklaerung($erklaerung) {
-    $this->erklaerung = $erklaerung;
+  public function getErklaerungRichtig() {
+    return $this->erklaerungRichtig;
+  }
+
+  /**
+   * @param mixed $erklaerungFalsch
+   */
+  public function setErklaerungFalsch($erklaerungFalsch): void {
+    $this->erklaerungFalsch = $erklaerungFalsch;
+  }
+
+  /**
+   * @param mixed $erklaerungRichtig
+   */
+  public function setErklaerungRichtig($erklaerungRichtig): void {
+    $this->erklaerungRichtig = $erklaerungRichtig;
   }
 
   function randomString($length = 8) {
