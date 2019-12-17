@@ -1,0 +1,19 @@
+uuid: ea0e1ec5-89fd-464b-8407-c2913a046176
+langcode: de
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_aufgabe_erklaerung_richtig
+field_name: field_aufgabe_erklaerung_richtig
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.aufgabe.body
     - field.field.node.aufgabe.field_aufgabe_antwortoptionen
     - field.field.node.aufgabe.field_aufgabe_erklaerung
+    - field.field.node.aufgabe.field_aufgabe_erklaerung_richtig
     - field.field.node.aufgabe.field_aufgabe_frage
     - node.type.aufgabe
   module:
@@ -27,6 +28,14 @@ content:
     region: content
   field_aufgabe_erklaerung:
     weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_aufgabe_erklaerung_richtig:
+    weight: 26
     settings:
       rows: 5
       placeholder: ''

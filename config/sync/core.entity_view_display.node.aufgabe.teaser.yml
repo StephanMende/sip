@@ -5,6 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.aufgabe.body
+    - field.field.node.aufgabe.field_aufgabe_antwortoptionen
+    - field.field.node.aufgabe.field_aufgabe_erklaerung
+    - field.field.node.aufgabe.field_aufgabe_erklaerung_richtig
+    - field.field.node.aufgabe.field_aufgabe_frage
     - node.type.aufgabe
   module:
     - text
@@ -28,4 +32,8 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_aufgabe_antwortoptionen: true
+  field_aufgabe_erklaerung: true
+  field_aufgabe_erklaerung_richtig: true
+  field_aufgabe_frage: true
   langcode: true
