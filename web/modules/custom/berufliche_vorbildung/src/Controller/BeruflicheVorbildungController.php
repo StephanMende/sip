@@ -12,6 +12,7 @@ use Drupal\Core\Render\Markup;
 
 class BeruflicheVorbildungController extends ControllerBase
 {
+    const SETTINGS = 'berufliche_vorbildung.settings';
 
     public function showStudiengaenge($beruf_id) {
 
@@ -30,6 +31,8 @@ class BeruflicheVorbildungController extends ControllerBase
             $nodes = node_load_multiple($studiengang_nids);
             //create content to show the Studiengaenge
             $text = '<p>Folgenden Studiengang können wir Ihnen auf Grund Ihrer beruflichen Vorbildung empfehlen:<br><strong>Hinweis:</strong>Dies ist nur eine Empfehlung, ob Sie letztendlich zugelassen werden entscheidet die Universität.</p>';
+            $config = $this->config(static::SETTINGS);
+            $text = $config->get('berufliche_vorbildung_studiengang_text');
             foreach ($nodes as $node) {
                 //ksm($node->get('body')->getString());
                 /**
@@ -38,15 +41,20 @@ class BeruflicheVorbildungController extends ControllerBase
                     'beschreibung' => check_markup($node->get('body')->value, $node->get('body')->format),
                 ];
                 **/
-                $studiengang_titles[] = [
-                  '#markup' => $text . '<p><a href="#">' .  $node->getTitle() . '</a></p>',
-                ];
-
-
-
+                $studiengang_titles[] = $node->getTitle();
             }
 
-            return $studiengang_titles;
+            $item_list = [
+                '#theme' => 'item_list',
+                '#items' => $studiengang_titles,
+            ];
+
+            $html = '<p>' . $text . '</p>';
+            $html .= \Drupal::service('renderer')->render($item_list);
+
+
+
+            return ['#markup' => $html];
             /**
             return ['#theme' => 'show_studiengaenge',
                 '#studiengang_name' => $this->t('Wirtschaftsinformatik'),
