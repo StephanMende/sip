@@ -21,4 +21,4 @@ berufliche_vorbildung.settings:
     _form: '\Drupal\berufliche_vorbildung\Form\BeruflicheVorbildungConfigForm'
     _title: 'Berufliche Vorbildung Settings'
   requirements:
-    _permission: 'administer site configuration'
+    _role: 'zsb_admin'
