@@ -41,18 +41,28 @@ class BeruflicheVorbildungController extends ControllerBase
                     'beschreibung' => check_markup($node->get('body')->value, $node->get('body')->format),
                 ];
                 **/
-                $studiengang_titles[] = $node->getTitle();
+                $studiengang_titles[] =  ['title' => $node->getTitle(), 'link' => $node->get('field_studiengang_links')->uri] ;
             }
 
+            sort($studiengang_titles);
+
+            $html = '<p>' . $text . '</p><ul>';
+            foreach($studiengang_titles as $studiengang_title) {
+                $html .= '<li><a target="_blank" href="' . $studiengang_title['link'] . '">' . $studiengang_title['title'] . '</a></li>';
+            }
+
+            $html .= '</ul>';
+
+            /*
             $item_list = [
                 '#theme' => 'item_list',
                 '#items' => $studiengang_titles,
+                '#attributes' => ['class' => 'studiengaenge_berufliche_vorbildung'],
             ];
 
-            $html = '<p>' . $text . '</p>';
             $html .= \Drupal::service('renderer')->render($item_list);
 
-
+            */
 
             return ['#markup' => $html];
             /**
