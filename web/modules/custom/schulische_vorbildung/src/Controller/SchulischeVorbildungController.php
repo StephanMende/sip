@@ -36,6 +36,12 @@ class SchulischeVorbildungController extends ControllerBase
         $result = $this->database_helper->getStudiengangBySchulabschlussId($schulabschluss_nid);
         //ksm($result);
 
+        $text = '<p>Folgenden Studiengang können wir Ihnen auf Grund Ihrer schulischen Vorbildung empfehlen:<br/><strong>Hinweis:</strong>Dies
+                              ist nur eine Empfehlung. Ob Sie letztlich zugelassen werden entscheidet die Universität.</p>';
+        $studiengang_titles[] = [
+          '#markup' => $text,
+        ];
+
         if(!is_null($result)) {
             //collect all nids of studiengang content
             foreach ($result as $studiengang) {
@@ -45,8 +51,7 @@ class SchulischeVorbildungController extends ControllerBase
             $nodes = node_load_multiple($studiengang_nids);
             //ksm($nodes);
             //create content to show the Studiengaenge
-            $text = '<p>Folgenden Studiengang können wir Ihnen auf Grund Ihrer schulischen Vorbildung empfehlen:<br/><strong>Hinweis:</strong>Dies 
-                            ist nur eine Empfehlung. Ob Sie letztlich zugelassen werden entscheidet die Universität.</p>';
+
             //$markup = $text;
             foreach ($nodes as $node) {
                 //ksm($node->get('body')->getString());
@@ -58,7 +63,7 @@ class SchulischeVorbildungController extends ControllerBase
                  * */
 
               $studiengang_titles[] = [
-                 '#markup' => $text . '<p><a href="'. $node->field_studiengang_links->uri .'">' .  $node->getTitle() . '</a></p>',
+                 '#markup' => '<p><a href="'. $node->field_studiengang_links->uri .'">' .  $node->getTitle() . '</a></p>',
               ];
             }
             /**
