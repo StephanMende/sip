@@ -46,7 +46,7 @@ class BeruflicheVorbildungController extends ControllerBase
 
             sort($studiengang_titles);
 
-            $html = '<p>' . $text . '</p><ul>';
+            $html = '<p>' . $text['value'] . '</p><ul>';
             foreach($studiengang_titles as $studiengang_title) {
                 $html .= '<li><a target="_blank" href="' . $studiengang_title['link'] . '">' . $studiengang_title['title'] . '</a></li>';
             }

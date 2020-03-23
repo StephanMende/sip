@@ -34,13 +34,9 @@ class SchulischeVorbildungController extends ControllerBase
 
     public function showStudiengaenge($schulabschluss_nid) {
         $result = $this->database_helper->getStudiengangBySchulabschlussId($schulabschluss_nid);
-        //ksm($result);
 
-        $text = '<p>Folgenden Studiengang können wir Ihnen auf Grund Ihrer schulischen Vorbildung empfehlen:<br/><strong>Hinweis:</strong>Dies
-                              ist nur eine Empfehlung. Ob Sie letztlich zugelassen werden entscheidet die Universität.</p>';
-        $studiengang_titles[] = [
-          '#markup' => $text,
-        ];
+        $config = $this->config('berufliche_vorbildung.settings');
+        $text = $config->get('schulische_vorbildung_studiengang_text');
 
         if(!is_null($result)) {
             //collect all nids of studiengang content
@@ -62,20 +58,19 @@ class SchulischeVorbildungController extends ControllerBase
                 ];
                  * */
 
-              $studiengang_titles[] = [
-                 '#markup' => '<p><a href="'. $node->field_studiengang_links->uri .'">' .  $node->getTitle() . '</a></p>',
-              ];
+                $studiengang_titles[] =  ['title' => $node->getTitle(), 'link' => $node->get('field_studiengang_links')->uri] ;
             }
-            /**
-            return ['#theme' => 'show_studiengaenge',
-                '#studiengang_name' => $this->t('Wirtschaftsinformatik'),
-                '#studiengaenge' => $studiengang_titles,
-                '#title' => 'Empfohlene Studiengänge',
-            ];
-             * */
-            //dsm($studiengang_titles);
-            //$markup = $studiengang_titles;
-            return $studiengang_titles;
+
+            sort($studiengang_titles);
+
+            $html = '<p>' . $text['value'] . '</p><ul>';
+            foreach($studiengang_titles as $studiengang_title) {
+              $html .= '<li><a target="_blank" href="' . $studiengang_title['link'] . '">' . $studiengang_title['title'] . '</a></li>';
+            }
+
+            $html .= '</ul>';
+
+            return ['#markup' => $html];
 
         } else {
 

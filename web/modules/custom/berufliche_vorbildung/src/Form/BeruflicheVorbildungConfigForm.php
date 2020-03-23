@@ -26,10 +26,20 @@ class BeruflicheVorbildungConfigForm extends ConfigFormBase {
 
         $form['berufliche_vorbildung_studiengang_text'] = [
             '#type' => 'text_format',
-            '#title' => $this->t('Text für den Studiengang'),
+            '#title' => $this->t('Text für empfohlene Studiengänge mit beruflicher Vorbildung'),
             '#default_value' => $config->get('berufliche_vorbildung_studiengang_text.value'),
             '#format' => $config->get('berufliche_vorbildung_studiengang_text.format'),
         ];
+
+        $moduleHandler = \Drupal::service('module_handler');
+        if($moduleHandler->moduleExists('schulische_vorbildung')){
+          $form['schulische_vorbildung_studiengang_text'] = [
+            '#type' => 'text_format',
+            '#title' => $this->t('Text für empfohlene Studiengänge mit schulischer Vorbildung'),
+            '#default_value' => $config->get('schulische_vorbildung_studiengang_text.value'),
+            '#format' => $config->get('schulische_vorbildung_studiengang_text.format'),
+          ];
+        }
 
         return parent::buildForm($form, $form_state);
     }
@@ -39,6 +49,13 @@ class BeruflicheVorbildungConfigForm extends ConfigFormBase {
         $this->configFactory->getEditable(static::SETTINGS)
             ->set('berufliche_vorbildung_studiengang_text', $form_state->getValue('berufliche_vorbildung_studiengang_text'))
             ->save();
+
+        $moduleHandler = \Drupal::service('module_handler');
+        if($moduleHandler->moduleExists('schulische_vorbildung')){
+          $this->configFactory->getEditable(static::SETTINGS)
+            ->set('schulische_vorbildung_studiengang_text', $form_state->getValue('schulische_vorbildung_studiengang_text'))
+            ->save();
+        }
 
         parent::submitForm($form, $form_state);
     }
