@@ -1,1 +1,3 @@
-berufliche_vorbildung_studiengang_text: ffffs
+berufliche_vorbildung_studiengang_text:
+  value: "<p>Folgende&nbsp;Studiengänge können wir Ihnen auf Grund Ihrer beruflichen Vorbildung empfehlen:<br />\r\n<strong>Hinweis:&nbsp;</strong>Dies ist nur eine Empfehlung. Ob Sie letztlich zugelassen werden entscheidet die Universität.</p>\r\n"
+  format: full_html

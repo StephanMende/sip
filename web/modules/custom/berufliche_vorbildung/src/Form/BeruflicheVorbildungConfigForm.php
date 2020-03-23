@@ -25,9 +25,10 @@ class BeruflicheVorbildungConfigForm extends ConfigFormBase {
         $config = $this->config(static::SETTINGS);
 
         $form['berufliche_vorbildung_studiengang_text'] = [
-            '#type' => 'textarea',
+            '#type' => 'text_format',
             '#title' => $this->t('Text für den Studiengang'),
-            '#default_value' => $config->get('berufliche_vorbildung_studiengang_text'),
+            '#default_value' => $config->get('berufliche_vorbildung_studiengang_text.value'),
+            '#format' => $config->get('berufliche_vorbildung_studiengang_text.format'),
         ];
 
         return parent::buildForm($form, $form_state);
