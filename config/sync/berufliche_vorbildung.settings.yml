@@ -1,6 +1,9 @@
 berufliche_vorbildung_studiengang_text:
-  value: "<p>Folgende&nbsp;Studiengänge können wir Ihnen auf Grund Ihrer beruflichen Vorbildung empfehlen:<br />\r\n<strong>Hinweis:&nbsp;</strong>Dies ist nur eine Empfehlung. Ob Sie letztlich zugelassen werden entscheidet die Universität.</p>\r\n"
+  value: "<p>Folgende&nbsp;Studiengänge können wir Ihnen auf Grund Ihrer beruflichen Vorbildung empfehlen:<br />\r\n<strong>Hinweis:&nbsp;</strong>Dies ist nur eine Empfehlung. Ob Sie letztlich zugelassen werden entscheidet die Universität.</p>\r\n\r\n<p>&nbsp;</p>\r\n"
   format: full_html
 schulische_vorbildung_studiengang_text:
   value: "<p>Folgende&nbsp;Studiengänge können wir Ihnen auf Grund Ihrer schulischen Vorbildung empfehlen:<br />\r\n<strong>Hinweis:&nbsp;</strong>Dies ist nur eine Empfehlung. Ob Sie letztlich zugelassen werden entscheidet die Universität.</p>\r\n"
+  format: full_html
+berufliche_vorbildung_kein_studiengang:
+  value: "<p>Leider gibt es keine passenden Studiengänge.</p>\r\n\r\n<p>&nbsp;</p>\r\n"
   format: full_html

@@ -74,10 +74,12 @@ class SchulischeVorbildungController extends ControllerBase
 
         } else {
 
-            return [
-                    '#type' => 'markup',
-                    '#markup' => $this->t('Leider gibt es keine Studiengänge.')
-                    ];
+          return [
+            '#type' => 'processed_text',
+            '#text' => $config->get('berufliche_vorbildung_kein_studiengang.value'),
+            '#format' => $config->get('berufliche_vorbildung_kein_studiengang.format')
+            ];
+
         }
     }
 }

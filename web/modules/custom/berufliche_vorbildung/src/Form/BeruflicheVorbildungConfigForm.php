@@ -41,6 +41,13 @@ class BeruflicheVorbildungConfigForm extends ConfigFormBase {
           ];
         }
 
+        $form['berufliche_vorbildung_kein_studiengang'] = [
+          '#type' => 'text_format',
+          '#title' => $this->t('Text wenn kein passender Studiengang gefunden wurde'),
+          '#default_value' => $config->get('berufliche_vorbildung_kein_studiengang.value'),
+          '#format' => $config->get('berufliche_vorbildung_kein_studiengang.format'),
+        ];
+
         return parent::buildForm($form, $form_state);
     }
 
@@ -56,6 +63,10 @@ class BeruflicheVorbildungConfigForm extends ConfigFormBase {
             ->set('schulische_vorbildung_studiengang_text', $form_state->getValue('schulische_vorbildung_studiengang_text'))
             ->save();
         }
+
+        $this->configFactory->getEditable(static::SETTINGS)
+          ->set('berufliche_vorbildung_kein_studiengang', $form_state->getValue('berufliche_vorbildung_kein_studiengang'))
+          ->save();
 
         parent::submitForm($form, $form_state);
     }

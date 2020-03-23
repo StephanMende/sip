@@ -19,6 +19,7 @@ class BeruflicheVorbildungController extends ControllerBase
         $studiengaenge = ['Wirtschaftsinformatik', 'Angewandte Informatik'];
 
         $databaseHelper = new DatabaseHelper();
+        $config = $this->config(static::SETTINGS);
 
         $result = $databaseHelper->getStudiengangByBerufId($beruf_id);
 
@@ -31,7 +32,6 @@ class BeruflicheVorbildungController extends ControllerBase
             $nodes = node_load_multiple($studiengang_nids);
             //create content to show the Studiengaenge
             $text = '<p>Folgenden Studiengang können wir Ihnen auf Grund Ihrer beruflichen Vorbildung empfehlen:<br><strong>Hinweis:</strong>Dies ist nur eine Empfehlung, ob Sie letztendlich zugelassen werden entscheidet die Universität.</p>';
-            $config = $this->config(static::SETTINGS);
             $text = $config->get('berufliche_vorbildung_studiengang_text');
             foreach ($nodes as $node) {
                 //ksm($node->get('body')->getString());
@@ -73,10 +73,11 @@ class BeruflicheVorbildungController extends ControllerBase
             ];
              * */
         } else {
-            return [
-                '#type' => 'markup',
-                '#markup' => $this->t('Leider gibt es keine Studiengänge.')
-            ];
+          return [
+            '#type' => 'processed_text',
+            '#text' => $config->get('berufliche_vorbildung_kein_studiengang.value'),
+            '#format' => $config->get('berufliche_vorbildung_kein_studiengang.format')
+          ];
         }
     }
 
