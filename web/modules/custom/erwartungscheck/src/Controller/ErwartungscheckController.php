@@ -69,8 +69,8 @@ class ErwartungscheckController extends ControllerBase {
         //Wenn nur ein Feld angelegt wurde, wird der Wert hier ausgegeben.
         //Test
         if (count($ausgabeText) == 1) {
-              $markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
-              $markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+              //$markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+              //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
               if ($codeFlag) {
                   $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
               }
@@ -88,8 +88,8 @@ class ErwartungscheckController extends ControllerBase {
               }
 
 
-                $markup =  '<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
-                $markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+                //$markup =  '<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+                //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
                 if ($codeFlag) {
                     $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
                 }
@@ -109,8 +109,8 @@ class ErwartungscheckController extends ControllerBase {
               }
 
 
-                $markup ='<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
-                $markup .=  'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+                //$markup ='<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+                //$markup .=  'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
                 if ($codeFlag) {
                     $markup .=  '<p>Hier Ihr Code [' . $userString . ']</p>';
                 }
@@ -137,8 +137,8 @@ class ErwartungscheckController extends ControllerBase {
 
 
 
-                $markup =  '<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
-                $markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+                //$markup =  '<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+                //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
                 if ($codeFlag) {
                     $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
                 }
@@ -167,8 +167,8 @@ class ErwartungscheckController extends ControllerBase {
             }
 
 
-              $markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
-              $markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>';
+              //$markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
+              //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>';
               if ($codeFlag) {
                   $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
               }
