@@ -39,6 +39,11 @@ class FachquizForm extends FormBase {
     $this->aufgaben_count = count($aufgaben);
 
     //Erstelle die Form
+    $form['fachquiz']['title'] = [
+      '#type' => 'markup',
+      '#markup' => '<h2>Fachquiz</h2>',
+    ];
+
     $form['fachquiz']['aufgabe'] = [
       '#type' => 'markup',
       '#markup' => '<p>' . $aufgaben[$this->step]->aufgabe . '</p>',
@@ -154,5 +159,11 @@ class FachquizForm extends FormBase {
       $shuffled_array[$key] = $antworten[$key];
     }
     return $shuffled_array;
+  }
+
+  public function getStudiengangTitle($nid) {
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $node = $node_storage->load($nid);
+    return $node->title->value;
   }
 }
