@@ -20,7 +20,7 @@ class VorbildungForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['vorbildung']['select'] = [
       '#type' => 'select',
-      '#title' => $this->t('Bitte wählen Sie hier aus welche Vorbildung Sie haben'),
+      '#title' => $this->t('Bitte wählen Sie hier aus, welche Vorbildung Sie haben'),
       '#options' => [
         'berufliche_vorbildung' => $this->t('Berufliche Vorbildung'),
         'schulische_vorbildung' => $this->t('Schulische Vorbildung'),
