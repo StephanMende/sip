@@ -129,6 +129,7 @@ class FachquizForm extends FormBase {
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.rueckmeldung', '<div class="explanation-msg" style="margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px;">' . $rueckmeldung_header . $rueckmeldung . $rueckmeldung_button  . '</div>'));
     $response->addCommand(new CssCommand('#button_fachquiz_beantworten', ['visibility' => 'hidden']));
+    $response->addCommand(new CssCommand('#edit-antwort', ['pointer-events' => 'none']));
 
     return $response;
   }

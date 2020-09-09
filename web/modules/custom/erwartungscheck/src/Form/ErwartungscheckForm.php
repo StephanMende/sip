@@ -130,6 +130,7 @@ class ErwartungscheckForm extends FormBase {
             )
         );
         $response->addCommand(new CssCommand('#button_beantworten', ['visibility' => 'hidden']));
+        $response->addCommand(new CssCommand('#edit-frage', ['pointer-events' => 'none']));
 
         return $response;
     }
