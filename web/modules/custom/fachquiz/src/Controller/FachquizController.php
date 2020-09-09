@@ -80,6 +80,7 @@ class FachquizController extends ControllerBase {
   public function fachquizInfo($fachquiz_nid, $percent) {
     //Hole den Prozentwert aus der URL
     $percent = $percent;
+    $userString = "";
     $codeFlag = false; //TODO: Aendern, wenn der Config Import Fehler behoben wurde
     //Generiere den Random String
     $userData = new FachquizData();

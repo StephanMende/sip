@@ -68,6 +68,7 @@ class ErwartungscheckController extends ControllerBase {
     public function erwartungcheckErgebnisAusgabe(array $ausgabeText, $percent, $userString, $codeFlag) {
         //Wenn nur ein Feld angelegt wurde, wird der Wert hier ausgegeben.
         //Test
+        $markup = '';
         if (count($ausgabeText) == 1) {
               //$markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
               //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
