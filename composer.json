@@ -37,7 +37,7 @@
         "drupal/at_tools": "^3.2",
         "drupal/clipboardjs": "^2.0",
         "drupal/console": "~1.0",
-        "drupal/core": "~8.7",
+        "drupal/core": "~8.9",
         "drupal/devel": "2.x-dev@dev",
         "drupal/entityreference_dragdrop": "^1.1",
         "drupal/examples": "1.x-dev",
