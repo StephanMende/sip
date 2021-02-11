@@ -73,7 +73,7 @@ class ErwartungscheckController extends ControllerBase {
               //$markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
               //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
               if ($codeFlag) {
-                  $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+                  $markup .= '<p>' . $this->t('Hier Ihr Code') . '[' . $userString . ']</p>';
               }
               $markup .= $ausgabeText[0];
 
@@ -92,7 +92,7 @@ class ErwartungscheckController extends ControllerBase {
                 //$markup =  '<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
                 //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
                 if ($codeFlag) {
-                    $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+                    $markup .= '<p>' . $this->t('Hier Ihr Code') . '[' . $userString . ']</p>';
                 }
                 $markup .= $ausgabeText[$bereich];
 
@@ -113,7 +113,7 @@ class ErwartungscheckController extends ControllerBase {
                 //$markup ='<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
                 //$markup .=  'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
                 if ($codeFlag) {
-                    $markup .=  '<p>Hier Ihr Code [' . $userString . ']</p>';
+                    $markup .=  '<p>' . $this->t('Hier Ihr Code') . '[' . $userString . ']</p>';
                 }
                 $markup .= $ausgabeText[$bereich];
 
@@ -141,7 +141,7 @@ class ErwartungscheckController extends ControllerBase {
                 //$markup =  '<p>Ihre Erwartungen an das Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
                 //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
                 if ($codeFlag) {
-                    $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+                    $markup .= '<p>' . $this->t('Hier Ihr Code') . '[' . $userString . ']</p>';
                 }
                 $markup .= $ausgabeText[$bereich];
               return $markup;
@@ -171,14 +171,14 @@ class ErwartungscheckController extends ControllerBase {
               //$markup =  '<p>Ihre Erwartungen an das Wirtschaftsinformatik-Studium stimmen zu [' . $percent . '%] mit den Erwartungen';
               //$markup .= 'von Studierenden und Lehrenden aus dem Fachbereich überein und sind nicht sehr realistisch.</p>';
               if ($codeFlag) {
-                  $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+                  $markup .= '<p>' . $this->t('Hier Ihr Code') . '[' . $userString . ']</p>';
               }
               $markup .= $ausgabeText[$bereich];
             return $markup;
 
           } else {
 
-              $markup = '<p>Falls nichts zutrifft</p>';
+              $markup = '<p>' . $this->t('Falls nichts zutrifft') . '</p>';
             return $markup;
           }
     }
@@ -192,7 +192,7 @@ class ErwartungscheckController extends ControllerBase {
         $node = $node_storage->load($studiengang_nid);
         //Pruefe ob es sich um einen Studiengang Node handelt
         if (!$node->bundle() === 'studiengang') {
-          \Drupal::messenger()->addMessage('Die URL weist keinen Verweis auf einen Studiengang auf.');
+          \Drupal::messenger()->addMessage($this->t('Die URL weist keinen Verweis auf einen Studiengang auf.'));
         }
 
         //dsm($node);
@@ -207,10 +207,10 @@ class ErwartungscheckController extends ControllerBase {
           return $form;
         //Falls es mehrere Erwartungschecks fuer einen Studiengang gibt, zeige eine Nachricht
         } else if (count($erwartungschecks > 1)) {
-          return ['#markup' => '<p>Für diesen Studiengang existieren mehrere Erwartungschecks!'];
+          return ['#markup' => '<p>' . $this->t('Für diesen Studiengang existieren mehrere Erwartungschecks!') . '</p>'];
         }
         //Falls es keine Erwartungschecks gibt, zeige eine Nachricht
-        return ['#markup' => '<p>Für diesen Studiengang wurde bisher kein Erwartungscheck angelegt!'];
+        return ['#markup' => '<p>' . $this->t('Für diesen Studiengang wurde bisher kein Erwartungscheck angelegt!') . '</p>'];
 
 
     }

@@ -52,14 +52,14 @@ class ErwartungscheckForm extends FormBase {
         $form['erwartungscheck']['frage'] = [
           '#type' => 'radios',
           '#title' => $questions[$this->step]->aussage,
-          '#options' => ['wahr' => 'wahr', 'falsch' => 'falsch'],
+          '#options' => ['wahr' => $this->t('wahr'), 'falsch' => $this->t('falsch')],
           //'#required' => TRUE,
           '#default_value' => 'wahr',
         ];
 
         $form['erwartungscheck']['button'] = [
           '#type' => 'button',
-          '#value' => 'Beantworten',
+          '#value' => $this->t('Beantworten'),
           '#id' => 'button_beantworten',
           '#ajax' => [
             'callback' => '::setExplanationMessage',
@@ -108,18 +108,18 @@ class ErwartungscheckForm extends FormBase {
         //Pruefe ob die Frage richtig beantwortet wurde, wenn ja style den Erklärungscontainer
         //und setze die $correct_answer_flag auf true.
         if ($questions[$this->step]->richtige_antwort == $form_state->getValue('frage')) {
-            $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
+            $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>' .$this->t('Ihre Antwort ist richtig.') . '</h3></div>';
             $this->correct_answer_flag = true;
 
             $correct_answers = $this->correct_answer;
         //Wenn die Frage falsch beantwortet wurde
         } else {
-            $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
+            $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>' . $this->t('Ihre Antwort ist falsch.') . '</h3></div>';
         }
         //Gebe die Rueckmeldung zur Frage aus
         $explanation = $questions[$this->step]->rueckmeldung;
         //Erstelle einen Weiter-Button damit in Sumbit ausgelöst wird
-        $explanation_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
+        $explanation_button = '<input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="' . $this->t('Weiter') . '" class="button js-form-submit form-submit">';
 
         //Gebe eine AJAX Antwort zurück, dadurch muss die Seite nicht neu geladeen werden
         $response = new AjaxResponse();
