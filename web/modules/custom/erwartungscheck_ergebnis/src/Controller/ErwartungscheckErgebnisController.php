@@ -17,8 +17,10 @@ class ErwartungscheckErgebnisController extends ControllerBase {
         $result = $query->execute();
         */
 
-
-        $html = '<p>Sie haben für den Studiengang <em>' . $studiengang . '</em> folgenden Wert: ' . $prozentzahl . '% erreicht.';
+        $message = $this->t('Sie haben für den Studiengang <strong>@studiengang</strong> folgenden Wert @prozentzahl erreicht', 
+                            array('studiengang' => $studiengang, 'prozentzahl' => $prozentzahl ));
+        //$html = '<p>' . $this->t('Sie haben für den Studiengang') .'<em>' . $studiengang . '</em> folgenden Wert: ' . $prozentzahl . '% erreicht.';
+        $html = '<p>' . $message . '</p>';
         return ['#markup' => $html];
     }
 
@@ -32,7 +34,7 @@ class ErwartungscheckErgebnisController extends ControllerBase {
         foreach ($result as $row) {
             dsm($row);
         }
-        $html = '<p>Vielen Dank für Ihre Zeit.</p>';
+        $html = '<p>'.  $this->t('Vielen Dank für Ihre Zeit.') . '</p>';
 
         return ['#markup' => $html];
     }
