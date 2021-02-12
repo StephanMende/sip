@@ -38,7 +38,7 @@ class FachquizController extends ControllerBase {
       $node = $node_storage->load($nid);
       //Pruefe ob es sich um einen Studiengang Node handelt
       if (!$node->bundle() === 'studiengang') {
-          \Drupal::messenger()->addMessage('Die URL weist keinen Verweis auf einen Studiengang auf.');
+          \Drupal::messenger()->addMessage($this->t('Die URL weist keinen Verweis auf einen Studiengang auf.'));
       }
 
       foreach($node->field_fachquiz as $reference) {
@@ -73,7 +73,7 @@ class FachquizController extends ControllerBase {
         return $html_list;
       }
       //Falls es keine Erwartungschecks gibt, zeige eine Nachricht
-      return ['#markup' => '<p>Für diesen Studiengang wurde bisher kein Erwartungscheck angelegt!'];
+      return ['#markup' => '<p>' . $this->t('Für diesen Studiengang wurde bisher kein Erwartungscheck angelegt!') . '</p>'];
 
   }
 
@@ -110,13 +110,13 @@ class FachquizController extends ControllerBase {
 
     $userData = new FachquizData();
 
-    $markup = 'Vielen Dank, dass Sie mitgemacht haben. Sie haben ' . $percent .'% erreicht. Ihre Auswertung wird hier auch erscheinen,
-      wir entwickeln diese Komponente gerade...';
+    $markup = $this->t('Vielen Dank, dass Sie mitgemacht haben. Sie haben @percenct% erreicht. Ihre Auswertung wird hier auch erscheinen,
+      wir entwickeln diese Komponente gerade...', array('percent' => $percent));
 
     // Access Token nur generieren und ausgeben, wenn diese Option für den Studiengang aktiviert ist
     if ($codeFlag == TRUE) {
       $userString = $userData->randomString();
-      $markup .=  '<br>Ihr Bewerbungscode: ' . $userString . ' ';
+      $markup .=  '<br>' . $this->t('Ihr Bewerbungscode: ') . $userString . ' ';
     }
 
     return['#markup' => $markup];
@@ -126,9 +126,9 @@ class FachquizController extends ControllerBase {
     //Wenn nur ein Feld angelegt wurde, wird der Wert hier ausgegeben.
     //Test
     if (count($ausgabeText) == 1) {
-          $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+          $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)) . '</p>';
           if ($codeFlag) {
-              $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+              $markup .= '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) . '</p>';
           }
           $markup .= $ausgabeText[0];
 
@@ -144,9 +144,9 @@ class FachquizController extends ControllerBase {
           }
 
 
-            $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+            $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht.', array('percent' => $percent)) . '</p>';
             if ($codeFlag) {
-                $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+                $markup .= '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) . '</p>';
             }
             $markup .= $ausgabeText[$bereich];
 
@@ -164,10 +164,10 @@ class FachquizController extends ControllerBase {
           }
 
 
-            $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
-            $markup .=  'von Studierenden und Lehrenden aus dem Fachbereich überein.</p>';
+            $markup =  '<p>' $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)) . '</p>';
+            $markup .=  $this->t('von Studierenden und Lehrenden aus dem Fachbereich überein.') . '</p>';
             if ($codeFlag) {
-                $markup .=  '<p>Hier Ihr Code [' . $userString . ']</p>';
+                $markup .=  '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) .'</p>';
             }
             $markup .= $ausgabeText[$bereich];
 
@@ -192,9 +192,9 @@ class FachquizController extends ControllerBase {
 
 
 
-        $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+        $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)) . '</p>';
             if ($codeFlag) {
-                $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+                $markup .= '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) . '</p>';
             }
             $markup .= $ausgabeText[$bereich];
           return $markup;
@@ -221,16 +221,16 @@ class FachquizController extends ControllerBase {
         }
 
 
-        $markup =  '<p>Sie haben [' . $percent . '%] bei diesem Fachquiz erreicht</p>';
+        $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)).  '</p>';
           if ($codeFlag) {
-              $markup .= '<p>Hier Ihr Code [' . $userString . ']</p>';
+              $markup .= '<p>'. $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) . '</p>';
           }
           $markup .= $ausgabeText[$bereich];
         return $markup;
 
       } else {
 
-          $markup = '<p>Falls nichts zutrifft</p>';
+          $markup = '<p>' . $this->t('Falls nichts zutrifft') . '</p>';
         return $markup;
       }
 }
@@ -238,7 +238,7 @@ class FachquizController extends ControllerBase {
   public function helper($nid) {
     $fachzquizHelper = new FachquizHelper();
     $fachquiz_data = $fachzquizHelper->getFachquiz($nid);
-    dsm($fachquiz_data);
+    //dsm($fachquiz_data);
     return ['#markup' => 'Helper'];
   }
 
