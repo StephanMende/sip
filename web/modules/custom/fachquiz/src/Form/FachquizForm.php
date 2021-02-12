@@ -113,9 +113,9 @@ class FachquizForm extends FormBase {
 
     if($form_state->getValue('antwort') == 0) {
       $this->correct_answer_flag = true;
-      $rueckmeldung_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
+      $rueckmeldung_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>' . $this->t('Ihre Antwort ist richtig.') . '</h3></div>';
     } else {
-      $rueckmeldung_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>Ihre Antwort ist falsch.</h3></div>';
+      $rueckmeldung_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>' . $this->t('Ihre Antwort ist falsch.') . '</h3></div>';
     }
 
     if ($this->correct_answer_flag === true) {
