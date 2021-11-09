@@ -23,6 +23,12 @@
 #edit-frage .form-type-radio,
 #edit-antwort .form-type-radio {
   margin: 0;
+  white-space: nowrap;
+}
+
+#edit-frage .form-type-radio label,
+#edit-antwort .form-type-radio label {
+  white-space: normal;
 }
 
 .explanation-msg {
