@@ -29,9 +29,17 @@ class ZsbLink extends EntityReferenceLabelFormatter {
 
     // add the zsb typo3 link above the links
     $fieldName = $items->getName();
+
     if (count($elements) > 0) {
+      // set language prefix for english Erwartungscheck/Fachquiz
+      $linkLanguage = '';
+      $node = \Drupal::entityTypeManager()->getStorage('node')->load($items->target_id);
+      if ($node->language()->getId() === 'en') {
+        $linkLanguage = '/en';
+      }
+
       if ($fieldName === 'field_erwartungscheck') {
-        $route = '/erwartungscheck/quiz/';
+        $route = $linkLanguage. '/erwartungscheck/quiz/';
         $zsbLink = $this->generateLink($items, $route);
         array_unshift($elements, $zsbLink);
       }

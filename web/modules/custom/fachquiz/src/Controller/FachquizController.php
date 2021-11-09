@@ -57,11 +57,11 @@ class FachquizController extends ControllerBase {
         return $form;
       //Falls es mehrere Erwartungschecks fuer einen Studiengang gibt, erstelle eine Liste mit URLs die auf die
       //Fachquizzes zeigen
-      } else if (count($fachquizzes > 1)) {
+      } else if (count($fachquizzes) > 1) {
         foreach ($fachquizzes as $fachquiz_id) {
           $node = $node_storage->load($fachquiz_id);
           //dsm($node->title->value);
-          $links[] = Link::fromTextAndUrl($node->title->value, Url::fromRoute('fachquiz.form', ['fachquiz_nid' => $fachquiz_id, 'codeFlag' => $codeFlag]));
+          $links[] = Link::fromTextAndUrl($node->title->value, Url::fromRoute('fachquiz.form', ['fachquiz_nid' => $fachquiz_id, 'codeFlag' => $codeFlag], ['language' => $node->language()]));
         }
         //Erzeuge ungeordnete Liste
         $html_list = [
@@ -164,7 +164,7 @@ class FachquizController extends ControllerBase {
           }
 
 
-            $markup =  '<p>' $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)) . '</p>';
+            $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)) . '</p>';
             $markup .=  $this->t('von Studierenden und Lehrenden aus dem Fachbereich überein.') . '</p>';
             if ($codeFlag) {
                 $markup .=  '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) .'</p>';
@@ -238,7 +238,6 @@ class FachquizController extends ControllerBase {
   public function helper($nid) {
     $fachzquizHelper = new FachquizHelper();
     $fachquiz_data = $fachzquizHelper->getFachquiz($nid);
-    //dsm($fachquiz_data);
     return ['#markup' => 'Helper'];
   }
 
