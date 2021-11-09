@@ -41,7 +41,11 @@ class ErwartungscheckHelper {
 
   public function getTextOfTid($tid) {
     $term = Term::load($tid);
-    $name = $term->getName();
+    // get language from route and translated term
+    $currentLanguage = \Drupal::languageManager()->getCurrentLanguage(\Drupal\Core\Language\LanguageInterface::TYPE_CONTENT)->getId();
+    $termTranslated = \Drupal::service('entity.repository')->getTranslationFromContext($term, $currentLanguage);
+
+    $name = $termTranslated->getName();
 
     return $name;
   }
