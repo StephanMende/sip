@@ -108,13 +108,13 @@ class ErwartungscheckForm extends FormBase {
         //Pruefe ob die Frage richtig beantwortet wurde, wenn ja style den Erklärungscontainer
         //und setze die $correct_answer_flag auf true.
         if ($questions[$this->step]->richtige_antwort == $form_state->getValue('frage')) {
-            $explanation_header = '<div style="background-color: #3c763d;" class="explanation-header"><h3>' .$this->t('Ihre Antwort ist richtig.') . '</h3></div>';
+            $explanation_header = '<div class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
             $this->correct_answer_flag = true;
 
             $correct_answers = $this->correct_answer;
         //Wenn die Frage falsch beantwortet wurde
         } else {
-            $explanation_header = '<div style="background-color: #a94442;" class="explanation-header"><h3>' . $this->t('Ihre Antwort ist falsch.') . '</h3></div>';
+            $explanation_header = '<div class="explanation-header"><h3>Ihre Antwort ist nicht richtig.</h3></div>';
         }
         //Gebe die Rueckmeldung zur Frage aus
         $explanation = $questions[$this->step]->rueckmeldung;
