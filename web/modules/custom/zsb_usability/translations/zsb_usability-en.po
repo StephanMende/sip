@@ -1,0 +1,32 @@
+# Englisch translation of Studierendeninformationsportal
+#
+
+msgid "Weiter"
+msgstr "Next"
+
+msgid "Fachquiz"
+msgstr "Quiz"
+
+msgid "Erwartungscheck @studiengang"
+msgstr "Expectations Check @studiengang"
+
+msgid "Beantworten"
+msgstr "Answer"
+
+msgid "Ihre Antwort ist richtig."
+msgstr "Your answer is correct."
+
+msgid "Ihre Antwort ist nicht richtig."
+msgstr "Your answer is not correct."
+
+msgid "Weiter"
+msgstr "Next"
+
+msgid "wahr"
+msgstr "true"
+
+msgid "falsch"
+msgstr "false"
+
+msgid "Sie haben [@percent%] bei diesem Fachquiz erreicht"
+msgstr "You have reached @percent% in this online quiz."

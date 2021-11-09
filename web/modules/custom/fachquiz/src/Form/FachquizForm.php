@@ -41,7 +41,7 @@ class FachquizForm extends FormBase {
     //Erstelle die Form
     $form['fachquiz']['title'] = [
       '#type' => 'markup',
-      '#markup' => '<h2>Fachquiz</h2>',
+      '#markup' => '<h2>' . $this->t('Fachquiz') . '</h2>',
     ];
 
     $form['fachquiz']['aufgabe'] = [
@@ -67,7 +67,7 @@ class FachquizForm extends FormBase {
 
     $form['fachquiz']['button'] = [
       '#type' => 'button',
-      '#value' => 'Beantworten',
+      '#value' => $this->t('Beantworten'),
       '#id' => 'button_fachquiz_beantworten',
       '#ajax' => [
         'callback' => '::setRueckmeldungMessage',
@@ -82,7 +82,7 @@ class FachquizForm extends FormBase {
     $form['fachquiz']['submit'] = [
       '#id' => 'button_submit',
       '#type' => 'submit',
-      '#value' => $this->t('Next'),
+      '#value' => $this->t('Weiter'),
     ];
     return $form;
   }
@@ -113,9 +113,9 @@ class FachquizForm extends FormBase {
 
     if($form_state->getValue('antwort') == 0) {
       $this->correct_answer_flag = true;
-      $rueckmeldung_header = '<div class="explanation-header"><h3>Ihre Antwort ist richtig.</h3></div>';
+      $rueckmeldung_header = '<div class="explanation-header"><h3>' . $this->t("Ihre Antwort ist richtig.") . '</h3></div>';
     } else {
-      $rueckmeldung_header = '<div class="explanation-header"><h3>Ihre Antwort ist nicht richtig.</h3></div>';
+      $rueckmeldung_header = '<div class="explanation-header"><h3>' . $this->t("Ihre Antwort ist nicht richtig.") . '</h3></div>';
     }
 
     if ($this->correct_answer_flag === true) {
@@ -124,7 +124,7 @@ class FachquizForm extends FormBase {
       $rueckmeldung = $aufgaben[$this->step]->erklaerungFalsch;
     }
 
-    $rueckmeldung_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='Weiter' class='button js-form-submit form-submit'>";
+    $rueckmeldung_button = "<input data-drupal-selector='edit-submit' type='submit' id='edit-submit' name= 'op' value='" . $this->t('Weiter') . "' class='button js-form-submit form-submit'>";
 
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('.rueckmeldung', '<div class="explanation-msg" style="margin-top: -50px; z-index: 100; transition: margin-top 1s; background-color: #ebebed; padding: 0 10px 10px;">' . $rueckmeldung_header . $rueckmeldung . $rueckmeldung_button  . '</div>'));
