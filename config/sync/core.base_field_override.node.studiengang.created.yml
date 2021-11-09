@@ -1,0 +1,18 @@
+uuid: 16da4f0f-911a-47ac-b5ce-1f91250a50f6
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.studiengang
+id: node.studiengang.created
+field_name: created
+entity_type: node
+bundle: studiengang
+label: 'Geschrieben am'
+description: 'Der Zeitpunkt an dem Beitrag geschrieben wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

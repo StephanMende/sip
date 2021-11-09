@@ -1,0 +1,20 @@
+uuid: 87a75cba-5b15-46bb-af7e-abc47cbffdd7
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.antwortoption
+  module:
+    - path
+id: node.antwortoption.path
+field_name: path
+entity_type: node
+bundle: antwortoption
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

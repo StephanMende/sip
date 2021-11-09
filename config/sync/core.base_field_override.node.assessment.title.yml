@@ -1,0 +1,18 @@
+uuid: 21f14d5c-480d-40c1-9a9f-357e50df9793
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.assessment
+id: node.assessment.title
+field_name: title
+entity_type: node
+bundle: assessment
+label: Titel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

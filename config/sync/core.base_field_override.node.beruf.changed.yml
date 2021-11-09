@@ -1,0 +1,18 @@
+uuid: 0043f5df-f57b-4a52-9d6b-a8f4aedd0c06
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.beruf
+id: node.beruf.changed
+field_name: changed
+entity_type: node
+bundle: beruf
+label: Geändert
+description: 'Zeitpunkt, zu dem der Beitrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

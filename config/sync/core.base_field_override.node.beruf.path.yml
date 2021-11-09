@@ -1,0 +1,20 @@
+uuid: 78d0b3c4-60a3-4502-8b67-f47912c84766
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.beruf
+  module:
+    - path
+id: node.beruf.path
+field_name: path
+entity_type: node
+bundle: beruf
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

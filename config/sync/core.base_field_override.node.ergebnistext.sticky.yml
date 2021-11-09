@@ -1,0 +1,22 @@
+uuid: 965ba8e2-2b3d-49e6-8a5f-108afb0610c5
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.ergebnistext
+id: node.ergebnistext.sticky
+field_name: sticky
+entity_type: node
+bundle: ergebnistext
+label: 'Oben in Listen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

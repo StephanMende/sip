@@ -1,0 +1,18 @@
+uuid: 38b1518a-723c-4532-a4f0-4afb8077a3b9
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.fachquiz
+id: node.fachquiz.title
+field_name: title
+entity_type: node
+bundle: fachquiz
+label: Titel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

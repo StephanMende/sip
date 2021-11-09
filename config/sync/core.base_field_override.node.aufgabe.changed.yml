@@ -1,0 +1,18 @@
+uuid: cc07e8d4-b97b-420d-ab37-8a97c8b1ef42
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aufgabe
+id: node.aufgabe.changed
+field_name: changed
+entity_type: node
+bundle: aufgabe
+label: Geändert
+description: 'Zeitpunkt, zu dem der Beitrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

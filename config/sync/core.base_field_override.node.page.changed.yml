@@ -1,0 +1,18 @@
+uuid: 0d2adabe-1c2c-4525-8933-b8d266efeb7d
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.changed
+field_name: changed
+entity_type: node
+bundle: page
+label: Geändert
+description: 'Zeitpunkt, zu dem der Beitrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

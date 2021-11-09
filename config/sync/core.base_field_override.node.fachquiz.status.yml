@@ -1,0 +1,22 @@
+uuid: f0d26366-a0b9-4101-9e2b-7466b058e574
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.fachquiz
+id: node.fachquiz.status
+field_name: status
+entity_type: node
+bundle: fachquiz
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

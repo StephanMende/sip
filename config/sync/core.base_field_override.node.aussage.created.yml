@@ -1,0 +1,18 @@
+uuid: 34f97cac-d88b-46d5-9586-7c326ea9f450
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aussage
+id: node.aussage.created
+field_name: created
+entity_type: node
+bundle: aussage
+label: 'Geschrieben am'
+description: 'Der Zeitpunkt an dem Beitrag geschrieben wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

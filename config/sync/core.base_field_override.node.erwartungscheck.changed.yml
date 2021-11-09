@@ -1,0 +1,18 @@
+uuid: 27ea0158-598b-41b3-be96-a5f178ad7ecb
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.erwartungscheck
+id: node.erwartungscheck.changed
+field_name: changed
+entity_type: node
+bundle: erwartungscheck
+label: Geändert
+description: 'Zeitpunkt, zu dem der Beitrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

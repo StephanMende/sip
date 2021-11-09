@@ -1,0 +1,22 @@
+uuid: edba4c26-58d2-46c6-8d07-535feb7a75d1
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aufgabe
+id: node.aufgabe.sticky
+field_name: sticky
+entity_type: node
+bundle: aufgabe
+label: 'Oben in Listen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

@@ -35,6 +35,7 @@ content:
       match_operator: CONTAINS
       collapsed: false
       allow_duplicate: false
+      revision: false
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content

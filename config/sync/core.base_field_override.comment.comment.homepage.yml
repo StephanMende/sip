@@ -1,0 +1,18 @@
+uuid: 91c53385-64bd-4ebb-83f8-eb8f3e9678ce
+langcode: de
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+id: comment.comment.homepage
+field_name: homepage
+entity_type: comment
+bundle: comment
+label: Startseite
+description: 'Die Homepage-Adresse des Kommentarautors.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: uri

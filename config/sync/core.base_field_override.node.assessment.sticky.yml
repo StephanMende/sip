@@ -1,0 +1,22 @@
+uuid: 92759595-91db-4101-b6be-d1c976b92a7c
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.assessment
+id: node.assessment.sticky
+field_name: sticky
+entity_type: node
+bundle: assessment
+label: 'Oben in Listen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

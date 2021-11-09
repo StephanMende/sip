@@ -15,7 +15,7 @@ bundle: erwartungscheck
 mode: default
 content:
   field_erwartungscheck_aussagen:
-    weight: 1
+    weight: 2
     settings:
       form_mode: default
       override_labels: true
@@ -27,9 +27,17 @@ content:
       match_operator: CONTAINS
       collapsed: false
       allow_duplicate: false
+      revision: false
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -42,7 +50,6 @@ hidden:
   body: true
   created: true
   field_ergebnistext: true
-  langcode: true
   path: true
   promote: true
   status: true

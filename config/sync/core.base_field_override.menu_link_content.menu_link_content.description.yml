@@ -1,0 +1,18 @@
+uuid: 02413125-9ea9-40ee-accc-26b2fafa573e
+langcode: de
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.menu_link_content.description
+field_name: description
+entity_type: menu_link_content
+bundle: menu_link_content
+label: Beschreibung
+description: 'Wird beim Schweben über dem Menülink angezeigt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

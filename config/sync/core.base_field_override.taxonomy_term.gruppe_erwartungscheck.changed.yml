@@ -1,0 +1,18 @@
+uuid: ca8d2472-0e58-4abd-bf8a-f5060189898a
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.gruppe_erwartungscheck
+id: taxonomy_term.gruppe_erwartungscheck.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: gruppe_erwartungscheck
+label: Geändert
+description: 'Der Zeitpunkt an dem der Begriff zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

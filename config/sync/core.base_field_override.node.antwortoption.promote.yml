@@ -1,0 +1,22 @@
+uuid: 8194f3d6-1672-4fc5-9040-e3193be4861e
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.antwortoption
+id: node.antwortoption.promote
+field_name: promote
+entity_type: node
+bundle: antwortoption
+label: 'Auf der Startseite anzeigen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

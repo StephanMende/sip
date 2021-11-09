@@ -1,0 +1,18 @@
+uuid: bf185d0b-357f-4125-89bf-7de93c2575ca
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwort_erwartungscheck
+id: taxonomy_term.antwort_erwartungscheck.name
+field_name: name
+entity_type: taxonomy_term
+bundle: antwort_erwartungscheck
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

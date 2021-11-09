@@ -1,0 +1,22 @@
+uuid: c241e8e5-1640-47ca-884c-e9586ae0e559
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.antwortoption
+id: node.antwortoption.status
+field_name: status
+entity_type: node
+bundle: antwortoption
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

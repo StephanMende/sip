@@ -1,0 +1,20 @@
+uuid: e2fa0e05-a7db-468d-a6fd-4ce375333297
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.assessment
+  module:
+    - path
+id: node.assessment.path
+field_name: path
+entity_type: node
+bundle: assessment
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

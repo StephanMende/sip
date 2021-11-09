@@ -1,0 +1,18 @@
+uuid: db75b30b-992b-442b-af31-d4b7ee7bc9b0
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.ergebnistext
+id: node.ergebnistext.title
+field_name: title
+entity_type: node
+bundle: ergebnistext
+label: Titel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

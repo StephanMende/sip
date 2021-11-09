@@ -1,0 +1,20 @@
+uuid: 916359b4-2cac-4667-8868-a93142f84ad6
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.studiengang
+  module:
+    - path
+id: node.studiengang.path
+field_name: path
+entity_type: node
+bundle: studiengang
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

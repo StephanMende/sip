@@ -1,0 +1,20 @@
+uuid: 7fabc065-0e31-4c80-82d5-725abfbfb5bc
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.gruppe_erwartungscheck
+  module:
+    - path
+id: taxonomy_term.gruppe_erwartungscheck.path
+field_name: path
+entity_type: taxonomy_term
+bundle: gruppe_erwartungscheck
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

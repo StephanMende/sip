@@ -1,0 +1,18 @@
+uuid: 4f5030dc-cd31-469d-850b-153afcc16061
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.antwortoption
+id: node.antwortoption.changed
+field_name: changed
+entity_type: node
+bundle: antwortoption
+label: Geändert
+description: 'Zeitpunkt, zu dem der Beitrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

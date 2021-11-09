@@ -1,0 +1,22 @@
+uuid: 78ccd306-1855-4d4f-821a-0e99c6f0d2d8
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.berufsgruppe
+id: node.berufsgruppe.sticky
+field_name: sticky
+entity_type: node
+bundle: berufsgruppe
+label: 'Oben in Listen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

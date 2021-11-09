@@ -1,0 +1,20 @@
+uuid: 89801929-5af8-4475-a775-a82400e0c053
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aufgabe
+  module:
+    - path
+id: node.aufgabe.path
+field_name: path
+entity_type: node
+bundle: aufgabe
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,22 @@
+uuid: 82579df2-b5e7-4ac7-a9bd-d4a604ee20f5
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.gruppe_erwartungscheck
+id: taxonomy_term.gruppe_erwartungscheck.status
+field_name: status
+entity_type: taxonomy_term
+bundle: gruppe_erwartungscheck
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

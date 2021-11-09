@@ -1,0 +1,18 @@
+uuid: 5326eded-8c14-4140-b827-5d03db0c151c
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.gruppe_erwartungscheck
+id: taxonomy_term.gruppe_erwartungscheck.name
+field_name: name
+entity_type: taxonomy_term
+bundle: gruppe_erwartungscheck
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

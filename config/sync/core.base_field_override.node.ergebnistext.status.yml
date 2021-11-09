@@ -1,0 +1,22 @@
+uuid: 671369f9-b0c8-4614-8199-82930798b6a4
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.ergebnistext
+id: node.ergebnistext.status
+field_name: status
+entity_type: node
+bundle: ergebnistext
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

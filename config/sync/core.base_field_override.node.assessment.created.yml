@@ -1,0 +1,18 @@
+uuid: 5add3e38-8b80-4286-89f8-f79b3fc804c4
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.assessment
+id: node.assessment.created
+field_name: created
+entity_type: node
+bundle: assessment
+label: 'Geschrieben am'
+description: 'Der Zeitpunkt an dem Beitrag geschrieben wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

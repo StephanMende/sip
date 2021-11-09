@@ -1,0 +1,18 @@
+uuid: 0042525d-e131-45b1-89bb-d4083b91cf4d
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.assessment
+id: node.assessment.changed
+field_name: changed
+entity_type: node
+bundle: assessment
+label: Geändert
+description: 'Zeitpunkt, zu dem der Beitrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

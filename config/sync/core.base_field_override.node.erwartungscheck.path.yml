@@ -1,0 +1,20 @@
+uuid: 15b65a8c-6d75-4373-a277-68dec7d741c2
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.erwartungscheck
+  module:
+    - path
+id: node.erwartungscheck.path
+field_name: path
+entity_type: node
+bundle: erwartungscheck
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

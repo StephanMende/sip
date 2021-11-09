@@ -1,0 +1,22 @@
+uuid: fe43193e-2135-4e22-bc26-a52912d0be66
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.beruf
+id: node.beruf.sticky
+field_name: sticky
+entity_type: node
+bundle: beruf
+label: 'Oben in Listen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

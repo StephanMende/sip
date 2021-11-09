@@ -1,0 +1,20 @@
+uuid: 9c880843-4850-4f73-a61a-4d28682b5536
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.schulabschluss
+  module:
+    - path
+id: node.schulabschluss.path
+field_name: path
+entity_type: node
+bundle: schulabschluss
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -4,8 +4,15 @@ status: true
 dependencies:
   config:
     - node.type.erwartungscheck
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 id: node.erwartungscheck
 target_entity_type_id: node
 target_bundle: erwartungscheck
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

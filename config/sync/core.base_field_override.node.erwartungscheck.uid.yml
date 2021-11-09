@@ -1,0 +1,20 @@
+uuid: 1cbb76d7-fcf6-4f47-9a4b-2d399965f20e
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.erwartungscheck
+id: node.erwartungscheck.uid
+field_name: uid
+entity_type: node
+bundle: erwartungscheck
+label: 'Geschrieben von'
+description: 'Der Benutzername des Autors.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

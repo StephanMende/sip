@@ -1,0 +1,22 @@
+uuid: 7a4c434f-50cb-4a57-9591-4ac5053779b4
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwort_erwartungscheck
+id: taxonomy_term.antwort_erwartungscheck.status
+field_name: status
+entity_type: taxonomy_term
+bundle: antwort_erwartungscheck
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: f1783a23-5122-4dce-a557-c12eb5e65b10
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.status
+field_name: status
+entity_type: taxonomy_term
+bundle: tags
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

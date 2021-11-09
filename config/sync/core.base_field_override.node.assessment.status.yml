@@ -1,0 +1,22 @@
+uuid: 424eb464-cdd3-45ee-a046-77c623f04b3d
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.assessment
+id: node.assessment.status
+field_name: status
+entity_type: node
+bundle: assessment
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

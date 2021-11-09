@@ -1,0 +1,22 @@
+uuid: c17e3418-59b2-4914-910e-38b5d05219a7
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.antwortoption
+id: node.antwortoption.sticky
+field_name: sticky
+entity_type: node
+bundle: antwortoption
+label: 'Oben in Listen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

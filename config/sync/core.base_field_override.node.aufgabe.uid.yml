@@ -1,0 +1,20 @@
+uuid: 9ad9ef05-40b6-4a47-a764-52966b474bcf
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aufgabe
+id: node.aufgabe.uid
+field_name: uid
+entity_type: node
+bundle: aufgabe
+label: 'Geschrieben von'
+description: 'Der Benutzername des Autors.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

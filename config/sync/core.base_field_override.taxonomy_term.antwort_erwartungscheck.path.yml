@@ -1,0 +1,20 @@
+uuid: c419107f-3cd9-4dfe-bd74-8d1899fd35d7
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwort_erwartungscheck
+  module:
+    - path
+id: taxonomy_term.antwort_erwartungscheck.path
+field_name: path
+entity_type: taxonomy_term
+bundle: antwort_erwartungscheck
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

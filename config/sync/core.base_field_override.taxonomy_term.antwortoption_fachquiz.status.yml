@@ -1,0 +1,22 @@
+uuid: 28733292-e673-4773-8b51-4157249f0c1a
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwortoption_fachquiz
+id: taxonomy_term.antwortoption_fachquiz.status
+field_name: status
+entity_type: taxonomy_term
+bundle: antwortoption_fachquiz
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

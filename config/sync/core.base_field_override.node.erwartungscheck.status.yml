@@ -1,0 +1,22 @@
+uuid: 6d007529-8ef1-4088-b966-8a4e543ee06e
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.erwartungscheck
+id: node.erwartungscheck.status
+field_name: status
+entity_type: node
+bundle: erwartungscheck
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

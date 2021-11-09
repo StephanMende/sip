@@ -1,0 +1,20 @@
+uuid: 4632a126-270a-4d8f-8257-54fdeead9792
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.studiengang
+id: node.studiengang.uid
+field_name: uid
+entity_type: node
+bundle: studiengang
+label: 'Geschrieben von'
+description: 'Der Benutzername des Autors.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

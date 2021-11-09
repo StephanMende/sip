@@ -1,0 +1,20 @@
+uuid: 51513b70-8f2a-4984-ba12-726ff6ec9999
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aussage
+  module:
+    - path
+id: node.aussage.path
+field_name: path
+entity_type: node
+bundle: aussage
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

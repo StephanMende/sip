@@ -1,0 +1,18 @@
+uuid: 1c972016-9184-4710-816b-cd2f17c1d45d
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.fachquiz
+id: node.fachquiz.changed
+field_name: changed
+entity_type: node
+bundle: fachquiz
+label: Geändert
+description: 'Zeitpunkt, zu dem der Beitrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

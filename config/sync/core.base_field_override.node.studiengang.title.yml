@@ -1,0 +1,18 @@
+uuid: 9d1c2a89-8dcd-4ead-8816-24e02359e2f1
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.studiengang
+id: node.studiengang.title
+field_name: title
+entity_type: node
+bundle: studiengang
+label: Titel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

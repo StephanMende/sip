@@ -1,0 +1,22 @@
+uuid: 6f8e9b74-cb4c-47ea-9996-d6af7131a2d0
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.beruf
+id: node.beruf.status
+field_name: status
+entity_type: node
+bundle: beruf
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

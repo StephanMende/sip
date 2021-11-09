@@ -1,0 +1,22 @@
+uuid: df49242f-361c-4572-9c01-72ff54902f6a
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.status
+field_name: status
+entity_type: node
+bundle: page
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

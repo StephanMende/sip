@@ -1,0 +1,18 @@
+uuid: 6ed5666d-cb37-4549-a2ab-232384adab20
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.schulabschluss
+id: node.schulabschluss.changed
+field_name: changed
+entity_type: node
+bundle: schulabschluss
+label: Geändert
+description: 'Zeitpunkt, zu dem der Beitrag zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

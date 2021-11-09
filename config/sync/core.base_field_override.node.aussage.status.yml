@@ -1,0 +1,22 @@
+uuid: 63a205a8-11f1-4c84-974a-93630125c78f
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.aussage
+id: node.aussage.status
+field_name: status
+entity_type: node
+bundle: aussage
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

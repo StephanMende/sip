@@ -1,0 +1,22 @@
+uuid: bb9641df-9088-4555-9d6b-2fc597f55234
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.erwartungscheck
+id: node.erwartungscheck.sticky
+field_name: sticky
+entity_type: node
+bundle: erwartungscheck
+label: 'Oben in Listen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

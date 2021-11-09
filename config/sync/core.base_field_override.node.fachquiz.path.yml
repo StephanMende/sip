@@ -1,0 +1,20 @@
+uuid: 74a39ae2-1cd2-4c99-810f-11c15ed347f5
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.fachquiz
+  module:
+    - path
+id: node.fachquiz.path
+field_name: path
+entity_type: node
+bundle: fachquiz
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

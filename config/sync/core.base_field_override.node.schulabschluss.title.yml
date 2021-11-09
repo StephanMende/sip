@@ -1,0 +1,18 @@
+uuid: 2aba3a1b-b08c-4b39-ad94-c11a1bf4b3ac
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.schulabschluss
+id: node.schulabschluss.title
+field_name: title
+entity_type: node
+bundle: schulabschluss
+label: Titel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

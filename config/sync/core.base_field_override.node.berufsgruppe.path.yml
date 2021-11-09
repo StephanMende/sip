@@ -1,0 +1,20 @@
+uuid: fcf5d79e-d904-46ac-93a1-bfd0f3fac82b
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.berufsgruppe
+  module:
+    - path
+id: node.berufsgruppe.path
+field_name: path
+entity_type: node
+bundle: berufsgruppe
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

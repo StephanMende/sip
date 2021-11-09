@@ -1,0 +1,18 @@
+uuid: 0a19d0c8-6d28-4b7f-b5e3-fff19b9ad845
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.beruf
+id: node.beruf.created
+field_name: created
+entity_type: node
+bundle: beruf
+label: 'Geschrieben am'
+description: 'Der Zeitpunkt an dem Beitrag geschrieben wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

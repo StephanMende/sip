@@ -1,0 +1,20 @@
+uuid: 932b5848-339f-4330-a5cc-b4c595703f21
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwortoption_fachquiz
+  module:
+    - text
+id: taxonomy_term.antwortoption_fachquiz.description
+field_name: description
+entity_type: taxonomy_term
+bundle: antwortoption_fachquiz
+label: Beschreibung
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

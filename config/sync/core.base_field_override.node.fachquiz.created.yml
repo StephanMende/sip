@@ -1,0 +1,18 @@
+uuid: 63c49e2c-d1cb-4fa7-b8b8-039a621d02d3
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.fachquiz
+id: node.fachquiz.created
+field_name: created
+entity_type: node
+bundle: fachquiz
+label: 'Geschrieben am'
+description: 'Der Zeitpunkt an dem Beitrag geschrieben wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

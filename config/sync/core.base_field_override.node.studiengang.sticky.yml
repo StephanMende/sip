@@ -1,0 +1,22 @@
+uuid: 26a6a0af-e4b2-4106-9216-a12d8d562649
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.studiengang
+id: node.studiengang.sticky
+field_name: sticky
+entity_type: node
+bundle: studiengang
+label: 'Oben in Listen'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

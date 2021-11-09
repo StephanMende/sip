@@ -1,0 +1,22 @@
+uuid: 9025dc74-6fa3-42c1-ab9b-80c61ee29383
+langcode: de
+status: true
+dependencies:
+  config:
+    - node.type.article
+id: node.article.status
+field_name: status
+entity_type: node
+bundle: article
+label: Veröffentlicht
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: An
+  off_label: Aus
+field_type: boolean

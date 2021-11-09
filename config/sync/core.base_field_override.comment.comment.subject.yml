@@ -1,0 +1,18 @@
+uuid: 7fe522d3-1807-4160-b611-937eefeda0ae
+langcode: de
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+id: comment.comment.subject
+field_name: subject
+entity_type: comment
+bundle: comment
+label: Betreff
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

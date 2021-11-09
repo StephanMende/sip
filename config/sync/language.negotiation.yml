@@ -1,5 +1,5 @@
 session:
-  parameter: language
+  parameter: lang
 url:
   source: path_prefix
   prefixes:

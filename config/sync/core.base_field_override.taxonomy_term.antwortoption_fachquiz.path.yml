@@ -1,0 +1,20 @@
+uuid: 6e865b64-f1b8-443a-8e32-f05fa5024fe5
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwortoption_fachquiz
+  module:
+    - path
+id: taxonomy_term.antwortoption_fachquiz.path
+field_name: path
+entity_type: taxonomy_term
+bundle: antwortoption_fachquiz
+label: URL-Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

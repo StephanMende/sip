@@ -1,0 +1,18 @@
+uuid: ee55fae5-ad37-4b37-9e13-380e39dfe6b5
+langcode: de
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.antwort_erwartungscheck
+id: taxonomy_term.antwort_erwartungscheck.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: antwort_erwartungscheck
+label: Geändert
+description: 'Der Zeitpunkt an dem der Begriff zuletzt bearbeitet wurde.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
