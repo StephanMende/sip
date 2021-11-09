@@ -111,7 +111,7 @@ class FachquizController extends ControllerBase {
     $userData = new FachquizData();
 
     $markup = $this->t('Vielen Dank, dass Sie mitgemacht haben. Sie haben @percenct% erreicht. Ihre Auswertung wird hier auch erscheinen,
-      wir entwickeln diese Komponente gerade...', array('percent' => $percent));
+      wir entwickeln diese Komponente gerade...', array('@percent' => $percent));
 
     // Access Token nur generieren und ausgeben, wenn diese Option für den Studiengang aktiviert ist
     if ($codeFlag == TRUE) {
@@ -126,7 +126,7 @@ class FachquizController extends ControllerBase {
     //Wenn nur ein Feld angelegt wurde, wird der Wert hier ausgegeben.
     //Test
     if (count($ausgabeText) == 1) {
-          $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)) . '</p>';
+          $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('@percent' => $percent)) . '</p>';
           if ($codeFlag) {
               $markup .= '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) . '</p>';
           }
@@ -144,7 +144,7 @@ class FachquizController extends ControllerBase {
           }
 
 
-            $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht.', array('percent' => $percent)) . '</p>';
+            $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht.', array('@percent' => $percent)) . '</p>';
             if ($codeFlag) {
                 $markup .= '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) . '</p>';
             }
@@ -164,7 +164,7 @@ class FachquizController extends ControllerBase {
           }
 
 
-            $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)) . '</p>';
+            $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('@percent' => $percent)) . '</p>';
             $markup .=  $this->t('von Studierenden und Lehrenden aus dem Fachbereich überein.') . '</p>';
             if ($codeFlag) {
                 $markup .=  '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) .'</p>';
@@ -192,7 +192,7 @@ class FachquizController extends ControllerBase {
 
 
 
-        $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)) . '</p>';
+        $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('@percent' => $percent)) . '</p>';
             if ($codeFlag) {
                 $markup .= '<p>' . $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) . '</p>';
             }
@@ -221,7 +221,7 @@ class FachquizController extends ControllerBase {
         }
 
 
-        $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('percent' => $percent)).  '</p>';
+        $markup =  '<p>' . $this->t('Sie haben [@percent%] bei diesem Fachquiz erreicht', array('@percent' => $percent)).  '</p>';
           if ($codeFlag) {
               $markup .= '<p>'. $this->t('Hier Ihr Code [@userString]', array('userString' => $userString)) . '</p>';
           }
