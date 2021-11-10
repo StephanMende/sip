@@ -41,7 +41,7 @@ display:
           items_per_page: 50
           tags:
             previous: '‹ Vorherige Seite'
-            next: 'Weiter >'
+            next: 'Nächste Seite ›'
             first: '« Anfang'
             last: 'Ende »'
       style:
@@ -467,7 +467,7 @@ display:
             operator_list: {  }
           is_grouped: true
           group_info:
-            label: 'Status veröffentlicht'
+            label: Veröffentlichungsstatus
             description: ''
             identifier: status
             optional: true

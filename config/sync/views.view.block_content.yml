@@ -55,7 +55,7 @@ display:
           total_pages: null
           tags:
             previous: '‹ Vorherige Seite'
-            next: 'Weiter >'
+            next: 'Nächste Seite ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Elemente pro Seite'

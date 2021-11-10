@@ -185,7 +185,7 @@ display:
             offset_label: Versatz
           tags:
             previous: '‹ Vorherige Seite'
-            next: 'Weiter >'
+            next: 'Nächste Seite ›'
             first: '« Anfang'
             last: 'Ende »'
           quantity: 9

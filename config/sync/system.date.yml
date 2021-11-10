@@ -1,5 +1,5 @@
 country:
-  default: ''
+  default: DE
 first_day: 0
 timezone:
   default: Europe/Berlin

@@ -14,7 +14,7 @@ field_name: user_picture
 entity_type: user
 bundle: user
 label: Bild
-description: 'Your virtual face or picture.'
+description: 'Ihr virtuelles Gesicht oder Bild.'
 required: false
 translatable: false
 default_value: {  }

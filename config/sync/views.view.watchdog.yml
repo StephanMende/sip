@@ -150,7 +150,7 @@ display:
           field: nothing
           relationship: none
           group_type: group
-          admin_label: Icon
+          admin_label: Symbol
           label: ''
           exclude: false
           alter:

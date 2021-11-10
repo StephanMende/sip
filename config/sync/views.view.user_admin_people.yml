@@ -53,7 +53,7 @@ display:
           total_pages: 0
           tags:
             previous: '‹ Vorherige Seite'
-            next: 'Weiter >'
+            next: 'Nächste Seite ›'
             first: '« Anfang'
             last: 'Ende »'
           expose:
