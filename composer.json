@@ -29,15 +29,15 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.6.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
+        "composer/installers": "^1.9",
         "drupal/adaptivetheme": "^3.1",
         "drupal/admin_toolbar": "^3.0",
         "drupal/at_tools": "^3.2",
         "drupal/clipboardjs": "^2.0",
         "drupal/console": "~1.0",
-        "drupal/core": "~8.9",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-recommended": "^8.8",
+        "drupal/core-project-message": "^8.8",
         "drupal/devel": "2.x-dev@dev",
         "drupal/entityreference_dragdrop": "^1.1",
         "drupal/examples": "1.x-dev",
@@ -99,6 +99,13 @@
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
+            }
+        },
+        "extra": {
+            "drupal-scaffold": {
+                "locations": {
+                    "web-root": "web/"
+                }
             }
         }
     },
