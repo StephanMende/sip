@@ -4,6 +4,7 @@
 composer install
 
 #Install Drupal
+echo "\$settings['config_sync_directory'] = '../config/sync';" >> web/sites/default/settings.php
 vendor/bin/drush -y site:install standard \
     --account-name=admin \
     --account-pass=password \
