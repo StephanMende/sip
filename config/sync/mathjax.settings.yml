@@ -6,3 +6,4 @@ _core:
   default_config_hash: 6uMZAUWR1uB-iKjE2S5MiVK3R8lCU2u2Iwl1PzEnORE
 langcode: de
 config_string: '{"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"processEscapes":"true"},"showProcessingMessages":"false","messageStyle":"none"}'
+enable_for_admin: 1

@@ -4,13 +4,13 @@ settings:
   enable_responsive_menus: 1
   enable_images: 0
   enable_touch_icons: 0
-  enable_fonts: 0
-  enable_titles: 0
+  enable_fonts: 1
+  enable_titles: 1
   enable_libraries: 0
   enable_mobile_blocks: 0
   enable_slideshows: 0
-  enable_shortcodes: 0
-  enable_custom_css: 0
+  enable_shortcodes: 1
+  enable_custom_css: 1
   enable_markup_overrides: 0
   enable_devel: 0
   enable_legacy_browsers: 0
@@ -511,6 +511,114 @@ settings:
   page_tabletisolate_footer: ''
   page_tabletisolate_footer_weight: '9'
   page_tabletisolate_footer_hide: 0
+  font_google_names: ''
+  font_typekit_names: ''
+  font_local: ''
+  font_local_names: ''
+  font_image_captions: none
+  font_websafe_image_captions: '0'
+  font_size_image_captions: ''
+  font_smoothing_image_captions: 0
+  font_slideshow_captions: none
+  font_websafe_slideshow_captions: '0'
+  font_size_slideshow_captions: ''
+  font_smoothing_slideshow_captions: 0
+  font_formitems: none
+  font_websafe_formitems: '0'
+  font_size_formitems: ''
+  font_smoothing_formitems: 0
+  font_tables: none
+  font_websafe_tables: '0'
+  font_size_tables: ''
+  font_smoothing_tables: 0
+  font_blockquotes: none
+  font_websafe_blockquotes: '0'
+  font_size_blockquotes: ''
+  font_smoothing_blockquotes: 0
+  font_code: none
+  font_websafe_code: '0'
+  font_size_code: ''
+  font_smoothing_code: 0
+  page_classes_body: ''
+  page_classes_page: ''
+  page_classes_row_wrapper_leaderboard: ''
+  page_classes_row_container_leaderboard: ''
+  page_classes_row_wrapper_header: ''
+  page_classes_row_container_header: ''
+  page_classes_row_wrapper_navbar: ''
+  page_classes_row_container_navbar: ''
+  page_classes_row_wrapper_highlighted: ''
+  page_classes_row_container_highlighted: ''
+  page_classes_row_wrapper_features: ''
+  page_classes_row_container_features: ''
+  page_classes_row_wrapper_content_prefix: ''
+  page_classes_row_container_content_prefix: ''
+  page_classes_row_wrapper_main: ''
+  page_classes_row_container_main: ''
+  page_classes_row_wrapper_content_suffix: ''
+  page_classes_row_container_content_suffix: ''
+  page_classes_row_wrapper_subfeatures: ''
+  page_classes_row_container_subfeatures: ''
+  page_classes_row_wrapper_footer: ''
+  page_classes_row_container_footer: ''
+  page_classes_region_leaderboard: ''
+  page_classes_region_header_first: ''
+  page_classes_region_header_second: ''
+  page_classes_region_navbar: ''
+  page_classes_region_highlighted: ''
+  page_classes_region_features_first: ''
+  page_classes_region_features_second: ''
+  page_classes_region_features_third: ''
+  page_classes_region_content_prefix: ''
+  page_classes_region_content: ''
+  page_classes_region_sidebar_first: ''
+  page_classes_region_sidebar_second: ''
+  page_classes_region_content_suffix: ''
+  page_classes_region_subfeatures_first: ''
+  page_classes_region_subfeatures_second: ''
+  page_classes_region_subfeatures_third: ''
+  page_classes_region_subfeatures_fourth: ''
+  page_classes_region_footer: ''
+  block_classes_ZSB: ''
+  block_classes_system_menu_block_account: ''
+  block_classes_system_branding_block: ''
+  block_classes_system_breadcrumb_block: ''
+  block_classes_system_main_block: ''
+  block_classes_system_menu_block_footer: ''
+  block_classes_help_block: ''
+  block_classes_local_actions_block: ''
+  block_classes_local_tasks_block: ''
+  block_classes_user_login_block: ''
+  block_classes_system_menu_block_main: ''
+  block_classes_system_messages_block: ''
+  block_classes_page_title_block: ''
+  block_classes_search_form_block: ''
+  block_classes_system_menu_block_tools: ''
+  nodetype_classes_antwortoption: ''
+  nodetype_classes_article: ''
+  nodetype_classes_assessment: ''
+  nodetype_classes_aufgabe: ''
+  nodetype_classes_aussage: ''
+  nodetype_classes_beruf: ''
+  nodetype_classes_berufsgruppe: ''
+  nodetype_classes_ergebnistext: ''
+  nodetype_classes_erwartungscheck: ''
+  nodetype_classes_fachquiz: ''
+  nodetype_classes_page: ''
+  nodetype_classes_schulabschluss: ''
+  nodetype_classes_studiengang: ''
+  commenttype_classes_comment: ''
+  shortcodes_textalign_enable: 0
+  shortcodes_position_enable: 0
+  shortcodes_layout_columns_enable: 0
+  shortcodes_float_region_blocks_enable: 0
+  shortcodes_whitespace_enable: 0
+  shortcodes_image_styles_enable: 0
+  shortcodes_grid_blocks_enable: 0
+  shortcodes_rounded_corners_enable: 0
+  shortcodes_menu_bullets_enable: 0
+  shortcodes_animate_enable: 0
+  custom_css: '/* Custom CSS */'
 features:
   logo: 1
   node_user_picture: 1
@@ -527,18 +635,18 @@ _core:
   default_config_hash: vIu0xlyHolvoD5fc7YSaeUlU7BC4Z2zP0bvTv1d2kTQ
 langcode: de
 settings_generated_files_path: themes/custom/styles/css/generated
-list_info: "name: sip_theme\nversion: 8.x-1.0\ntype: theme\n'base theme': at_core\n'base theme original': 8.x-3.1\n'subtheme type': adaptive_subtheme\nlayout: page-layout\ndescription: 'Theme für das Studierendeninformationsportal <br>Base: at_core (8.x-3.1) <br>Generated: Do. 10th, Jan., 2019 - 11:58'\ncore: 8.x\nregions:\n  leaderboard: Leaderboard\n  header_first: 'Header first'\n  header_second: 'Header second'\n  navbar: Navbar\n  highlighted: Highlighted\n  features_first: 'Features first'\n  features_second: 'Features second'\n  features_third: 'Features third'\n  content_prefix: 'Content prefix'\n  content: 'Main content'\n  sidebar_first: 'Sidebar first'\n  sidebar_second: 'Sidebar second'\n  content_suffix: 'Content suffix'\n  subfeatures_first: 'Sub-features first'\n  subfeatures_second: 'Sub-features second'\n  subfeatures_third: 'Sub-features third'\n  subfeatures_fourth: 'Sub-features fourth'\n  footer: Footer\n  page_top: 'Page top'\n  page_bottom: 'Page bottom'\ntags: 'adaptivetheme sub-theme'\nlibraries-extend:\n  quickedit/quickedit:\n    - sip_theme/quickedit\nstylesheets-remove:\n  - '@stable/css/node/node.preview.css'\n  - '@stable/css/node/node.module.css'\n  - '@stable/css/views/views.module.css'\n  - '@stable/css/system/components/tablesort.module.css'\n  - '@classy/css/components/file.css'\nfeatures:\n  - logo\n  - favicon\n  - node_user_picture\n  - comment_user_picture\n  - comment_user_verification\nengine: twig\nscreenshot: themes/custom/screenshot.png\nphp: 5.5.9\nlibraries: {  }\nmtime: 1547117913\nregions_hidden:\n  - page_top\n  - page_bottom\ndependencies:\n  - at_core\n"
+list_info: "name: sip_theme\nversion: 8.x-1.0\ntype: theme\n'base theme': at_core\n'base theme original': 8.x-3.1\n'subtheme type': adaptive_subtheme\nlayout: page-layout\ndescription: 'Theme für das Studierendeninformationsportal <br>Base: at_core (8.x-3.1) <br>Generated: Do. 10th, Jan., 2019 - 11:58'\ncore: 8.x\nregions:\n  leaderboard: Leaderboard\n  header_first: 'Header first'\n  header_second: 'Header second'\n  navbar: Navbar\n  highlighted: Highlighted\n  features_first: 'Features first'\n  features_second: 'Features second'\n  features_third: 'Features third'\n  content_prefix: 'Content prefix'\n  content: 'Main content'\n  sidebar_first: 'Sidebar first'\n  sidebar_second: 'Sidebar second'\n  content_suffix: 'Content suffix'\n  subfeatures_first: 'Sub-features first'\n  subfeatures_second: 'Sub-features second'\n  subfeatures_third: 'Sub-features third'\n  subfeatures_fourth: 'Sub-features fourth'\n  footer: Footer\n  page_top: 'Page top'\n  page_bottom: 'Page bottom'\ntags: 'adaptivetheme sub-theme'\nlibraries-extend:\n  quickedit/quickedit:\n    - sip_theme/quickedit\nstylesheets-remove:\n  - '@stable/css/node/node.preview.css'\n  - '@stable/css/node/node.module.css'\n  - '@stable/css/views/views.module.css'\n  - '@stable/css/system/components/tablesort.module.css'\n  - '@classy/css/components/file.css'\nfeatures:\n  - logo\n  - favicon\n  - node_user_picture\n  - comment_user_picture\n  - comment_user_verification\ncore_incompatible: false\nmtime: 1554725405\nengine: twig\nscreenshot: themes/custom/screenshot.png\nphp: 7.0.8\nlibraries: {  }\nlibraries_extend: {  }\nlibraries_override: {  }\ndependencies:\n  - at_core\nregions_hidden:\n  - page_top\n  - page_bottom\n"
 settings_extensions_form_open: 1
 settings_enable_extensions: 1
 settings_enable_responsive_menus: 1
 settings_enable_images: 0
 settings_enable_touch_icons: 0
-settings_enable_fonts: 0
-settings_enable_titles: 0
-settings_enable_shortcodes: 0
+settings_enable_fonts: 1
+settings_enable_titles: 1
+settings_enable_shortcodes: 1
 settings_enable_slideshows: 0
 settings_enable_mobile_blocks: 0
-settings_enable_custom_css: 0
+settings_enable_custom_css: 1
 settings_enable_ckeditor: 1
 settings_enable_devel: 0
 settings_enable_legacy_browsers: 0
@@ -635,7 +743,7 @@ table_layout_settings:
       settings_page_mobile_content_prefix_hide: 0
   main:
     layout:
-      settings_page_wide_main: threecol-source-ordered-3-6-3
+      settings_page_wide_main: threecol-source-ordered-2-8-2
       settings_page_tabletisolate_main: ''
       settings_page_mobile_main: ''
     weight:
@@ -712,4 +820,265 @@ settings_max_width_unit_subfeatures: em
 settings_max_width_value_footer: ''
 settings_max_width_unit_footer: em
 settings_enable_backups: 0
-log: 'Log color scheme'
+log: 'Farbschema protokollieren'
+settings_font_websafe: "Verdana, Geneva, sans-serif;\r\n\"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n\"Segoe UI\", Segoe, Geneva, Tahoma, sans-serif;\r\nImpact, \"Helvetica Inserat\", \"Arial Black\", sans-serif;\r\nGeorgia, Utopia, Palatino, \"Palatino Linotype\", serif;\r\n\"Times New Roman\", Times, serif;\r\n\"Courier New\", Courier, monospace;\r\nsans-serif;\r\nserif;"
+settings_font_google: ''
+settings_font_google_names: ''
+settings_font_typekit: ''
+settings_font_typekit_names: ''
+settings_font_local: ''
+settings_font_local_names: ''
+settings_font_fallback: sans_serif
+settings_font_line_height_multiplier_default: '1.5'
+settings_font_line_height_multiplier_large: '1.125'
+settings_font_base: none
+settings_font_websafe_base: '0'
+settings_font_size_base: ''
+settings_font_smoothing_base: 0
+settings_font_sitename: none
+settings_font_websafe_sitename: '0'
+settings_font_size_sitename: ''
+settings_font_smoothing_sitename: 0
+settings_font_siteslogan: none
+settings_font_websafe_siteslogan: '0'
+settings_font_size_siteslogan: ''
+settings_font_smoothing_siteslogan: 0
+settings_font_pagetitle: none
+settings_font_websafe_pagetitle: '0'
+settings_font_size_pagetitle: ''
+settings_font_smoothing_pagetitle: 0
+settings_font_nodetitle: none
+settings_font_websafe_nodetitle: '0'
+settings_font_size_nodetitle: ''
+settings_font_smoothing_nodetitle: 0
+settings_font_nodetitle_teaser: none
+settings_font_websafe_nodetitle_teaser: '0'
+settings_font_size_nodetitle_teaser: ''
+settings_font_smoothing_nodetitle_teaser: 0
+settings_font_commenttitle: none
+settings_font_websafe_commenttitle: '0'
+settings_font_size_commenttitle: ''
+settings_font_smoothing_commenttitle: 0
+settings_font_blocktitle: none
+settings_font_websafe_blocktitle: '0'
+settings_font_size_blocktitle: ''
+settings_font_smoothing_blocktitle: 0
+settings_font_links: none
+settings_font_websafe_links: '0'
+settings_font_size_links: ''
+settings_font_smoothing_links: 0
+settings_font_menus: none
+settings_font_websafe_menus: '0'
+settings_font_size_menus: ''
+settings_font_smoothing_menus: 0
+settings_font_responsivemenu: none
+settings_font_websafe_responsivemenu: '0'
+settings_font_size_responsivemenu: ''
+settings_font_smoothing_responsivemenu: 0
+settings_font_responsivemenu_toggle: none
+settings_font_websafe_responsivemenu_toggle: '0'
+settings_font_size_responsivemenu_toggle: ''
+settings_font_smoothing_responsivemenu_toggle: 0
+settings_font_image_captions: none
+settings_font_websafe_image_captions: '0'
+settings_font_size_image_captions: ''
+settings_font_smoothing_image_captions: 0
+settings_font_slideshow_captions: none
+settings_font_websafe_slideshow_captions: '0'
+settings_font_size_slideshow_captions: ''
+settings_font_smoothing_slideshow_captions: 0
+settings_font_tabs: none
+settings_font_websafe_tabs: '0'
+settings_font_size_tabs: ''
+settings_font_smoothing_tabs: 0
+settings_font_breadcrumbs: none
+settings_font_websafe_breadcrumbs: '0'
+settings_font_size_breadcrumbs: ''
+settings_font_smoothing_breadcrumbs: 0
+settings_font_h1h4: none
+settings_font_websafe_h1h4: '0'
+settings_font_smoothing_h1h4: 0
+settings_font_h5h6: none
+settings_font_websafe_h5h6: '0'
+settings_font_smoothing_h5h6: 0
+settings_font_h1: none
+settings_font_websafe_h1: '0'
+settings_font_size_h1: ''
+settings_font_smoothing_h1: 0
+settings_font_h2: none
+settings_font_websafe_h2: '0'
+settings_font_size_h2: ''
+settings_font_smoothing_h2: 0
+settings_font_h3: none
+settings_font_websafe_h3: '0'
+settings_font_size_h3: ''
+settings_font_smoothing_h3: 0
+settings_font_h4: none
+settings_font_websafe_h4: '0'
+settings_font_size_h4: ''
+settings_font_smoothing_h4: 0
+settings_font_h5: none
+settings_font_websafe_h5: '0'
+settings_font_size_h5: ''
+settings_font_smoothing_h5: 0
+settings_font_h6: none
+settings_font_websafe_h6: '0'
+settings_font_size_h6: ''
+settings_font_smoothing_h6: 0
+settings_font_formitems: none
+settings_font_websafe_formitems: '0'
+settings_font_size_formitems: ''
+settings_font_smoothing_formitems: 0
+settings_font_buttons: none
+settings_font_websafe_buttons: '0'
+settings_font_size_buttons: ''
+settings_font_smoothing_buttons: 0
+settings_font_tables: none
+settings_font_websafe_tables: '0'
+settings_font_size_tables: ''
+settings_font_smoothing_tables: 0
+settings_font_blockquotes: none
+settings_font_websafe_blockquotes: '0'
+settings_font_size_blockquotes: ''
+settings_font_smoothing_blockquotes: 0
+settings_font_code: none
+settings_font_websafe_code: '0'
+settings_font_size_code: ''
+settings_font_smoothing_code: 0
+settings_font_custom_selectors: none
+settings_font_websafe_custom_selectors: '0'
+settings_font_size_custom_selectors: ''
+settings_font_smoothing_custom_selectors: 0
+settings_custom_selectors: ''
+settings_titles_sitename_case: none
+settings_titles_sitename_weight: '400'
+settings_titles_sitename_alignment: left
+settings_titles_sitename_letterspacing: ''
+settings_titles_siteslogan_case: none
+settings_titles_siteslogan_weight: '400'
+settings_titles_siteslogan_alignment: left
+settings_titles_siteslogan_letterspacing: ''
+settings_titles_pagetitle_case: none
+settings_titles_pagetitle_weight: '400'
+settings_titles_pagetitle_alignment: left
+settings_titles_pagetitle_letterspacing: ''
+settings_titles_nodetitle_case: none
+settings_titles_nodetitle_weight: '400'
+settings_titles_nodetitle_alignment: left
+settings_titles_nodetitle_letterspacing: ''
+settings_titles_nodetitle_teaser_case: none
+settings_titles_nodetitle_teaser_weight: '400'
+settings_titles_nodetitle_teaser_alignment: left
+settings_titles_nodetitle_teaser_letterspacing: ''
+settings_titles_commenttitle_case: none
+settings_titles_commenttitle_weight: '400'
+settings_titles_commenttitle_alignment: left
+settings_titles_commenttitle_letterspacing: ''
+settings_titles_blocktitle_case: none
+settings_titles_blocktitle_weight: '400'
+settings_titles_blocktitle_alignment: left
+settings_titles_blocktitle_letterspacing: ''
+settings_titles_h1_case: none
+settings_titles_h1_weight: '400'
+settings_titles_h1_alignment: left
+settings_titles_h1_letterspacing: ''
+settings_titles_h2_case: none
+settings_titles_h2_weight: '400'
+settings_titles_h2_alignment: left
+settings_titles_h2_letterspacing: ''
+settings_titles_h3_case: none
+settings_titles_h3_weight: '400'
+settings_titles_h3_alignment: left
+settings_titles_h3_letterspacing: ''
+settings_titles_h4_case: none
+settings_titles_h4_weight: '600'
+settings_titles_h4_alignment: left
+settings_titles_h4_letterspacing: ''
+settings_titles_h5_case: none
+settings_titles_h5_weight: '400'
+settings_titles_h5_alignment: left
+settings_titles_h5_letterspacing: ''
+settings_titles_h6_case: none
+settings_titles_h6_weight: '600'
+settings_titles_h6_alignment: left
+settings_titles_h6_letterspacing: ''
+settings_page_classes_body: ''
+settings_page_classes_page: ''
+settings_page_classes_row_wrapper_leaderboard: ''
+settings_page_classes_row_container_leaderboard: ''
+settings_page_classes_row_wrapper_header: ''
+settings_page_classes_row_container_header: ''
+settings_page_classes_row_wrapper_navbar: ''
+settings_page_classes_row_container_navbar: ''
+settings_page_classes_row_wrapper_highlighted: ''
+settings_page_classes_row_container_highlighted: ''
+settings_page_classes_row_wrapper_features: ''
+settings_page_classes_row_container_features: ''
+settings_page_classes_row_wrapper_content_prefix: ''
+settings_page_classes_row_container_content_prefix: ''
+settings_page_classes_row_wrapper_main: ''
+settings_page_classes_row_container_main: ''
+settings_page_classes_row_wrapper_content_suffix: ''
+settings_page_classes_row_container_content_suffix: ''
+settings_page_classes_row_wrapper_subfeatures: ''
+settings_page_classes_row_container_subfeatures: ''
+settings_page_classes_row_wrapper_footer: ''
+settings_page_classes_row_container_footer: ''
+settings_page_classes_region_leaderboard: ''
+settings_page_classes_region_header_first: ''
+settings_page_classes_region_header_second: ''
+settings_page_classes_region_navbar: ''
+settings_page_classes_region_highlighted: ''
+settings_page_classes_region_features_first: ''
+settings_page_classes_region_features_second: ''
+settings_page_classes_region_features_third: ''
+settings_page_classes_region_content_prefix: ''
+settings_page_classes_region_content: ''
+settings_page_classes_region_sidebar_first: ''
+settings_page_classes_region_sidebar_second: ''
+settings_page_classes_region_content_suffix: ''
+settings_page_classes_region_subfeatures_first: ''
+settings_page_classes_region_subfeatures_second: ''
+settings_page_classes_region_subfeatures_third: ''
+settings_page_classes_region_subfeatures_fourth: ''
+settings_page_classes_region_footer: ''
+settings_block_classes_ZSB: ''
+settings_block_classes_system_menu_block_account: ''
+settings_block_classes_system_branding_block: ''
+settings_block_classes_system_breadcrumb_block: ''
+settings_block_classes_system_main_block: ''
+settings_block_classes_system_menu_block_footer: ''
+settings_block_classes_help_block: ''
+settings_block_classes_local_actions_block: ''
+settings_block_classes_local_tasks_block: ''
+settings_block_classes_user_login_block: ''
+settings_block_classes_system_menu_block_main: ''
+settings_block_classes_system_messages_block: ''
+settings_block_classes_page_title_block: ''
+settings_block_classes_search_form_block: ''
+settings_block_classes_system_menu_block_tools: ''
+settings_nodetype_classes_antwortoption: ''
+settings_nodetype_classes_article: ''
+settings_nodetype_classes_assessment: ''
+settings_nodetype_classes_aufgabe: ''
+settings_nodetype_classes_aussage: ''
+settings_nodetype_classes_beruf: ''
+settings_nodetype_classes_berufsgruppe: ''
+settings_nodetype_classes_ergebnistext: ''
+settings_nodetype_classes_erwartungscheck: ''
+settings_nodetype_classes_fachquiz: ''
+settings_nodetype_classes_page: ''
+settings_nodetype_classes_schulabschluss: ''
+settings_nodetype_classes_studiengang: ''
+settings_commenttype_classes_comment: ''
+settings_shortcodes_textalign_enable: 0
+settings_shortcodes_position_enable: 0
+settings_shortcodes_layout_columns_enable: 0
+settings_shortcodes_float_region_blocks_enable: 0
+settings_shortcodes_whitespace_enable: 0
+settings_shortcodes_image_styles_enable: 0
+settings_shortcodes_grid_blocks_enable: 0
+settings_shortcodes_rounded_corners_enable: 0
+settings_shortcodes_menu_bullets_enable: 0
+settings_shortcodes_animate_enable: 0
+settings_custom_css: '/* Custom CSS */'
