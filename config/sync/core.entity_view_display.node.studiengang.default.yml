@@ -24,45 +24,45 @@ bundle: studiengang
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   field_ausgabeerwartungscheck:
-    weight: 107
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 107
     region: content
   field_erwartungscheck:
-    weight: 105
+    type: zsb_link
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: zsb_link
+    weight: 105
     region: content
   field_fachquiz:
-    weight: 106
+    type: zsb_link
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: zsb_link
+    weight: 106
     region: content
   field_studiengang_berufe:
-    weight: 102
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 102
     region: content
   field_studiengang_links:
-    weight: 104
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -71,21 +71,21 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 104
     region: content
   field_studiengang_schulabschluss:
-    weight: 103
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 103
     region: content
   links:
-    weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 100
+    region: content
 hidden:
   field_erwartungscheck_token: true
   field_fachquiz_token: true

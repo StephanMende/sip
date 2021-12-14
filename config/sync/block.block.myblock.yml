@@ -15,6 +15,6 @@ plugin: ZSB
 settings:
   id: ZSB
   label: 'My Block'
-  provider: schulische_vorbildung
   label_display: visible
+  provider: schulische_vorbildung
 visibility: {  }

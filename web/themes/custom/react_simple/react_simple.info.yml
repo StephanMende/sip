@@ -1,4 +1,6 @@
 name: React Simple
 description: React
 type: theme
+base theme: at_core
 core: 8.x
+core_version_requirement: ^8 || ^9

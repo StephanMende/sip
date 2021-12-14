@@ -30,75 +30,75 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_ausgabeerwartungscheck:
+    type: text_textarea
     weight: 12
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_erwartungscheck:
+    type: inline_entity_form_complex
     weight: 11
+    region: content
     settings:
       form_mode: default
+      override_labels: false
       label_singular: ''
       label_plural: ''
-      collapsible: true
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
-      collapsed: false
       allow_duplicate: false
+      collapsible: true
+      collapsed: false
     third_party_settings: {  }
-    type: inline_entity_form_complex
-    region: content
   field_fachquiz:
+    type: options_buttons
     weight: 13
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_studiengang_berufe:
+    type: inline_entity_form_complex
     weight: 8
+    region: content
     settings:
       form_mode: default
       override_labels: true
       label_singular: Beruf
       label_plural: Berufe
-      collapsible: true
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      collapsed: false
       allow_duplicate: false
+      collapsible: true
+      collapsed: false
     third_party_settings: {  }
-    type: inline_entity_form_complex
-    region: content
   field_studiengang_links:
+    type: link_default
     weight: 10
+    region: content
     settings:
       placeholder_url: 'Bitte hier mit http: bzw. https: beginnen'
       placeholder_title: 'Alternativer angezeigter Text für den Link'
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_studiengang_schulabschluss:
+    type: inline_entity_form_complex
     weight: 9
+    region: content
     settings:
       form_mode: default
       override_labels: true
       label_singular: Schulabschluss
       label_plural: Schulabschluss
-      collapsible: true
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      collapsed: false
       allow_duplicate: false
+      collapsible: true
+      collapsed: false
     third_party_settings: {  }
-    type: inline_entity_form_complex
-    region: content
   langcode:
     type: language_select
     weight: 1
@@ -114,24 +114,24 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 4
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 5
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -144,12 +144,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 2
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden:
   body: true

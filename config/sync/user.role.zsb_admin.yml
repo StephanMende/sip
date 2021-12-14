@@ -1,7 +1,31 @@
 uuid: 69ec0710-63fb-43bd-b890-22bcc91a9809
 langcode: de
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.full_html
+    - node.type.antwortoption
+    - node.type.assessment
+    - node.type.aufgabe
+    - node.type.aussage
+    - node.type.beruf
+    - node.type.berufsgruppe
+    - node.type.ergebnistext
+    - node.type.erwartungscheck
+    - node.type.fachquiz
+    - node.type.page
+    - node.type.schulabschluss
+    - node.type.studiengang
+    - taxonomy.vocabulary.antwort_erwartungscheck
+    - taxonomy.vocabulary.antwortoption_fachquiz
+    - taxonomy.vocabulary.gruppe_erwartungscheck
+  module:
+    - filter
+    - node
+    - taxonomy
+    - toolbar
+    - toolbar_menu
+    - tour
 id: zsb_admin
 label: ZSB_Admin
 weight: 3

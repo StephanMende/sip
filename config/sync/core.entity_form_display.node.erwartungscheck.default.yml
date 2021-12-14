@@ -15,22 +15,22 @@ bundle: erwartungscheck
 mode: default
 content:
   field_erwartungscheck_aussagen:
+    type: inline_entity_form_complex
     weight: 2
+    region: content
     settings:
       form_mode: default
       override_labels: true
       label_singular: Aussage
       label_plural: Aussagen
-      collapsible: true
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      collapsed: false
       allow_duplicate: false
+      collapsible: true
+      collapsed: false
       revision: false
     third_party_settings: {  }
-    type: inline_entity_form_complex
-    region: content
   langcode:
     type: language_select
     weight: 1
