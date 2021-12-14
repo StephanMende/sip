@@ -8,6 +8,7 @@
 
 namespace Drupal\schulische_vorbildung\Form;
 
+use Drupal\Core\Url;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -61,7 +62,7 @@ class SchulischeVorbildungForm extends FormBase
         $schulabschluss_title = $form_state->getValue('schulabschluss_dropdown');
         $schulabschluss_nid = $this->schulische_vorbildung->getNidOfSchulabschluss($schulabschluss_title);
 
-        $url = \Drupal\Core\Url::fromRoute('schulische_vorbildung.controller')
+        $url = Url::fromRoute('schulische_vorbildung.controller')
             ->setRouteParameter('schulabschluss_nid', $schulabschluss_nid);
 
         $form_state->setRedirectUrl($url);

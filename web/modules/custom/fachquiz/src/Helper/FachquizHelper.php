@@ -17,7 +17,7 @@ class FachquizHelper {
       ->condition('type','fachquiz')->condition('nid', $fachquiz_nid)->execute();
 
     //node objects from the nids
-    $nodes =  node_load_multiple($nids);
+    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
 
     foreach ($nodes as $node) {
       $aufgaben = $node->get('field_fachquiz_aufgaben')->referencedEntities();
@@ -29,8 +29,8 @@ class FachquizHelper {
           'aufgabe' => $aufgabe->body->value,
           'frage' => $aufgabe->field_aufgabe_frage->value,
           'antwortoptionen' => $antworten,
-          'erklaerungFalsch' => drupal_render($valueErklaerungFalsch),
-          'erklaerungRichtig' => drupal_render($valueErklaerungRichtig),
+          'erklaerungFalsch' =>  \Drupal::service('renderer')->render($valueErklaerungFalsch),
+          'erklaerungRichtig' =>  \Drupal::service('renderer')->render($valueErklaerungRichtig),
         ];
       }
     }

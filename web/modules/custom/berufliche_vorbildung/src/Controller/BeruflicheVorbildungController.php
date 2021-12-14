@@ -29,9 +29,9 @@ class BeruflicheVorbildungController extends ControllerBase
                 $studiengang_nids[] = $studiengang->entity_id;
             }
             //load the studiengang nodes
-            $nodes = node_load_multiple($studiengang_nids);
+            $nodes = \Drupal\node\Entity\Node::loadMultiple($studiengang_nids);
             //create content to show the Studiengaenge
-            $text = '<p>Folgenden Studiengang können wir Ihnen auf Grund Ihrer beruflichen Vorbildung empfehlen:<br><strong>Hinweis:</strong>Dies ist nur eine Empfehlung, ob Sie letztendlich zugelassen werden entscheidet die Universität.</p>';
+            //$text = '<p>Folgenden Studiengang können wir Ihnen auf Grund Ihrer beruflichen Vorbildung empfehlen:<br><strong>Hinweis:</strong>Dies ist nur eine Empfehlung, ob Sie letztendlich zugelassen werden entscheidet die Universität.</p>';
             $text = $config->get('berufliche_vorbildung_studiengang_text');
             foreach ($nodes as $node) {
                 //ksm($node->get('body')->getString());

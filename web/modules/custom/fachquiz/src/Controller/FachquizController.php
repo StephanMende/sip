@@ -34,7 +34,7 @@ class FachquizController extends ControllerBase {
       //$studiengang = 32; // "Erwartungscheck Wirtschaftsinformatik"
       //Pruefe ob zum Studiengang ein Erwartungscheck existiert
       $nid = $studiengang_nid;
-      $node_storage = \Drupal::entityManager()->getStorage('node');
+      $node_storage = \Drupal::entityTypeManager()->getStorage('node');
       $node = $node_storage->load($nid);
       //Pruefe ob es sich um einen Studiengang Node handelt
       if (!$node->bundle() === 'studiengang') {

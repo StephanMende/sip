@@ -2,4 +2,5 @@ name: Schulische Vorbildung
 description: Stellt ein Formular fuer die schulisch Vorbildung zur Verfuegung
 type: module
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: SIP

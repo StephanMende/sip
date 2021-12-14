@@ -44,7 +44,7 @@ class SchulischeVorbildungController extends ControllerBase
                 $studiengang_nids[] = $studiengang->entity_id;
             }
             //load the studiengang nodes
-            $nodes = node_load_multiple($studiengang_nids);
+            $nodes = \Drupal\node\Entity\Node::loadMultiple($studiengang_nids);
             //ksm($nodes);
             //create content to show the Studiengaenge
 

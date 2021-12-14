@@ -8,6 +8,7 @@
 
 namespace Drupal\erwartungscheck\Helper;
 
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\taxonomy\Entity\Term;
 
 class ErwartungscheckHelper {
@@ -18,7 +19,7 @@ class ErwartungscheckHelper {
       ->condition('type','erwartungscheck')->condition('nid',$targetId)->execute();
 
     //node objects from the nids
-    $nodes =  node_load_multiple($nids);
+    $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
 
     //create aussagen based on content
     foreach($nodes as $node) {
@@ -29,8 +30,8 @@ class ErwartungscheckHelper {
         $valueAussage = $aussage->body->view();
         $valueRueckmeldung = $aussage->field_rueckmeldung->view();
         $aussagen_data[] = [
-          'aussage' => drupal_render($valueAussage),
-          'rueckmeldung' => drupal_render($valueRueckmeldung),
+          'aussage' => \Drupal::service('renderer')->render($valueAussage),
+          'rueckmeldung' => \Drupal::service('renderer')->render($valueRueckmeldung),
           'richtige_antwort' => $this->getTextOfTid($aussage->field_richtige_antwort->target_id),
           'gruppe' => $this->getTextOfTid($aussage->field_gruppe->target_id),
         ];
@@ -42,7 +43,7 @@ class ErwartungscheckHelper {
   public function getTextOfTid($tid) {
     $term = Term::load($tid);
     // get language from route and translated term
-    $currentLanguage = \Drupal::languageManager()->getCurrentLanguage(\Drupal\Core\Language\LanguageInterface::TYPE_CONTENT)->getId();
+    $currentLanguage = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
     $termTranslated = \Drupal::service('entity.repository')->getTranslationFromContext($term, $currentLanguage);
 
     $name = $termTranslated->getName();

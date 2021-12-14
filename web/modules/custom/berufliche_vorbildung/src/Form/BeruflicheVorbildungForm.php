@@ -9,6 +9,7 @@
 namespace Drupal\berufliche_vorbildung\Form;
 
 
+use Drupal\Core\Url;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger;
@@ -159,7 +160,7 @@ class BeruflicheVorbildungForm extends FormBase
 
             $beruf_id = $nid;
 
-            $url = \Drupal\Core\Url::fromRoute('berufliche_vorbildung.controller')
+            $url = Url::fromRoute('berufliche_vorbildung.controller')
                 ->setRouteParameter('beruf_id', $beruf_id);
             $form_state->setRedirectUrl($url);
 
@@ -190,7 +191,7 @@ class BeruflicheVorbildungForm extends FormBase
             ->condition('type', 'studiengang')
             ->execute();
 
-        $nodes = node_load_multiple($nids);
+        $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 
         foreach ($nodes as $node) {
             $target_ids[] = $node->get('field_studiengang_berufe');
@@ -212,7 +213,7 @@ class BeruflicheVorbildungForm extends FormBase
             ->condition('type','berufsgruppe')->execute();
 
         //node object from the nid
-        $nodes = node_load_multiple($nids);
+        $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 
         //get Berufsgruppe
         foreach ($nodes as $node) {
@@ -258,11 +259,11 @@ class BeruflicheVorbildungForm extends FormBase
         }
 
         //get target ids for the nid
-        $node = node_load($nid);
+        $node = \Drupal::service('entity_type.manager')->getStorage('node')->load($nid);
         $target_ids = $node->get("field_berufsgruppe_beruf")->getValue();
         foreach ($target_ids as $target_id) {
             $target_id = $target_id["target_id"];
-            $node_beruf = node_load($target_id);
+            $node_beruf = \Drupal::service('entity_type.manager')->getStorage('node')->load($target_id);
             $beruf_title = $node_beruf->getTitle();
             //write in array
             $berufe[$beruf_title] = $beruf_title;

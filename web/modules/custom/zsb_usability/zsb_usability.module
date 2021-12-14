@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 /**
  * @file
  * Primary module hooks for zsb_usability module.
@@ -12,7 +14,7 @@
 /**
  * Implements hook_ENTITY_TYPE_view_alter().
  */
-function zsb_usability_studiengang_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+function zsb_usability_studiengang_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
 
   $asd = 0;
 }
@@ -20,7 +22,7 @@ function zsb_usability_studiengang_view_alter(array &$build, Drupal\Core\Entity\
 /**
  * Implements hook_entity_view_alter().
  */
-function zsb_usability_entity_view_alter(array &$build, Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+function zsb_usability_entity_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
 
 
   /*if ($entity->bundle() === 'studiengang') {

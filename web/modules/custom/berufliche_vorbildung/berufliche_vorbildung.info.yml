@@ -2,4 +2,5 @@ name: Berufliche Vorbildung
 description: Stellt ein Formular fuer die berufliche Vorbidlung zur Verfuegung
 type: module
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: SIP

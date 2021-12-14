@@ -188,7 +188,7 @@ class ErwartungscheckController extends ControllerBase {
         //Pruefe welcher Studiengang
         //$studiengang = 32; // "Erwartungscheck Wirtschaftsinformatik"
         //Pruefe ob zum Studiengang ein Erwartungscheck existiert
-        $node_storage = \Drupal::entityManager()->getStorage('node');
+        $node_storage = \Drupal::service('entity_type.manager')->getStorage('node');
         $node = $node_storage->load($studiengang_nid);
         //Pruefe ob es sich um einen Studiengang Node handelt
         if (!$node->bundle() === 'studiengang') {

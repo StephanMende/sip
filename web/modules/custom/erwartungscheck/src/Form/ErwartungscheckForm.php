@@ -8,6 +8,8 @@
 
 namespace Drupal\erwartungscheck\Form;
 
+use Drupal\Core\Url;
+use Drupal\erwartungscheck\Data\ErwartungscheckData;
 use Drupal\Core\Ajax\CssCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -91,7 +93,7 @@ class ErwartungscheckForm extends FormBase {
             //Berechne den Prozentwert
             $percent = round($this->correct_answer / $this->question_count, 2)*100;
             //Gehe zur URL die den Auswertungstext anzeigt und geben den Prozentwert und den Titel des Studiengange mit
-            $url = \Drupal\Core\Url::fromRoute('erwartungscheck.info')->setRouteParameters(['percent'=> $percent, 'studiengang_nid'=> $this->studiengang_nid]);
+            $url = Url::fromRoute('erwartungscheck.info')->setRouteParameters(['percent'=> $percent, 'studiengang_nid'=> $this->studiengang_nid]);
             $form_state->setRedirectUrl($url);
 
         } else {
@@ -147,7 +149,7 @@ class ErwartungscheckForm extends FormBase {
         $erwartungscheckAussagen = $erwartungscheckHelper->getErwartungcheck($targetId);
 
         foreach ($erwartungscheckAussagen as $data) {
-            $erwartungscheckData = new Data\ErwartungscheckData();
+            $erwartungscheckData = new ErwartungscheckData();
             $erwartungscheckData->setAussage($data['aussage']);
             $erwartungscheckData->setGruppe($data['gruppe']); //TODO Change to term reference
             $erwartungscheckData->setRichtigeAntwort($data['richtige_antwort']);

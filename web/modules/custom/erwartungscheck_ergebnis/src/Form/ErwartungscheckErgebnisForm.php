@@ -13,7 +13,7 @@ class ErwartungscheckErgebnisForm extends FormBase {
         //Hole den Namen des Studiengangs aus der URL
         $studiengang = $arg1;
         //Speichere den Studiengang im temporären Speicher für die Submit Funktion
-        $tempstore = \Drupal::service('user.private_tempstore')->get('erwartungscheck_ergebnis');
+        $tempstore = \Drupal::service('tempstore.private')->get('erwartungscheck_ergebnis');
         $tempstore->set('studiengang', $studiengang);
 
         //Hole dir die Anzahl der Felder, die die Form bereits hat
@@ -108,7 +108,7 @@ class ErwartungscheckErgebnisForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
 
         //Hole den Studiengang aus dem temporären Speicher
-        $tempstore = \Drupal::service('user.private_tempstore')
+        $tempstore = \Drupal::service('tempstore.private')
                     ->get('erwartungscheck_ergebnis');
         $studiengang = $tempstore->get('studiengang');
         //Hole alle Werte aus dem Formular

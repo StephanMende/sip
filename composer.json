@@ -35,20 +35,19 @@
         "drupal/at_tools": "^3.2",
         "drupal/clipboardjs": "^2.0",
         "drupal/console": "~1.0",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "^8.8",
-        "drupal/devel": "2.x-dev@dev",
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-project-message": "^9",
+        "drupal/core-recommended": "^9",
         "drupal/entityreference_dragdrop": "^2.0@beta",
-        "drupal/examples": "1.x-dev",
         "drupal/field_group": "^3.1",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/mathjax": "^3.0",
         "drupal/node_title_help_text": "^1.0",
         "drupal/toolbar_menu": "^2.1",
         "drupal/tour_ui": "^1.0@beta",
+        "drupal/upgrade_status": "^3.12",
         "drupal/x_frame_options": "^1.1",
-        "drush/drush": "^9.0.0",
+        "drush/drush": "10.x",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
@@ -109,6 +108,6 @@
         }
     },
     "require-dev": {
-        "drupal/core-dev": "^8.8"
+        "drupal/core-dev": "^9"
     }
 }

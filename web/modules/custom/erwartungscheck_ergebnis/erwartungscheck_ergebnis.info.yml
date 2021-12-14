@@ -2,3 +2,4 @@ name: Erwartungscheck Ergebnis
 description: Zeigt die Ergebnisseite des Erwartungschecks an.
 type: module
 core: 8.x
+core_version_requirement: ^8 || ^9

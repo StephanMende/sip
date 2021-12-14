@@ -4,4 +4,5 @@ type: module
 package: Security
 configure: allow_iframed_site.settings
 core: 8.x
+core_version_requirement: ^8 || ^9
 

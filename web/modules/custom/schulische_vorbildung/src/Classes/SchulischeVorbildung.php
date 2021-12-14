@@ -17,7 +17,7 @@ class SchulischeVorbildung
             ->condition('type', 'schulabschluss')
             ->execute();
 
-        $nodes = node_load_multiple($nids);
+        $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 
         foreach ($nodes as $node) {
             $schulabschluesse[$node->getTitle()] = $node->getTitle();
