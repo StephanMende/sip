@@ -13,8 +13,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 	mv composer.phar /usr/local/bin/composer && \
 	php -r "unlink('composer-setup.php');"
 
-#Install drush
-RUN composer global require drush/drush
+# Install drush
+RUN wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar && \
+	chmod +x drush.phar && \
+	cp -Rf drush.phar /usr/local/bin/drush
 
 #Install drupal console
 RUN composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader
