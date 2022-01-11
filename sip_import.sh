@@ -1,16 +1,17 @@
 #!/bin/bash
 
 echo ">>> Pull changes from GitHub Repository"
+vendor/bin/drush -y config:export
 git pull
 
 echo ">>> Backup database"
 vendor/bin/drush cache:rebuild
 tes=$(date +"%Y%m%dT%H%M").sql
-vendor/bin/drush sql:dump --extra-dump=--no-tablespaces > ~/$tes
-echo ">>> Database backup created: ~/$tes"
+vendor/bin/drush sql:dump --extra-dump=--no-tablespaces > ~/sip_sql_backups/$tes
+echo ">>> Database backup created: ~/sip_sql_backups/$tes"
 
 echo ">>> Update Composer dependencies"
-composer install
+vendor/bin/composer install
 
 echo ">>> Update database"
 vendor/bin/drush -y updatedb
