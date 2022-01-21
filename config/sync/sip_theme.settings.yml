@@ -618,7 +618,7 @@ settings:
   shortcodes_rounded_corners_enable: 0
   shortcodes_menu_bullets_enable: 0
   shortcodes_animate_enable: 0
-  custom_css: '/* Custom CSS */'
+  custom_css: "/* Custom CSS */\r\n\r\n"
 features:
   logo: 1
   node_user_picture: 1

@@ -11,7 +11,7 @@ vendor/bin/drush sql:dump --extra-dump=--no-tablespaces > ~/sip_sql_backups/$tes
 echo ">>> Database backup created: ~/sip_sql_backups/$tes"
 
 echo ">>> Update Composer dependencies"
-vendor/bin/composer install
+vendor/bin/composer install --no-interaction
 
 echo ">>> Update database"
 vendor/bin/drush -y updatedb

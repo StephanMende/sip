@@ -23,5 +23,5 @@ vendor/bin/drush -y config:export
 
 echo ">>> Done. Now add, commit and push your changes to the GitHub repository."
 git add .
-git commit -m "Update Drupal core/modules"
+git commit -m "Automatic update of Drupal core/modules/config"
 git push
